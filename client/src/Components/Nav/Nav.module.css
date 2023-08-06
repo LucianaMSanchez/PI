@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Coda&display=swap');
+
+
+.nav{
+    background-color: #21334b;
+    padding: 1em;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-evenly;
+    padding-left: 3em;
+    align-items: center;
+    }
+
+.icono{
+    position: absolute;
+    margin-top: 1em;
+    margin-left: 1em;  
+    width:3em;
+    }
+    
+
+.about{
+    font-size: 0.8em;
+    color:#ffffff;
+    border: 1px #ff5722;
+    font-family: 'Coda', sans-serif;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.home{
+    font-size: 0.8em;
+    color:#ffffff;
+    border: 1px #ff5722;
+    font-family: 'Coda', sans-serif;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.pokedex{
+    font-size: 0.8em;
+    color:#ffffff;
+    border: 1px #ff5722;
+    font-family: 'Coda', sans-serif;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.play{
+    font-size: 0.8em;
+    color:#ffffff;
+    border: 1px #ff5722;
+    font-family: 'Coda', sans-serif;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.create{
+    font-size: 0.8em;
+    color:#ffffff;
+    border: 1px #ff5722;
+    font-family: 'Coda', sans-serif;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.logout{
+    font-size: 0.8em;
+    color:#ffffff;
+    border: 1px #ff5722;
+    font-family: 'Coda', sans-serif;
+    font-weight: bold;
+    cursor: pointer; 
+    text-decoration: none;  
+}

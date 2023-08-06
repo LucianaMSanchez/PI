@@ -1,0 +1,36 @@
+.back{
+    justify-content: center;
+}
+
+.container{
+    background-color: transparent;
+    height: 100%;
+    width: 14em;
+    display: grid;
+    margin-top: 1em;
+    grid: auto / auto auto;
+}
+
+.type{
+    background-color: transparent;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    width: 5em;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 1em;
+}
+
+.typeImage{
+    width: 3em;
+    cursor: pointer;
+    align-items: center;
+}
+
+.typeName{
+    font-family: 'Coda', sans-serif;
+    font-weight: bold;
+    color: #0c203d; 
+    text-align: center;
+}

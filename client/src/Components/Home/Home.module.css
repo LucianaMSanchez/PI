@@ -1,0 +1,10 @@
+
+.contain{
+background-color: rgb(255, 255, 255); 
+display: flex;
+flex-direction: row;
+width: 100vw;
+height:2000px;
+}   
+    
+

@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Coda&display=swap');
+
+
+.container{
+display: flex;
+background-image: url("../../assets/BAI-3-Curves_1.gif");
+background-size: cover; 
+background-repeat:repeat-y;
+height: 100vh;
+justify-content: space-around;
+}
+
+.divUno{
+width:50vw;
+justify-content: center;
+padding: 3em;
+padding-left: 10em;
+}
+
+.divDos{
+    width:50vw;
+    justify-content: center;
+    padding: 3em;
+}
+
+.imagen{
+    size: 5px;
+    border-radius: 15px;
+    border: 5px solid #00b7c2; 
+    margin-top: 4em;
+}
+    
+.rick {
+    color: #00fa21;
+    font-family: 'Coda', sans-serif;
+    font-style: bold;
+    font-size: 4em;
+    text-align: left;
+    text-shadow: 0.5em 0.5em 0.5em #ec0ca1;
+}
+  
+
+.caracteristics{
+   
+    color: #44e3ff;
+    text-align: left;
+    font-size: 1.5em;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 2em;
+    text-shadow: 3em 3em 3em #ec0ca1;
+  
+}
+
+.goBack{
+    color: #00fa21;
+    font-family: 'Coda', sans-serif;
+    font-style: bold;
+    font-size: 2em;
+    text-align: left;
+    text-shadow: 0.5em 0.5em 0.5em #ec0ca1;
+}
+
+.divEp{
+    background: linear-gradient(to bottom,#1f0141, #cdaef0); 
+    display: flex;
+    flex-wrap: wrap;
+    width:100%;
+    border-radius:15px;
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    }
+    
+/* // .first-color { 
+    // 	background: #222831; 
+    // }
+    
+    // .first-color { 
+    // 	background: #ecfeff; 
+    // }
+        
+    // .second-color { 
+    // 	background: #00b7c2; 
+    // }
+    
+    // .third-color { 
+    // 	background: #128494; 
+    // }
+    
+    // .fourth-color { 
+    // 	background: #4ef037; 
+    // } */

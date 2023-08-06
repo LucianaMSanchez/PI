@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Coda&display=swap');
+
+.back{
+    background: linear-gradient(to bottom,#1f0141, #cdaef0); 
+    height: 3000px;
+}
+
+.imagen{
+    border-radius: 15px;
+    border: 5px solid #00b7c2; 
+    margin-top: 3em;
+    width:30vw;
+}
+
+.div{
+    display: flex;
+    width:80%;
+    padding: 3em;
+    padding-left: 8em;
+    justify-content: space-around;
+}
+
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    width:95%;
+    border-radius:15px;
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+}
+
+.divDos{
+    align-items: center;
+}
+
+.rick {
+    color: #00fa21;
+    font-family: 'Coda', sans-serif;
+    font-style: bold;
+    font-size: 3em;
+    text-align: left;
+    text-shadow: 0.5em 0.5em 0.5em #ec0ca1;
+    padding-left: 2em;
+}
+  
+
+.caracteristics{
+    color: #44e3ff;
+    text-align: left;
+    font-size: 1.5em;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1em;
+    text-shadow: 3em 3em 3em #ec0ca1;
+    padding-left: 4em;
+}
+
+.goBack{
+    border: solid 1px #4ef037;
+    border-radius: 15px 15px 15px 15px;
+    height: 2em;
+    width: 6em;
+    padding-top: 0.7em;
+    background-color:#ecfeff;
+    box-shadow: inset 0 0 5px #00b7c2;
+    text-align: center;
+}

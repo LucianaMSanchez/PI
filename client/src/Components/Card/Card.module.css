@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Coda&display=swap');
+
+
+.container{
+    background-color: transparent;
+    width: 10em;
+    height: 10em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    padding-left: 1em;
+    padding-right: 1em;
+    display: flex;
+    cursor: pointer;
+}
+
+.miniContainer{
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+}
+
+.supContainer{
+    display: flex;
+    height: 20%;
+}
+
+.closebutton{
+    background-color: transparent;
+    color:rgb(5, 5, 85);
+    width: 1em;
+    height: 1em;
+    transition: 0.5s;
+}
+
+.closebutton:hover{
+    box-shadow: 4px 4px 3px 0px rgba(0,0,0,0.75);
+}
+
+.name {
+    font-family: 'Coda', sans-serif;
+    font-size: 2em;
+    white-space: pre-wrap;
+}
+
+.imageContainer{
+    position: relative;
+    overflow: hidden;
+}
+
+.image,
+.svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.image{
+    background-color: transparent;
+    border: none;
+    z-index: 2;
+    left: 30%; 
+    top: 30%;
+    width: 70%; 
+    height: 70%; 
+}
+
+.image:hover{
+    transform: scale(1.05);
+}
+
+.svg{
+    z-index: 1;
+    width:100%;
+}
+
+.types{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+
+.type{
+    margin-bottom: 1em;
+}
+
+.typeImage{
+size: 80%;
+}
+
+.typeName{
+    font-family: 'Coda', sans-serif;
+    font-size: 0.2em;
+}
+
