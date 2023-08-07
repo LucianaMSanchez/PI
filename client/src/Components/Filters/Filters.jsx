@@ -27,7 +27,7 @@ import water from "../../assets/types/water.png";
 
 
 
-const Filters = (pokemons, allPokemons) =>{
+const Filters = ({pokemons, allPokemons}) =>{
 
     const location = useLocation();
     const dispatch = useDispatch();
@@ -43,27 +43,27 @@ const Filters = (pokemons, allPokemons) =>{
     })
 
 
-    const handleOrderAz = (value) => {
-        if (value !== "null"){
-            dispatch(orderAz(value, pokemons))
-            setAux(({...aux, 
-                orderAz: value, 
-                orderHp: "null", 
-                orderAttack: "null", 
-                orderDefense: "null", 
-                orderSpeed: "null", 
-                filterOrigin: "null", 
-                filterType: "null"
-            }))
+    const handleOrderAz = (order) => {
+        if (order !== "null"){
+            dispatch(orderAz(order, pokemons))
+        setAux(({...aux, 
+            orderAz: order, 
+            orderHp: "null", 
+            orderAttack: "null", 
+            orderDefense: "null", 
+            orderSpeed: "null", 
+            filterOrigin: "null", 
+            filterType: "null"
+        }))
             if(error) window.alert(error)
         }
     }
 
-    const handleOrderHp = (value) => {
-        if (value !== "null"){
-            dispatch(orderHp(value, pokemons))
+    const handleOrderHp = (order) => {
+        if (order !== "null"){
+            dispatch(orderHp(order, pokemons))
             setAux(({...aux, 
-                orderHp: value, 
+                orderHp: order, 
                 orderAz: "null", 
                 orderAttack: "null", 
                 orderDefense: "null", 
@@ -74,11 +74,11 @@ const Filters = (pokemons, allPokemons) =>{
             if(error) window.alert(error)
         }
     }
-    const handleOrderAttack = (value) => {
-        if (value !== "null"){
-            dispatch(orderAttack(value, pokemons))
+    const handleOrderAttack = (order) => {
+        if (order !== "null"){
+            dispatch(orderAttack(order, pokemons))
             setAux(({...aux, 
-                orderAttack: value, 
+                orderAttack: order, 
                 orderHp: "null", 
                 orderAz: "null", 
                 orderDefense: "null", 
@@ -89,11 +89,11 @@ const Filters = (pokemons, allPokemons) =>{
             if(error) window.alert(error)
         }
     }
-    const handleOrderDefense = (value) => {
-        if (value !== "null"){
-            dispatch(orderDefense(value, pokemons))
+    const handleOrderDefense = (order) => {
+        if (order !== "null"){
+            dispatch(orderDefense(order, pokemons))
             setAux(({...aux, 
-                orderDefense: value, 
+                orderDefense: order, 
                 orderHp: "null", 
                 orderAttack: "null", 
                 orderAz: "null", 
@@ -104,11 +104,11 @@ const Filters = (pokemons, allPokemons) =>{
             if(error) window.alert(error)
         }
     }
-    const handleOrderSpeed = (value) => {
-        if (value !== "null"){
-            dispatch(orderSpeed(value, pokemons))
+    const handleOrderSpeed = (order) => {
+        if (order !== "null"){
+            dispatch(orderSpeed(order, pokemons))
             setAux(({...aux, 
-                orderSpeed: value, 
+                orderSpeed: order, 
                 orderHp: "null", 
                 orderAttack: "null", 
                 orderDefense: "null", 
@@ -120,11 +120,11 @@ const Filters = (pokemons, allPokemons) =>{
         }
     }
     
-    const handleFilterOrigin = (value) => {
-        if (value !== "null"){
-            dispatch(filterOrigin(value, allPokemons))
+    const handleFilterOrigin = (origin) => {
+        if (origin !== "null"){
+            dispatch(filterOrigin(origin, allPokemons))
             setAux(({...aux, 
-                filterOrigin: value, 
+                filterOrigin: origin, 
                 orderAz: "null", 
                 orderHp: "null", 
                 orderAttack: "null", 
@@ -135,11 +135,11 @@ const Filters = (pokemons, allPokemons) =>{
             if(error) window.alert(error)  
         }
     }
-    const handleFilterType = (value) => {
-        if (value !== "null"){
-            dispatch(filterType(value, allPokemons))
+    const handleFilterType = (type) => {
+        if (type !== "null"){
+            dispatch(filterType(type, allPokemons))
             setAux(({...aux, 
-                filterType: value, 
+                filterType: type, 
                 orderAz: "null", 
                 orderHp: "null", 
                 orderAttack: "null", 
@@ -185,57 +185,57 @@ return (
         <div className={style.filters}>
         <h2 className={style.titles}>Order</h2>
             <div>
-                <button className={style.ord} onClick={() => handleOrderAz("A")}>Az</button>
-                <button className={style.ord} onClick={() => handleOrderAz("D")}>Za</button>
+                <button value={aux.orderAz} className={style.ord} onClick={() => handleOrderAz("A")}>Az</button>
+                <button value={aux.orderAz} className={style.ord} onClick={() => handleOrderAz("D")}>Za</button>
             </div>
         <h2 className={style.titles}>Filter</h2>
             <div>
-                <button className={style.ord} onClick={() => handleFilterOrigin("Created")}>Created</button>
-                <button className={style.ord} onClick={() => handleFilterOrigin("Original")}>Original</button>
+                <button value={aux.filterOrigin} className={style.ord} onClick={() => handleFilterOrigin("Created")}>Created</button>
+                <button value={aux.filterOrigin} className={style.ord} onClick={() => handleFilterOrigin("Original")}>Original</button>
             </div>
         </div>
         <div className={style.orders}>
             <h2 className={style.titles}>Stats</h2>
             <div>
-                <button className={style.stat} onClick={() => handleOrderHp("A")}>+ Hp</button>
-                <button className={style.stat} onClick={() => handleOrderHp("D")}>- Hp</button>
+                <button value={aux.orderHp} className={style.stat} onClick={() => handleOrderHp("A")}>+ Hp</button>
+                <button value={aux.orderHp} className={style.stat} onClick={() => handleOrderHp("D")}>- Hp</button>
             </div>
             <div>
-                <button className={style.stat} onClick={() => handleOrderAttack("A")}>+ Attack</button>
-                <button className={style.stat} onClick={() => handleOrderAttack("D")}>- Attack</button>
+                <button value={aux.orderAttack} className={style.stat} onClick={() => handleOrderAttack("A")}>+ Attack</button>
+                <button value={aux.orderAttack} className={style.stat} onClick={() => handleOrderAttack("D")}>- Attack</button>
             </div>
             <div>
-                <button className={style.stat} onClick={() => handleOrderDefense("A")}>+ Defense</button>
-                <button className={style.stat} onClick={() => handleOrderDefense("D")}>- Defense</button>
+                <button value={aux.orderDefense} className={style.stat} onClick={() => handleOrderDefense("A")}>+ Defense</button>
+                <button value={aux.orderDefense} className={style.stat} onClick={() => handleOrderDefense("D")}>- Defense</button>
             </div>
             <div>
-                <button className={style.stat} onClick={() => handleOrderSpeed("A")}>+ Speed</button>
-                <button className={style.stat} onClick={() => handleOrderSpeed("D")}>- Speed</button>
+                <button value={aux.orderSpeed} className={style.stat} onClick={() => handleOrderSpeed("A")}>+ Speed</button>
+                <button value={aux.orderSpeed} className={style.stat} onClick={() => handleOrderSpeed("D")}>- Speed</button>
             </div>
         </div>    
         <div >
         <h2 className={style.titles}>Filter type of energy</h2>
             <div className={style.types}>
-                <button onClick={() => handleFilterType("normal")} className={style.buttons}> <img src={normal} alt="normal" className={style.type} /> </button>
-                <button onClick={() => handleFilterType("fighting")} className={style.buttons}> <img src={fighting} alt="fighting" className={style.type} /> </button>
-                <button onClick={() => handleFilterType("flying")} className={style.buttons}> <img src={flying} alt="flying" className={style.type} /> </button>
-                <button onClick={() => handleFilterType("poison")} className={style.buttons}> <img src={poison} alt="poison" className={style.type} /> </button>
-                <button onClick={() => handleFilterType("ground")} className={style.buttons}> <img src={ground} alt="ground" className={style.type} /> </button>
-                <button onClick={() => handleFilterType("rock")} className={style.buttons}> <img src={rock} alt="rock" className={style.type} /> </button>
-                <button onClick={() => handleFilterType("bug")} className={style.buttons}> <img src={bug} alt="bug" className={style.type} /> </button>
-                <button onClick={() => handleFilterType("ghost")} className={style.buttons}> <img src={ghost} alt="ghost" className={style.type} /> </button>
-                <button onClick={() => handleFilterType("steel")} className={style.buttons}> <img src={steel} alt="steel" className={style.type} /> </button>
-                <button onClick={() => handleFilterType("fire")} className={style.buttons}> <img src={fire} alt="fire" className={style.type} /> </button>
-                <button onClick={() => handleFilterType("water")} className={style.buttons}> <img src={water} alt="water" className={style.type} /> </button>
-                <button onClick={() => handleFilterType("grass")} className={style.buttons}> <img src={grass} alt="grass" className={style.type} /> </button>
-                <button onClick={() => handleFilterType("electric")} className={style.buttons}> <img src={electric} alt="electric" className={style.type} /> </button>
-                <button onClick={() => handleFilterType("psychic")} className={style.buttons}> <img src={psychic} alt="psychic" className={style.type} /> </button>
-                <button onClick={() => handleFilterType("ice")} className={style.buttons}> <img src={ice} alt="ice" className={style.type} /> </button>
-                <button onClick={() => handleFilterType("dragon")} className={style.buttons}> <img src={dragon} alt="dragon" className={style.type} /> </button>
-                <button onClick={() => handleFilterType("dark")} className={style.buttons}> <img src={dark} alt="dark" className={style.type} /> </button>
-                <button onClick={() => handleFilterType("fairy")} className={style.buttons}> <img src={fairy} alt="fairy" className={style.type} /> </button>
-                <button onClick={() => handleFilterType("shadow")} className={style.buttons}> <img src={shadow} alt="shadow" className={style.type} /> </button>
-                <button onClick={() => handleFilterType("unknown")} className={style.buttons}> <img src={unknown} alt="unknown" className={style.type} /> </button>
+                <button value={aux.filterType} onClick={() => handleFilterType("normal")} className={style.buttons}> <img src={normal} alt="normal" className={style.type} /> </button>
+                <button value={aux.filterType} onClick={() => handleFilterType("fighting")} className={style.buttons}> <img src={fighting} alt="fighting" className={style.type} /> </button>
+                <button value={aux.filterType} onClick={() => handleFilterType("flying")} className={style.buttons}> <img src={flying} alt="flying" className={style.type} /> </button>
+                <button value={aux.filterType} onClick={() => handleFilterType("poison")} className={style.buttons}> <img src={poison} alt="poison" className={style.type} /> </button>
+                <button value={aux.filterType} onClick={() => handleFilterType("ground")} className={style.buttons}> <img src={ground} alt="ground" className={style.type} /> </button>
+                <button value={aux.filterType} onClick={() => handleFilterType("rock")} className={style.buttons}> <img src={rock} alt="rock" className={style.type} /> </button>
+                <button value={aux.filterType} onClick={() => handleFilterType("bug")} className={style.buttons}> <img src={bug} alt="bug" className={style.type} /> </button>
+                <button value={aux.filterType} onClick={() => handleFilterType("ghost")} className={style.buttons}> <img src={ghost} alt="ghost" className={style.type} /> </button>
+                <button value={aux.filterType} onClick={() => handleFilterType("steel")} className={style.buttons}> <img src={steel} alt="steel" className={style.type} /> </button>
+                <button value={aux.filterType} onClick={() => handleFilterType("fire")} className={style.buttons}> <img src={fire} alt="fire" className={style.type} /> </button>
+                <button value={aux.filterType} onClick={() => handleFilterType("water")} className={style.buttons}> <img src={water} alt="water" className={style.type} /> </button>
+                <button value={aux.filterType} onClick={() => handleFilterType("grass")} className={style.buttons}> <img src={grass} alt="grass" className={style.type} /> </button>
+                <button value={aux.filterType} onClick={() => handleFilterType("electric")} className={style.buttons}> <img src={electric} alt="electric" className={style.type} /> </button>
+                <button value={aux.filterType} onClick={() => handleFilterType("psychic")} className={style.buttons}> <img src={psychic} alt="psychic" className={style.type} /> </button>
+                <button value={aux.filterType} onClick={() => handleFilterType("ice")} className={style.buttons}> <img src={ice} alt="ice" className={style.type} /> </button>
+                <button value={aux.filterType} onClick={() => handleFilterType("dragon")} className={style.buttons}> <img src={dragon} alt="dragon" className={style.type} /> </button>
+                <button value={aux.filterType} onClick={() => handleFilterType("dark")} className={style.buttons}> <img src={dark} alt="dark" className={style.type} /> </button>
+                <button value={aux.filterType} onClick={() => handleFilterType("fairy")} className={style.buttons}> <img src={fairy} alt="fairy" className={style.type} /> </button>
+                <button value={aux.filterType} onClick={() => handleFilterType("shadow")} className={style.buttons}> <img src={shadow} alt="shadow" className={style.type} /> </button>
+                <button value={aux.filterType} onClick={() => handleFilterType("unknown")} className={style.buttons}> <img src={unknown} alt="unknown" className={style.type} /> </button>
             </div>
         </div>
     <button className={style.clearButton} onClick={location.pathname === "/home" ? handleClear : handleClearPokedex}>

@@ -26,6 +26,7 @@ const createPokemon = async (id) => {
             weight: pokemon.weight,
             types: pokemon.types,
        })
+       console.log(newPokemon)
       
     if (!newPokemon) throw new Error("Error creating pokemon");
     return newPokemon;

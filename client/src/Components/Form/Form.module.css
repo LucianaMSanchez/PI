@@ -11,8 +11,7 @@
 
 .email{
     font-family: 'Coda', sans-serif;
-    font-weight: bold;
-    color: #2d4059; 
+    color: #d7dfe9; 
     margin-top: 3em;
     margin-bottom: 1.5em;
     margin-left: 2em;
@@ -20,8 +19,7 @@
 
 .pass{
     font-family: 'Coda', sans-serif;
-    font-weight: bold;
-    color: #2d4059; 
+    color: #d7dfe9; 
     margin-top: 1.5em;
     margin-bottom: 3em;
     margin-left: 2em;
@@ -62,8 +60,9 @@
 
 .span{
     font-size: 0.8em;
-    color: #128494;
+    color: #d7dfe9;
     margin-top: 1.5em;
+    margin-left: 2em;
     font-family: 'Coda', sans-serif;
     font-weight: normal;
 }
@@ -79,7 +78,7 @@
     background-color: #ecfeff; 
     box-shadow: inset 0 0 5px #3dc7be;
     align-self: center;
-    margin-left: 6em;
+    margin-left: 8.2em;
     cursor: pointer;
 }
 
@@ -92,7 +91,7 @@
 .name{
     font-family: 'Coda', sans-serif;
     font-weight: bold;
-    color: #2d4059; 
+    color: #d7dfe9; 
     margin-top: 4em;
     margin-bottom: 2em;
     margin-left: 2em;

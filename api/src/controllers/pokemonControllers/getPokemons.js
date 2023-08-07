@@ -2,41 +2,34 @@ const axios = require("axios");
 const getData = require("../../utils/getData");
 
 const baseUrl = "https://pokeapi.co/api/v2/pokemon/";
-let endpoint = baseUrl;
-
 
 const getPokemons = async () => {
-    let allPokemons = [];
-    let pokemonCount = 0;
-    let pokemons = [];
+  let allPokemons = [];
+  let pokemonCount = 0;
+  let pokemons = [];
 
-    while (endpoint && pokemonCount < 24) {
-        const response = await axios.get(endpoint);
-        const results = response.data.results;
-        allPokemons = [...allPokemons, ...results];
-        pokemonCount += results.length;
+  let endpoint = baseUrl; 
 
-        endpoint = response.data.next;
-    }
+  while (endpoint && pokemonCount < 36) {
+    const response = await axios.get(endpoint);
+    const results = response.data.results;
+    allPokemons.push(...results);
+    pokemonCount += results.length;
 
-    for (const poke of allPokemons) {
-      const url = poke.url;
-  
-      const pokemon = await axios
-        .get(url)
-        .then((response) => response.data)
-        .then((data) => getData(data))
-        .catch((error) => {
-          throw new Error(`Error fetching ${url}: ${error.message}`);
-        });
-  
-      if (pokemon) {
-        pokemons.push(pokemon);
-      }
-    }
-    return pokemons;
+    endpoint = response.data.next;
+  }
+
+  const pokemonPromises = allPokemons.slice(0, 36).map((poke) => axios.get(poke.url)); 
+
+  try {
+    const pokemonResponses = await Promise.all(pokemonPromises);
+    pokemons = await Promise.all(pokemonResponses.map((response) => getData(response.data)));
+  } catch (error) {
+    throw new Error(`Error fetching pokemon details: ${error.message}`);
+  }
+
+  return pokemons;
 };
-
 
 module.exports = getPokemons;
 

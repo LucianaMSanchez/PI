@@ -11,8 +11,8 @@ const filterRouter = express.Router();
 
 filterRouter.post("/type", async (req, res) => {
     try {
-        const { type, filterPokemons} = req.body;
-        const filteredPokemons = await filterType(type, filterPokemons);
+        const { type, allPokemons} = req.body;
+        const filteredPokemons = await filterType(type, allPokemons);
         return res.status(200).json(filteredPokemons);   
     } catch (error) {
         return res.status(404).json({error: error.message});
@@ -71,8 +71,8 @@ filterRouter.post("/speed", async (req, res) => {
 
 filterRouter.post("/origin", async (req, res) => {
     try {
-        const { origin, filterPokemons} = req.body;
-        const originPokemons = await filterOrigin(origin, filterPokemons);
+        const { origin, allPokemons} = req.body;
+        const originPokemons = await filterOrigin(origin, allPokemons);
         return res.status(200).json(originPokemons);   
     } catch (error) {
         return res.status(404).json({error: error.message});

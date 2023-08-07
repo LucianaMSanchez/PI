@@ -10,7 +10,6 @@ import { CLOSE_CARD_SUCCESS, CLOSE_CARD_FAILURE, CLEAR_POKEMONS, CLEAR_OWN_POKEM
 const initialState = {
     pokemons: [],
     allPokemons: [],
-    searchPokemons: [],
     pokedex: [],
     allPokedex: [],
     newPokemons: [],
@@ -60,8 +59,8 @@ const rootReducer = (state= initialState, action) => {
             return {
                 ...state, 
                 error: null,
-                pokemons: [...state.pokemons, action.payload],
-                allPokemons: [...state.allPokemons, action.payload]
+                pokemons: [...state.pokemons, ...action.payload],
+                allPokemons: [...state.allPokemons, ...action.payload]
                 };
         case GET_POKEMONS_FAILURE: 
             return {
@@ -72,8 +71,8 @@ const rootReducer = (state= initialState, action) => {
             return {
                 ...state, 
                 error: null,
-                pokemons: [...state.pokemons, action.payload],
-                allPokemons: [...state.allPokemons, action.payload]
+                pokemons: [...state.pokemons, ...action.payload],
+                allPokemons: [...state.allPokemons, ...action.payload]
                 };
         case GET_OWN_POKEMONS_FAILURE: 
             return {
@@ -84,9 +83,7 @@ const rootReducer = (state= initialState, action) => {
             return {
                 ...state, 
                 error: null,
-                searchPokemons: [...state.searchPokemons, action.payload],
-                pokemons: state.searchPokemons,
-                allPokemons: state.searchPokemons
+                pokemons: [...state.pokemons, action.payload],
                 };
         case GET_POKEMON_ID_FAILURE: 
             return {
@@ -97,9 +94,7 @@ const rootReducer = (state= initialState, action) => {
             return {
                 ...state, 
                 error: null,
-                searchPokemons: [...state.searchPokemons, action.payload],
-                pokemons: state.searchPokemons,
-                allPokemons: state.searchPokemons
+                pokemons: [...state.pokemons, action.payload],
                 };
         case GET_POKEMON_NAME_FAILURE: 
             return {
@@ -110,9 +105,7 @@ const rootReducer = (state= initialState, action) => {
             return {
                 ...state, 
                 error: null,
-                searchPokemons: [...state.searchPokemons, action.payload],
-                pokemons: state.searchPokemons,
-                allPokemons: state.searchPokemons
+                pokemons: [...state.pokemons, action.payload],
                 };
         case GET_OWN_PPOKEMON_ID_FAILURE: 
             return {
@@ -123,9 +116,7 @@ const rootReducer = (state= initialState, action) => {
             return {
                 ...state, 
                 error: null,
-                searchPokemons: [...state.searchPokemons, action.payload],
-                pokemons: state.searchPokemons,
-                allPokemons: state.searchPokemons
+                pokemons: [...state.pokemons, action.payload],
                 };
         case GET_OWN_PPOKEMON_NAME_FAILURE: 
             return {

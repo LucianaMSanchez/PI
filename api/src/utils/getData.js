@@ -11,14 +11,17 @@ const getData = async (data) => {
     const defenseStat = await data.stats.find(stat => stat.stat.name === "defense");
     const defensePoints = defenseStat.base_stat;
 
+    const speedStat = await data.stats.find(stat => stat.stat.name === "speed");
+    const speedPoints = speedStat.base_stat;
+
         const obj = {
         id: data.id,
         name: data.name,
-        image: data.sprites.front_default,
+        image: data.sprites.other.home.front_default,
         hitPoints: hpPoints,
         attack: attackPoints,
         defense: defensePoints,
-        speed: data.speed,
+        speed: speedPoints,
         height: data.height,
         weight: data.weight,
         types: typesNames,

@@ -80,6 +80,7 @@
     background-color: transparent;
     border: none;
     justify-content: space-evenly;
+    cursor: pointer;
 }
 
 .clearButton{

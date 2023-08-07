@@ -2,7 +2,7 @@ import React from "react";
 import SearchBar from "../SearchBar/SearchBar";
 import icono from "../../assets/pokeball.png";
 import style from "./Nav.module.css";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { logout } from "../../redux/actions";
@@ -11,18 +11,19 @@ const Nav = () => {
  
 let navigate = useNavigate();
 const dispatch = useDispatch();
+const location = useLocation()
 const user = useSelector((state) => state.user);
 
 const logOut = () => {
   dispatch(logout());
-  if(!user){
-  navigate("/");
-  }
+  (!user) && navigate("/");
 };
 
   return (
     <div>
-      <img className={style.icono} src={icono} alt="icono" />
+        <Link to="/home">
+          <img className={style.icono} src={icono} alt="icono" />
+        </Link>
       <div className={style.nav}>
         <Link to="/about">
           <h2 className={style.about}>About us</h2>
@@ -42,7 +43,11 @@ const logOut = () => {
         <h2 className={style.logout} onClick={logOut}>
           Log out
         </h2>
+
+        {location.pathname === "/home" ?
         <SearchBar />
+        : null}
+        
       </div>
     </div>
   );

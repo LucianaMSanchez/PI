@@ -1,5 +1,5 @@
 import React from "react";
-import { connect } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { useSelector } from "react-redux";
 import { useLocation } from "react-router-dom";
 import { Link } from "react-router-dom";
@@ -29,16 +29,15 @@ import water from "../../assets/types/water.png";
 
 
 
-function Card({id, name, image, types, closeCard }) {
+function Card({id, name, image, types}) {
    
 const location = useLocation();
 const pokemons = useSelector((state) => state.pokemons);
+const dispatch = useDispatch();
 
-
-const onClose = () => {
-   closeCard(id, pokemons)
-};
-
+   const onClose = () => {
+      dispatch(closeCard(id, pokemons))
+   };
 
    return (
     
@@ -51,12 +50,42 @@ const onClose = () => {
                      ) : ( null
                      )}
                </div>
+
                <div>
                   <h2 className={style.name}>{name} </h2>
                </div>
+
+               <div className={style.types}>
+                        {types?.map((type, index) => (
+                           <div key={index} className={style.type}>
+                              <Link to={`/typeDetail/${type}`} > 
+                              {type === 'shadow' && <img src={shadow} alt="shadow" className={style.typeImage}/>}
+                              {type === 'bug' && <img src={bug} alt="bug" className={style.typeImage}/>}
+                              {type === 'dark' && <img src={dark} alt="dark" className={style.typeImage}/>}
+                              {type === 'dragon' && <img src={dragon} alt="dragon" className={style.typeImage}/>}
+                              {type === 'fairy' && <img src={fairy} alt="fairy" className={style.typeImage}/>}
+                              {type === 'fighting' && <img src={fighting} alt="fighting" className={style.typeImage}/>}
+                              {type === 'fire' && <img src={fire} alt="fire" className={style.typeImage}/>}
+                              {type === 'flying' && <img src={flying} alt="flying" className={style.typeImage}/>}
+                              {type === 'ghost' && <img src={ghost} alt="ghost" className={style.typeImage}/>}
+                              {type === 'grass' && <img src={grass} alt="grass" className={style.typeImage}/>}
+                              {type === 'ground' && <img src={ground} alt="ground" className={style.typeImage}/>}
+                              {type === 'ice' && <img src={ice} alt="ice" className={style.typeImage}/>}
+                              {type === 'electric' && <img src={electric} alt="electric" className={style.typeImage}/>}
+                              {type === 'steel' && <img src={steel} alt="steel" className={style.typeImage}/>}
+                              {type === 'normal' && <img src={normal} alt="normal" className={style.typeImage}/>}
+                              {type === 'poison' && <img src={poison} alt="poison" className={style.typeImage}/>}
+                              {type === 'psychic' && <img src={psychic} alt="psychic" className={style.typeImage}/>}
+                              {type === 'rock' && <img src={rock} alt="rock" className={style.typeImage}/>}
+                              {type === 'unknown' && <img src={unknown} alt="unknown" className={style.typeImage}/>}
+                              {type === 'water' && <img src={water} alt="water" className={style.typeImage}/>}
+                              </Link>
+                           </div>
+                        ))}
+                        </div>
             </div>
             
-            <div>
+            <div className={style.infContainer}>
                <div className={style.imageContainer}>
                   {id > 1281 ? (
                      <Link to={`/createDetail/${id}`}>
@@ -67,56 +96,16 @@ const onClose = () => {
                         <img className={style.image} src={image} alt='imagen' />
                      </Link>
                   )}
-                  <div className={style.ellipse}>
-                     <img src={ellipse} alt="ellipse" />
-                  </div>
+                  <img src={ellipse} alt="ellipse" className={style.ellipse}/>
                </div>
             </div> 
-         </div>
-
-         <div className={style.types}>
-         {types?.map((type, index) => (
-            <div key={index} className={style.type}>
-                <Link to={`/typeDetail/${type.name}`} > 
-                {type.name === 'shadow' && <img src={shadow} alt="shadow" className={style.typeImage}/>}
-                {type.name === 'bug' && <img src={bug} alt="bug" className={style.typeImage}/>}
-                {type.name === 'dark' && <img src={dark} alt="dark" className={style.typeImage}/>}
-                {type.name === 'dragon' && <img src={dragon} alt="dragon" className={style.typeImage}/>}
-                {type.name === 'fairy' && <img src={fairy} alt="fairy" className={style.typeImage}/>}
-                {type.name === 'fighting' && <img src={fighting} alt="fighting" className={style.typeImage}/>}
-                {type.name === 'fire' && <img src={fire} alt="fire" className={style.typeImage}/>}
-                {type.name === 'flying' && <img src={flying} alt="flying" className={style.typeImage}/>}
-                {type.name === 'ghost' && <img src={ghost} alt="ghost" className={style.typeImage}/>}
-                {type.name === 'grass' && <img src={grass} alt="grass" className={style.typeImage}/>}
-                {type.name === 'ground' && <img src={ground} alt="ground" className={style.typeImage}/>}
-                {type.name === 'ice' && <img src={ice} alt="ice" className={style.typeImage}/>}
-                {type.name === 'electric' && <img src={electric} alt="electric" className={style.typeImage}/>}
-                {type.name === 'steel' && <img src={steel} alt="steel" className={style.typeImage}/>}
-                {type.name === 'normal' && <img src={normal} alt="normal" className={style.typeImage}/>}
-                {type.name === 'poison' && <img src={poison} alt="poison" className={style.typeImage}/>}
-                {type.name === 'psychic' && <img src={psychic} alt="psychic" className={style.typeImage}/>}
-                {type.name === 'rock' && <img src={rock} alt="rock" className={style.typeImage}/>}
-                {type.name === 'unknown' && <img src={unknown} alt="unknown" className={style.typeImage}/>}
-                {type.name === 'water' && <img src={water} alt="water" className={style.typeImage}/>}
-                </Link>
-                    <span className={style.typeName}>{type.name}</span>
-            </div>
-         ))}
          </div>
       </div>
    );
 }
 
-function mapDispatchToProps(dispatch) {
-   return {
-      closeCard: function (id, pokemons) {
-         dispatch(closeCard(id, pokemons))
-      }
-   }
-};
 
-
-export default connect (null, mapDispatchToProps) (Card);
+export default Card;
 
 
 

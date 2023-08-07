@@ -9,14 +9,14 @@ import logo from "../../assets/logo.png";
 function Cards() {
 
     
-    let pokemons = useSelector((state) => state.pokemons); 
+    const pokemons = useSelector((state) => state.pokemons); 
     const [page, setPage] = useState(1);
     const pokePerPage = 12;
     const maxPage = Math.ceil(pokemons.length / pokePerPage);
     const lastPage = maxPage + 1;
     const userId = useSelector((state) => state.user);
     const dispatch = useDispatch()
-    
+   
     useEffect(() => {
         if (userId) {
             dispatch(getPokemons());
@@ -54,8 +54,8 @@ function Cards() {
                     </div>
                 ) : (
                     <div className={style.container}>
-                        {pokemons?.slice((page - 1) * pokePerPage, page * pokePerPage)
-                        .map((poke, index) => {
+                        {pokemons?.slice((page - 1) * pokePerPage, page * pokePerPage).map((poke, index) => {
+                       
                         return <Card 
                         key={index}
                         id={poke.id} 

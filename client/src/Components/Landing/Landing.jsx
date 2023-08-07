@@ -4,6 +4,7 @@ import { useSelector, useDispatch} from "react-redux";
 import Form from "../Form/Form";
 import mouse from "../../assets/pikachu.png";
 import pokeball from "../../assets/pokeball.png";
+import light from "../../assets/luz2.png";
 import { loginPending } from "../../redux/actions";
 
 const ImageFollowMouse = () => {
@@ -28,11 +29,16 @@ const Landing = () => {
   
   const error = useSelector((state) => state.error);
   const access = useSelector((state) => state.access);
+  const [showLight, setShowLight] = useState(false);
   const dispatch = useDispatch();
 
-  const handleLog = () => {
+  const handlePokeball = () => {
+    setShowLight(true);
+    setTimeout(() => {
+    setShowLight(false);
     dispatch(loginPending())
-  }
+  }, 300);  
+};
 
 
   return (
@@ -42,7 +48,19 @@ const Landing = () => {
       </div>
       {access === false ? (
         <div>
-          <img className={style.ball} src={pokeball} onClick={handleLog} alt="pokeball" />
+          <img 
+            id="destello"
+            className={`${style.light} ${showLight? "" : style.invisible}`} 
+            src= {light} 
+            alt="blue light" 
+            />
+          <img 
+            id="pokeball"
+            className={style.ball} 
+            src={pokeball} 
+            alt="pokeball" 
+            onClick={handlePokeball} 
+            />
         </div>
       ) : (
         <div className={style.divForm}>
