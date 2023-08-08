@@ -110,10 +110,10 @@ export const getPokemons = () => {
  };
 
  export const createPokemon = (id) => {
-  const endpoint = `http://localhost:3001/pokemons/detail/${id}`;
+  const endpoint = "http://localhost:3001/pokemons/detail/" + id;
   return async (dispatch) => {
     try {
-       const {data} = await axios.post(endpoint)
+       const {data} = await axios(endpoint)
        return dispatch({
           type: CREATE_POKEMON_SUCCESS,
           payload: data,
@@ -258,7 +258,7 @@ export const getPokemons = () => {
   const endpoint = "http://localhost:3001/types/addTypes";
   return async (dispatch) => {
    try {
-      const {data} = await axios(endpoint, {id})
+      const {data} = await axios.post(endpoint, {id})
       return dispatch({
         type: ADD_TYPE_TO_POK_SUCCESS,
         payload: data,
@@ -276,7 +276,7 @@ export const addPokToType = (name) => {
   const endpoint = "http://localhost:3001/types/addPokemons";
   return async (dispatch) => {
    try {
-      const {data} = await axios(endpoint, {name})
+      const {data} = await axios.post(endpoint, {name})
       return dispatch({
         type: ADD_POK_TO_TYPE_SUCCESS,
         payload: data,

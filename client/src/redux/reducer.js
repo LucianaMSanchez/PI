@@ -14,7 +14,8 @@ const initialState = {
     allPokedex: [],
     newPokemons: [],
     types: [],
-    created: null,
+    createdPoke: {},
+    createdType: {},
     user: null,
     access: false,
     error: null,
@@ -136,7 +137,7 @@ const rootReducer = (state= initialState, action) => {
         case CREATE_POKEMON_SUCCESS: 
             return {
                 ...state, 
-                created: action.payload
+                createdPoke: action.payload
                 };
         case CREATE_POKEMON_FAILURE: 
             return {
@@ -146,7 +147,7 @@ const rootReducer = (state= initialState, action) => {
         case CREATE_TYPE_SUCCESS: 
             return {
                 ...state, 
-                created: action.payload
+                createdType: action.payload
                 };
         case CREATE_TYPE_FAILURE: 
             return {

@@ -1,3 +1,9 @@
+.back{
+    background: linear-gradient(to bottom,#1f0141, #cdaef0); 
+    height: 1500px;
+    display: flex;
+    flex-direction: column;
+}
 
 .container{
     display: flex;

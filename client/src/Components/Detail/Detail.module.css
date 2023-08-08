@@ -2,89 +2,95 @@
 
 
 .container{
-display: flex;
-background-image: url("../../assets/BAI-3-Curves_1.gif");
-background-size: cover; 
-background-repeat:repeat-y;
-height: 100vh;
-justify-content: space-around;
+    display: flex;
+    flex-direction: column;
+    background-image: url("../../assets/BAI-3-Curves_1.gif");
+    background-size: cover; 
 }
 
 .divUno{
-width:50vw;
-justify-content: center;
-padding: 3em;
-padding-left: 10em;
-}
-
-.divDos{
-    width:50vw;
-    justify-content: center;
-    padding: 3em;
-}
-
-.imagen{
-    size: 5px;
-    border-radius: 15px;
-    border: 5px solid #00b7c2; 
-    margin-top: 4em;
-}
-    
-.rick {
-    color: #00fa21;
-    font-family: 'Coda', sans-serif;
-    font-style: bold;
-    font-size: 4em;
-    text-align: left;
-    text-shadow: 0.5em 0.5em 0.5em #ec0ca1;
-}
-  
-
-.caracteristics{
-   
-    color: #44e3ff;
-    text-align: left;
-    font-size: 1.5em;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 2em;
-    text-shadow: 3em 3em 3em #ec0ca1;
-  
+    display: flex;
+    height: 10vh;
+    justify-content: space-between;
+    margin: 15px;
+    align-items: center;
 }
 
 .goBack{
-    color: #00fa21;
     font-family: 'Coda', sans-serif;
-    font-style: bold;
-    font-size: 2em;
-    text-align: left;
-    text-shadow: 0.5em 0.5em 0.5em #ec0ca1;
+    border: solid 1px #4ef037;
+    border-radius: 15px 15px 15px 15px;
+    height: 2em;
+    width: 6em;
+    padding-top: 0.7em;
+    background-color:#ecfeff;
+    box-shadow: inset 0 0 5px #00b7c2;
+    text-align: center;
 }
 
-.divEp{
-    background: linear-gradient(to bottom,#1f0141, #cdaef0); 
+.miniContainer{
     display: flex;
-    flex-wrap: wrap;
-    width:100%;
-    border-radius:15px;
-    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
-    }
-    
-/* // .first-color { 
-    // 	background: #222831; 
-    // }
-    
-    // .first-color { 
-    // 	background: #ecfeff; 
-    // }
-        
-    // .second-color { 
-    // 	background: #00b7c2; 
-    // }
-    
-    // .third-color { 
-    // 	background: #128494; 
-    // }
-    
-    // .fourth-color { 
-    // 	background: #4ef037; 
-    // } */
+    flex-direction: column;
+    align-items: center;
+}
+
+.name{
+    margin-top: 2em;
+    padding-top: 1em;
+    font-family: 'Coda', sans-serif;
+    font-size: 4em;
+    color: rgb(250, 250, 250);
+    text-shadow: 0 0 15px #09080a;
+}
+
+.type{
+    display: flex;
+    justify-items: center space-between;
+}
+
+.typeImage{
+    width: 5em;
+}
+
+.fav{
+    font-family: 'Coda', sans-serif;
+    font-weight: bolder;
+    font-size: 1em;
+    border: solid 1px #4ef037;
+    border-radius: 15px 15px 15px 15px;
+    height: 5em;
+    width: 8em;
+    background-color:#ecfeff;
+    box-shadow: inset 0 0 5px #00b7c2;
+    text-align: center;
+    margin-right: 2em;
+}
+
+.divDos{
+    display: flex;
+    margin: 5px;
+    justify-content: space-between;
+    margin-right: 60px;
+}
+
+.imageContainer{
+    justify-content: top;
+    margin-bottom: 6em;
+    margin-left: 4em;
+}
+
+.image{
+   width: 30em;
+} 
+
+.caracteristics{
+    color: #140352;
+    text-align: left;
+    font-size: 1.2em;
+    font-family: 'Coda', sans-serif;
+    font-weight: bold;
+    line-height: 2em;
+    text-shadow: 1em 1em 1em #ffffff;
+    margin-right: 11em;
+    margin-top: 7em;
+}

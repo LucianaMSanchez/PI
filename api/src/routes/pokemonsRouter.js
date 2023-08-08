@@ -8,7 +8,7 @@ const createPokemon = require("../controllers/pokemonControllers/createPokemon.j
 const pokemonsRouter = express.Router();
 
 
-pokemonsRouter.post("/detail/:id", async (req, res) => {
+pokemonsRouter.get("/detail/:id", async (req, res) => {
     try {
         const {id} = req.params;
         const pokemon = await createPokemon(id);

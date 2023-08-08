@@ -4,7 +4,6 @@
 
 .container{
     background-color: transparent;
-    border: solid 1px rgb(10, 8, 148);
     height: 100%;
     width: 14em;
     display: grid;

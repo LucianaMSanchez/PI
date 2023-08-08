@@ -1,25 +1,12 @@
-const { Pokemon, Type } = require("../../db")
-const { Op } = require("sequelize");
 const getDataType = require("../../utils/getData");
+const getTypeDB = require("../../utils/getTypeDB");
 const axios = require("axios");
 
 const Url = "https://pokeapi.co/api/v2/type"
 
 const getTypeByName = async (name) =>{
 
-    let foundType = await Type.findOne({
-      where: { 
-        name : {
-          [Op.iLike]: `%${name}%`, 
-        },
-      },
-      include: [
-        {
-          model: Pokemon,
-          through: { attributes: [] }, 
-        },
-      ],
-    });
+  let foundType = await getTypeDB(name);
   
   if(!foundType){
       const newType = await axios

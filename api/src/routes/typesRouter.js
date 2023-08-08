@@ -16,7 +16,7 @@ typesRouter.get("/", async (req, res) => {
     }
   });
 
-typesRouter.get("/addTypes", async (req, res) => {
+typesRouter.post("/addTypes", async (req, res) => {
   try {
     const {id}= req.body;
     const types = await addTypesToPokemon(id);
@@ -27,7 +27,7 @@ typesRouter.get("/addTypes", async (req, res) => {
   }
 });
 
-typesRouter.get("/addPokemons", async (req, res) => {
+typesRouter.post("/addPokemons", async (req, res) => {
   try {
     const {name}= req.body;
     const pokemons = await addPokemonsToType(name);

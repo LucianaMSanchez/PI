@@ -30,19 +30,4 @@ const getData = async (data) => {
     return obj;
   };
 
-
-  const getDataType = async (data) => {
-   
-    const pokemonsNames = await data.pokemon.map(pokemon => pokemon.pokemon.name);
-    
-            const obj = {
-            id: data.id,
-            name: data.name,
-            pokemons: pokemonsNames
-            }
-      
-    if (!obj) throw new Error("Error getting data");
-    return obj;
-  };
-
-module.exports = getData, getDataType;
+module.exports = getData;
