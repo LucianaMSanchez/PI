@@ -1,4 +1,4 @@
-const { Pokemon, User} = require("../../db");
+const { User } = require("../../db");
 
 
 const getPokedex = async (userId) => {

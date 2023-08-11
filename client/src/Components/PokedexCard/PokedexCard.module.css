@@ -1,0 +1,357 @@
+.cardShadow{
+    background-image: url("../../assets/energias/shadow.jpg");
+    background-size: cover;
+    border-radius: 15px;
+    height:10.5cm;
+    width: 7cm;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 25px 10px 6px #665a72;
+    border: solid 5px rgb(75, 74, 74);
+}
+.cardFire{
+    background-image: url("../../assets/energias/fire.jpg");
+    background-size: cover;
+    border-radius: 15px;
+    height:10.5cm;
+    width: 7cm;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 25px 10px 6px #665a72;
+    border: solid 5px rgb(75, 74, 74);
+}
+.cardWater{
+    background-image: url("../../assets/energias/water.jpg");
+    background-size: cover;
+    border-radius: 15px;
+    height:10.5cm;
+    width: 7cm;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 25px 10px 6px #665a72;
+    border: solid 5px rgb(75, 74, 74);
+}
+.cardDark{
+    background-image: url("../../assets/energias/dark.jpg");
+    background-size: cover;
+    border-radius: 15px;
+    height:10.5cm;
+    width: 7cm;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 25px 10px 6px #665a72;
+    border: solid 5px rgb(75, 74, 74);
+}
+.cardBug{
+    background-image: url("../../assets/energias/bug.jpg");
+    background-size: cover;
+    border-radius: 15px;
+    height:10.5cm;
+    width: 7cm;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 25px 10px 6px #665a72;
+    border: solid 5px rgb(75, 74, 74);
+}
+.cardDragon{
+    background-image: url("../../assets/energias/dragon.jpg");
+    background-size: cover;
+    border-radius: 15px;
+    height:10.5cm;
+    width: 7cm;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 25px 10px 6px #665a72;
+    border: solid 5px rgb(75, 74, 74);
+}
+.cardElectric{
+    background-image: url("../../assets/energias/electric.jpg");
+    background-size: cover;
+    border-radius: 15px;
+    height:10.5cm;
+    width: 7cm;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 25px 10px 6px #665a72;
+    border: solid 5px rgb(75, 74, 74);
+}
+.cardGrass{
+    background-image: url("../../assets/energias/grass.jpg");
+    background-size: cover;
+    border-radius: 15px;
+    height:10.5cm;
+    width: 7cm;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 25px 10px 6px #665a72;
+    border: solid 5px rgb(75, 74, 74);
+}
+.cardPoison{
+    background-image: url("../../assets/energias/poison.jpg");
+    background-size: cover;
+    border-radius: 15px;
+    height:10.5cm;
+    width: 7cm;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 25px 10px 6px #665a72;
+    border: solid 5px rgb(75, 74, 74);
+}
+.cardIce{
+    background-image: url("../../assets/energias/ice.jpg");
+    background-size: cover;
+    border-radius: 15px;
+    height:10.5cm;
+    width: 7cm;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 25px 10px 6px #665a72;
+    border: solid 5px rgb(75, 74, 74);
+}
+.cardFighting{
+    background-image: url("../../assets/energias/fighting.jpg");
+    background-size: cover;
+    border-radius: 15px;
+    height:10.5cm;
+    width: 7cm;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 25px 10px 6px #665a72;
+    border: solid 5px rgb(75, 74, 74);
+}
+.cardFlying{
+    background-image: url("../../assets/energias/flying.jpg");
+    background-size: cover;
+    border-radius: 15px;
+    height:10.5cm;
+    width: 7cm;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 25px 10px 6px #665a72;
+    border: solid 5px rgb(75, 74, 74);
+}
+.cardUnknown{
+    background-image: url("../../assets/energias/unknown.jpg");
+    background-size: cover;
+    border-radius: 15px;
+    height:10.5cm;
+    width: 7cm;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 25px 10px 6px #665a72;
+    border: solid 5px rgb(75, 74, 74);
+}
+.cardNormal{
+    background-image: url("../../assets/energias/normal.jpg");
+    background-size: cover;
+    border-radius: 15px;
+    height:10.5cm;
+    width: 7cm;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 25px 10px 6px #665a72;
+    border: solid 5px rgb(75, 74, 74);
+}
+.cardFairy{
+    background-image: url("../../assets/energias/fairy.jpg");
+    background-size: cover;
+    border-radius: 15px;
+    height:10.5cm;
+    width: 7cm;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 25px 10px 6px #665a72;
+    border: solid 5px rgb(75, 74, 74);
+}
+.cardPsychic{
+    background-image: url("../../assets/energias/psychic.jpg");
+    background-size: cover;
+    border-radius: 15px;
+    height:10.5cm;
+    width: 7cm;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 25px 10px 6px #665a72;
+    border: solid 5px rgb(75, 74, 74);
+}
+.cardGhost{
+    background-image: url("../../assets/energias/ghost.jpg");
+    background-size: cover;
+    border-radius: 15px;
+    height:10.5cm;
+    width: 7cm;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 25px 10px 6px #665a72;
+    border: solid 5px rgb(75, 74, 74);
+}
+.cardGround{
+    background-image: url("../../assets/energias/ground.jpg");
+    background-size: cover;
+    border-radius: 15px;
+    height:10.5cm;
+    width: 7cm;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 25px 10px 6px #665a72;
+    border: solid 5px rgb(75, 74, 74);
+}
+.cardRock{
+    background-image: url("../../assets/energias/rock.jpg");
+    background-size: cover;
+    border-radius: 15px;
+    height:10.5cm;
+    width: 7cm;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 25px 10px 6px #665a72;
+    border: solid 5px rgb(75, 74, 74);
+}
+.cardSteel{
+    background-image: url("../../assets/energias/steel.jpg");
+    background-size: cover;
+    border-radius: 15px;
+    height:10.5cm;
+    width: 7cm;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 25px 10px 6px #665a72;
+    border: solid 5px rgb(75, 74, 74);
+}
+
+.minicontainer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 2em;
+}
+
+.name{
+    font-family: 'Coda', sans-serif;
+    font-size: 1em;
+    color: rgb(0, 0, 0);
+    text-shadow: 9px 7px 6px #8a878d;
+    width: 11em;
+    text-align: center; 
+    border-radius: 8px;  
+    background-color: #f1f0f0; 
+    border: solid 4px rgb(78, 78, 78);
+    margin-top: 1em;
+}
+
+a {
+    text-decoration: none;
+}
+
+.types{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-top: 0.5em;
+    background-color: transparent;
+    height: 40%;
+    justify-self: end;
+}
+
+.typeImage{
+    width: 1em;
+    border: solid 2px rgb(75, 74, 74);
+    border-radius: 50%;
+}
+
+.imageContainer{
+    border-radius: 10px;  
+    background-color: rgba(173, 173, 173, 0.6);
+    border: solid 10px rgb(78, 78, 78);  
+}
+
+.imagePoke{
+    background-color: transparent;
+    height: 185px;  
+}
+
+.infContainer{
+
+    display: flex;
+    flex-direction: column;
+    width: 14em;
+    margin-top: 1em;
+}
+
+.idDiv{
+    width: 15em;
+    justify-items: flex-start;
+}
+
+.id{
+    font-family: 'Coda', sans-serif;
+    font-size: 1em;
+    color: rgb(0, 0, 0);
+    text-shadow: 9px 7px 6px #8a878d;
+    max-width: 3.5em;
+    text-align: center; 
+    border-radius: 50%;  
+    background-color: #f1f0f0; 
+    border: solid 2px rgb(78, 78, 78);
+}
+
+.caracteristics{
+    width: 6em; 
+    justify-items: center;
+    display: grid;
+    grid: auto / auto auto;
+ }
+
+.text{
+    width: 8.5em;
+    font-family: 'Coda', sans-serif;
+    font-size: 0.7em;
+    color: rgb(0, 0, 0);
+    text-shadow: 9px 7px 6px #8a878d;
+    text-align: center; 
+    border-radius: 5px;  
+    background-color: #f1f0f0; 
+    border: solid 3px rgb(78, 78, 78);
+    line-height: 1.2em;
+    margin: 0.5em;
+}

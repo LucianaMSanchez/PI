@@ -1,150 +1,278 @@
 @import url('https://fonts.googleapis.com/css2?family=Coda&display=swap');
 
-.backShadow{
+.back{
+    height:1850px;
+    display: flex;
+    flex-direction: column;
+    background-image: url("../../assets/back.png");
+    background-size: cover;
+}
+
+.cardShadow{
     background-image: url("../../assets/energias/shadow.jpg");
     background-size: cover;
-    height:700px;
+    border-radius: 15px;
+    height:13cm;
+    width: 8cm;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 25px 10px 6px #665a72;
+    border: solid 5px rgb(75, 74, 74);
 }
-.backFire{
+.cardFire{
     background-image: url("../../assets/energias/fire.jpg");
     background-size: cover;
-    height:700px;
+    border-radius: 15px;
+    height:13cm;
+    width: 8cm;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 25px 10px 6px #665a72;
+    border: solid 5px rgb(75, 74, 74);
 }
-.backWater{
+.cardWater{
     background-image: url("../../assets/energias/water.jpg");
     background-size: cover;
-    height:700px;
+    border-radius: 15px;
+    height:13cm;
+    width: 8cm;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 25px 10px 6px #665a72;
+    border: solid 5px rgb(75, 74, 74);
 }
-.backDark{
+.cardDark{
     background-image: url("../../assets/energias/dark.jpg");
     background-size: cover;
-    height:700px;
+    border-radius: 15px;
+    height:13cm;
+    width: 8cm;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 25px 10px 6px #665a72;
+    border: solid 5px rgb(75, 74, 74);
 }
-.backBug{
+.cardBug{
     background-image: url("../../assets/energias/bug.jpg");
     background-size: cover;
-    height:700px;
+    border-radius: 15px;
+    height:13cm;
+    width: 8cm;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 25px 10px 6px #665a72;
+    border: solid 5px rgb(75, 74, 74);
 }
-.backDragon{
+.cardDragon{
     background-image: url("../../assets/energias/dragon.jpg");
     background-size: cover;
-    height:700px;
+    border-radius: 15px;
+    height:13cm;
+    width: 8cm;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 25px 10px 6px #665a72;
+    border: solid 5px rgb(75, 74, 74);
 }
-.backElectric{
+.cardElectric{
     background-image: url("../../assets/energias/electric.jpg");
     background-size: cover;
-    height:700px;
+    border-radius: 15px;
+    height:13cm;
+    width: 8cm;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 25px 10px 6px #665a72;
+    border: solid 5px rgb(75, 74, 74);
 }
-.backGrass{
+.cardGrass{
     background-image: url("../../assets/energias/grass.jpg");
     background-size: cover;
-    height:700px;
+    border-radius: 15px;
+    height:13cm;
+    width: 8cm;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 25px 10px 6px #665a72;
+    border: solid 5px rgb(75, 74, 74);
 }
-.backPoison{
+.cardPoison{
     background-image: url("../../assets/energias/poison.jpg");
     background-size: cover;
-    height:700px;
+    border-radius: 15px;
+    height:13cm;
+    width: 8cm;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 25px 10px 6px #665a72;
+    border: solid 5px rgb(75, 74, 74);
 }
-.backIce{
+.cardIce{
     background-image: url("../../assets/energias/ice.jpg");
     background-size: cover;
-    height:700px;
+    border-radius: 15px;
+    height:13cm;
+    width: 8cm;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 25px 10px 6px #665a72;
+    border: solid 5px rgb(75, 74, 74);
 }
-.backFighting{
+.cardFighting{
     background-image: url("../../assets/energias/fighting.jpg");
     background-size: cover;
-    height:700px;
+    border-radius: 15px;
+    height:13cm;
+    width: 8cm;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 25px 10px 6px #665a72;
+    border: solid 5px rgb(75, 74, 74);
 }
-.backFlying{
+.cardFlying{
     background-image: url("../../assets/energias/flying.jpg");
     background-size: cover;
-    height:700px;
+    border-radius: 15px;
+    height:13cm;
+    width: 8cm;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 25px 10px 6px #665a72;
+    border: solid 5px rgb(75, 74, 74);
 }
-.backUnknown{
+.cardUnknown{
     background-image: url("../../assets/energias/unknown.jpg");
     background-size: cover;
-    height:700px;
+    border-radius: 15px;
+    height:13cm;
+    width: 8cm;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 25px 10px 6px #665a72;
+    border: solid 5px rgb(75, 74, 74);
 }
-.backNormal{
+.cardNormal{
     background-image: url("../../assets/energias/normal.jpg");
     background-size: cover;
-    height:700px;
+    border-radius: 15px;
+    height:13cm;
+    width: 8cm;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 25px 10px 6px #665a72;
+    border: solid 5px rgb(75, 74, 74);
 }
-.backFairy{
+.cardFairy{
     background-image: url("../../assets/energias/fairy.jpg");
     background-size: cover;
-    height:700px;
+    border-radius: 15px;
+    height:13cm;
+    width: 8cm;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 25px 10px 6px #665a72;
+    border: solid 5px rgb(75, 74, 74);
 }
-.backPsychic{
+.cardPsychic{
     background-image: url("../../assets/energias/psychic.jpg");
     background-size: cover;
-    height:700px;
+    border-radius: 15px;
+    height:13cm;
+    width: 8cm;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 25px 10px 6px #665a72;
+    border: solid 5px rgb(75, 74, 74);
 }
-.backGhost{
+.cardGhost{
     background-image: url("../../assets/energias/ghost.jpg");
     background-size: cover;
-    height:700px;
+    border-radius: 15px;
+    height:13cm;
+    width: 8cm;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 25px 10px 6px #665a72;
+    border: solid 5px rgb(75, 74, 74);
 }
-.backGround{
+.cardGround{
     background-image: url("../../assets/energias/ground.jpg");
     background-size: cover;
-    height:700px;
+    border-radius: 15px;
+    height:13cm;
+    width: 8cm;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 25px 10px 6px #665a72;
+    border: solid 5px rgb(75, 74, 74);
 }
-.backRock{
+.cardRock{
     background-image: url("../../assets/energias/rock.jpg");
     background-size: cover;
-    height:700px;
+    border-radius: 15px;
+    height:13cm;
+    width: 8cm;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 25px 10px 6px #665a72;
+    border: solid 5px rgb(75, 74, 74);
 }
-.backSteel{
+.cardSteel{
     background-image: url("../../assets/energias/steel.jpg");
     background-size: cover;
-    height:700px;
+    border-radius: 15px;
+    height:13cm;
+    width: 8cm;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 25px 10px 6px #665a72;
+    border: solid 5px rgb(75, 74, 74);
 }
 
 .divUno{
     display: flex;
     flex-direction: row;
-    height: 2em;
+    height: 4em;
     padding: 1em;
 }
 
@@ -158,20 +286,18 @@
     background-color:#ecfeff;
     box-shadow: inset 0 0 5px #00b7c2;
     text-align: center;
+    margin-left: 9em;
 }
 
 .divDos{
     display: flex;
-    flex-direction: row;
-    height: 12em;
-    align-content: center;
-    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
 }
 
 .type{
-    margin: 3em;
-    margin-top: 10em;
-    padding: 4em;
+    padding: 2em;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -180,44 +306,185 @@
 
 .name{
     font-family: 'Coda', sans-serif;
-    font-size: 4em;
-    color: rgb(250, 250, 250);
-    text-shadow: 0 0 15px #09080a;    
+    font-size: 2em;
+    color: rgb(0, 0, 0);
+    text-shadow: 9px 7px 6px #8a878d;
+    width: 6em;
+    text-align: center; 
+    border-radius: 8px;  
+    background-color: #f1f0f0; 
+    border: solid 4px rgb(78, 78, 78);
 }
 
 .typeImage{
     width: 5em;
+    border: solid 5px rgb(75, 74, 74);
+    border-radius: 50%;
 }
 
 .caracteristics{
-    background-color: #949494;
-    opacity: 0.8;
-    border-radius: 15px;
-    padding: 3em;
-    height: 20em;
-    color: #ffffff;
-    text-align: left;
-    font-size: 1.2em;
-    font-family: 'Coda', sans-serif;
-    font-weight: bolder;
-    line-height: 2em;
-    text-shadow: 1em 1em 1em #000000;
-    margin-right: 11em;
-    margin-top: 5em;
+   width: 17em; 
+   justify-items: center;
+   margin-bottom: 2em;
+}
 
+.text{
+    font-family: 'Coda', sans-serif;
+    font-size: 0.8em;
+    color: rgb(0, 0, 0);
+    text-shadow: 9px 7px 6px #8a878d;
+    text-align: center; 
+    border-radius: 5px;  
+    background-color: #f1f0f0; 
+    border: solid 3px rgb(78, 78, 78);
 }
 
 .container{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: last baseline;
+    justify-content: baseline;
+    margin-left: 16em;
+    margin-right: 10em;
 }
 
-.imageRel{
+.imagePoison{
     width: 6em;
     margin: 2em;
-    background-color: #97efff;
+    background: linear-gradient(to bottom,#1f0141, #cdaef0);
     border-radius: 50%;
-    border: solid 1px rgb(4, 161, 167);
+    border: solid 2px rgb(5, 0, 44);
+}
+.imageShadow{
+    width: 6em;
+    margin: 2em;
+    background: linear-gradient(to bottom,#3c3642, #e7e7e7);
+    border-radius: 50%;
+    border: solid 2px rgb(80, 80, 80);
+}
+.imageFire{
+    width: 6em;
+    margin: 2em;
+    background: linear-gradient(to bottom,#ff3604, #ffe572);
+    border-radius: 50%;
+    border: solid 2px rgb(207, 75, 23);
+}
+.imageWater{
+    width: 6em;
+    margin: 2em;
+    background: linear-gradient(to bottom,#2dc9f8, #7fe6e6);
+    border-radius: 50%;
+    border: solid 2px rgb(0, 171, 184);
+}
+.imageDark{
+    width: 6em;
+    margin: 2em;
+    background: linear-gradient(to bottom,#07050a, #b8b8b8);
+    border-radius: 50%;
+    border: solid 2px rgb(0, 0, 0);
+}
+.imageBug{
+    width: 6em;
+    margin: 2em;
+    background: linear-gradient(to bottom,#37fc31, #b9f5b3);
+    border-radius: 50%;
+    border: solid 2px rgb(0, 180, 0);
+}
+.imageDragon{
+    width: 6em;
+    margin: 2em;
+    background: linear-gradient(to bottom,#0e9c01, #ccf0ae);
+    border-radius: 50%;
+    border: solid 2px rgb(19, 161, 0);
+}
+.imageElectric{
+    width: 6em;
+    margin: 2em;
+    background: linear-gradient(to bottom,#eeff02, #e7e693);
+    border-radius: 50%;
+    border: solid 2px rgb(251, 255, 0);
+}
+.imageGrass{
+    width: 6em;
+    margin: 2em;
+    background: linear-gradient(to bottom,#1deb61, #94e0a7);
+    border-radius: 50%;
+    border: solid 2px rgb(3, 134, 57);
+}
+.imageIce{
+    width: 6em;
+    margin: 2em;
+    background: linear-gradient(to bottom,#00c9ec, #c9ebff);
+    border-radius: 50%;
+    border: solid 2px rgb(0, 109, 160);
+}
+.imageFighting{
+    width: 6em;
+    margin: 2em;
+    background: linear-gradient(to bottom,#41011f, #ad4f6f);
+    border-radius: 50%;
+    border: solid 2px rgb(44, 0, 24);
+}
+.imageFlying{
+    width: 6em;
+    margin: 2em;
+    background: linear-gradient(to bottom,#5f0bbe, #cdaef0);
+    border-radius: 50%;
+    border: solid 2px rgb(0, 93, 155);
+}
+.imageUnknown{
+    width: 6em;
+    margin: 2em;
+    background: linear-gradient(to bottom,#1f0141, #cdaef0);
+    border-radius: 50%;
+    border: solid 2px rgb(5, 0, 44);
+}
+.imageNormal{
+    width: 6em;
+    margin: 2em;
+    background: linear-gradient(to bottom,#aa0b00, #fda0a0);
+    border-radius: 50%;
+    border: solid 2px rgb(155, 0, 0);
+}
+.imageFairy{
+    width: 6em;
+    margin: 2em;
+    background: linear-gradient(to bottom,#7a0052, #cdaef0);
+    border-radius: 50%;
+    border: solid 2px rgb(77, 0, 47);
+}
+.imagePsychic{
+    width: 6em;
+    margin: 2em;
+    background: linear-gradient(to bottom,#700274, #cdaef0);
+    border-radius: 50%;
+    border: solid 2px rgb(74, 0, 97);
+}
+.imageRock{
+    width: 6em;
+    margin: 2em;
+    background: linear-gradient(to bottom,#483f53, #cdaef0);
+    border-radius: 50%;
+    border: solid 2px rgb(5, 0, 44);
+}
+.imageGround{
+    width: 6em;
+    margin: 2em;
+    background: linear-gradient(to bottom,#58360e, #f5dc8b);
+    border-radius: 50%;
+    border: solid 2px rgb(85, 63, 2);
+}
+.imageGhost{
+    width: 6em;
+    margin: 2em;
+    background: linear-gradient(to bottom,#39153d, #ccafee);
+    border-radius: 50%;
+    border: solid 2px rgb(42, 13, 66);
+}
+.imageSteel{
+    width: 6em;
+    margin: 2em;
+    background: linear-gradient(to bottom,#6b6b6b, #cdaef0);
+    border-radius: 50%;
+    border: solid 2px rgb(64, 64, 65);
 }

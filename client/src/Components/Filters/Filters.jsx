@@ -4,26 +4,7 @@ import { useLocation } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { orderAz, orderHp, orderAttack, orderDefense, orderSpeed } from "../../redux/actions";
 import { filterOrigin, filterType, clearFilters, clearFiltersPokedex } from "../../redux/actions";
-import shadow from "../../assets/types/shadow.png";
-import bug from "../../assets/types/bug.png";
-import dark from "../../assets/types/dark.png";
-import dragon from "../../assets/types/dragon.png";
-import fairy from "../../assets/types/fairy.png";
-import fighting from "../../assets/types/fighting.png";
-import fire from "../../assets/types/fire.png";
-import flying from "../../assets/types/flying.png";
-import ghost from "../../assets/types/ghost.png";
-import grass from "../../assets/types/grass.png";
-import ground from "../../assets/types/ground.png";
-import ice from "../../assets/types/ice.png";
-import electric from "../../assets/types/electric.png";
-import steel from "../../assets/types/steel.png";
-import normal from "../../assets/types/normal.png";
-import poison from "../../assets/types/poison.png";
-import psychic from "../../assets/types/psychic.png";
-import rock from "../../assets/types/rock.png";
-import unknown from "../../assets/types/unknown.png";
-import water from "../../assets/types/water.png";
+import images from "../../utils/images";
 
 
 
@@ -181,7 +162,7 @@ const Filters = ({pokemons, allPokemons}) =>{
 
 return (
 
-    <div className={style.container}>
+    <div className={location.pathname === "/home" ? style.container : style.container2}>
         <div className={style.filters}>
         <h2 className={style.titles}>Order</h2>
             <div>
@@ -216,26 +197,26 @@ return (
         <div >
         <h2 className={style.titles}>Filter type of energy</h2>
             <div className={style.types}>
-                <button value={aux.filterType} onClick={() => handleFilterType("normal")} className={style.buttons}> <img src={normal} alt="normal" className={style.type} /> </button>
-                <button value={aux.filterType} onClick={() => handleFilterType("fighting")} className={style.buttons}> <img src={fighting} alt="fighting" className={style.type} /> </button>
-                <button value={aux.filterType} onClick={() => handleFilterType("flying")} className={style.buttons}> <img src={flying} alt="flying" className={style.type} /> </button>
-                <button value={aux.filterType} onClick={() => handleFilterType("poison")} className={style.buttons}> <img src={poison} alt="poison" className={style.type} /> </button>
-                <button value={aux.filterType} onClick={() => handleFilterType("ground")} className={style.buttons}> <img src={ground} alt="ground" className={style.type} /> </button>
-                <button value={aux.filterType} onClick={() => handleFilterType("rock")} className={style.buttons}> <img src={rock} alt="rock" className={style.type} /> </button>
-                <button value={aux.filterType} onClick={() => handleFilterType("bug")} className={style.buttons}> <img src={bug} alt="bug" className={style.type} /> </button>
-                <button value={aux.filterType} onClick={() => handleFilterType("ghost")} className={style.buttons}> <img src={ghost} alt="ghost" className={style.type} /> </button>
-                <button value={aux.filterType} onClick={() => handleFilterType("steel")} className={style.buttons}> <img src={steel} alt="steel" className={style.type} /> </button>
-                <button value={aux.filterType} onClick={() => handleFilterType("fire")} className={style.buttons}> <img src={fire} alt="fire" className={style.type} /> </button>
-                <button value={aux.filterType} onClick={() => handleFilterType("water")} className={style.buttons}> <img src={water} alt="water" className={style.type} /> </button>
-                <button value={aux.filterType} onClick={() => handleFilterType("grass")} className={style.buttons}> <img src={grass} alt="grass" className={style.type} /> </button>
-                <button value={aux.filterType} onClick={() => handleFilterType("electric")} className={style.buttons}> <img src={electric} alt="electric" className={style.type} /> </button>
-                <button value={aux.filterType} onClick={() => handleFilterType("psychic")} className={style.buttons}> <img src={psychic} alt="psychic" className={style.type} /> </button>
-                <button value={aux.filterType} onClick={() => handleFilterType("ice")} className={style.buttons}> <img src={ice} alt="ice" className={style.type} /> </button>
-                <button value={aux.filterType} onClick={() => handleFilterType("dragon")} className={style.buttons}> <img src={dragon} alt="dragon" className={style.type} /> </button>
-                <button value={aux.filterType} onClick={() => handleFilterType("dark")} className={style.buttons}> <img src={dark} alt="dark" className={style.type} /> </button>
-                <button value={aux.filterType} onClick={() => handleFilterType("fairy")} className={style.buttons}> <img src={fairy} alt="fairy" className={style.type} /> </button>
-                <button value={aux.filterType} onClick={() => handleFilterType("shadow")} className={style.buttons}> <img src={shadow} alt="shadow" className={style.type} /> </button>
-                <button value={aux.filterType} onClick={() => handleFilterType("unknown")} className={style.buttons}> <img src={unknown} alt="unknown" className={style.type} /> </button>
+                <button value={aux.filterType} onClick={() => handleFilterType("normal")} className={style.buttons}> <img src={images.normal} alt="normal" className={style.type} /> </button>
+                <button value={aux.filterType} onClick={() => handleFilterType("fighting")} className={style.buttons}> <img src={images.fighting} alt="fighting" className={style.type} /> </button>
+                <button value={aux.filterType} onClick={() => handleFilterType("flying")} className={style.buttons}> <img src={images.flying} alt="flying" className={style.type} /> </button>
+                <button value={aux.filterType} onClick={() => handleFilterType("poison")} className={style.buttons}> <img src={images.poison} alt="poison" className={style.type} /> </button>
+                <button value={aux.filterType} onClick={() => handleFilterType("ground")} className={style.buttons}> <img src={images.ground} alt="ground" className={style.type} /> </button>
+                <button value={aux.filterType} onClick={() => handleFilterType("rock")} className={style.buttons}> <img src={images.rock} alt="rock" className={style.type} /> </button>
+                <button value={aux.filterType} onClick={() => handleFilterType("bug")} className={style.buttons}> <img src={images.bug} alt="bug" className={style.type} /> </button>
+                <button value={aux.filterType} onClick={() => handleFilterType("ghost")} className={style.buttons}> <img src={images.ghost} alt="ghost" className={style.type} /> </button>
+                <button value={aux.filterType} onClick={() => handleFilterType("steel")} className={style.buttons}> <img src={images.steel} alt="steel" className={style.type} /> </button>
+                <button value={aux.filterType} onClick={() => handleFilterType("fire")} className={style.buttons}> <img src={images.fire} alt="fire" className={style.type} /> </button>
+                <button value={aux.filterType} onClick={() => handleFilterType("water")} className={style.buttons}> <img src={images.water} alt="water" className={style.type} /> </button>
+                <button value={aux.filterType} onClick={() => handleFilterType("grass")} className={style.buttons}> <img src={images.grass} alt="grass" className={style.type} /> </button>
+                <button value={aux.filterType} onClick={() => handleFilterType("electric")} className={style.buttons}> <img src={images.electric} alt="electric" className={style.type} /> </button>
+                <button value={aux.filterType} onClick={() => handleFilterType("psychic")} className={style.buttons}> <img src={images.psychic} alt="psychic" className={style.type} /> </button>
+                <button value={aux.filterType} onClick={() => handleFilterType("ice")} className={style.buttons}> <img src={images.ice} alt="ice" className={style.type} /> </button>
+                <button value={aux.filterType} onClick={() => handleFilterType("dragon")} className={style.buttons}> <img src={images.dragon} alt="dragon" className={style.type} /> </button>
+                <button value={aux.filterType} onClick={() => handleFilterType("dark")} className={style.buttons}> <img src={images.dark} alt="dark" className={style.type} /> </button>
+                <button value={aux.filterType} onClick={() => handleFilterType("fairy")} className={style.buttons}> <img src={images.fairy} alt="fairy" className={style.type} /> </button>
+                <button value={aux.filterType} onClick={() => handleFilterType("shadow")} className={style.buttons}> <img src={images.shadow} alt="shadow" className={style.type} /> </button>
+                <button value={aux.filterType} onClick={() => handleFilterType("unknown")} className={style.buttons}> <img src={images.unknown} alt="unknown" className={style.type} /> </button>
             </div>
         </div>
     <button className={style.clearButton} onClick={location.pathname === "/home" ? handleClear : handleClearPokedex}>

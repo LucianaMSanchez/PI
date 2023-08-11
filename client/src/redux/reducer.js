@@ -1,21 +1,21 @@
 import { CREATE_USER_SUCCESS, CREATE_USER_FAILURE, LOG_IN_SUCCESS, LOG_IN_FAILURE, LOGIN_PENDING, LOG_OUT, CREATE_POKEMON_SUCCESS, CREATE_POKEMON_FAILURE} from "./action.types";
 import { GET_POKEMONS_SUCCESS, GET_POKEMONS_FAILURE, GET_POKEMON_ID_SUCCESS, GET_POKEMON_ID_FAILURE, GET_POKEMON_NAME_SUCCESS, GET_POKEMON_NAME_FAILURE, CREATE_OWN_POKEMON_SUCCESS, CREATE_OWN_POKEMON_FAILURE } from "./action.types";
-import { GET_OWN_POKEMONS_SUCCESS, GET_OWN_POKEMONS_FAILURE, GET_OWN_POKEMON_ID_SUCCESS, GET_OWN_PPOKEMON_ID_FAILURE, GET_OWN_PPOKEMON_NAME_SUCCESS, GET_OWN_PPOKEMON_NAME_FAILURE } from "./action.types";
+import { GET_OWN_POKEMONS_SUCCESS, GET_OWN_POKEMONS_FAILURE, GET_OWN_POKEMON_ID_SUCCESS, GET_OWN_POKEMON_ID_FAILURE, GET_OWN_POKEMON_NAME_SUCCESS, GET_OWN_POKEMON_NAME_FAILURE } from "./action.types";
 import { GET_TYPES_SUCCESS, GET_TYPES_FAILURE, GET_TYPE_NAME_SUCCESS, GET_TYPE_NAME_FAILURE, ADD_TYPE_TO_POK_SUCCESS, ADD_TYPE_TO_POK_FAILURE, ADD_POK_TO_TYPE_SUCCESS, ADD_POK_TO_TYPE_FAILURE } from "./action.types";
 import { ADD_POKEDEX_SUCCESS, ADD_POKEDEX_FAILURE, REMOVE_POKEDEX_SUCCESS, REMOVE_POKEDEX_FAILURE, GET_POKEDEX_SUCCESS, GET_POKEDEX_FAILURE, CREATE_TYPE_SUCCESS, CREATE_TYPE_FAILURE } from "./action.types";
 import { FILTER_TYPE_SUCCESS, FILTER_TYPE_FAILURE, ORDER_AZ_SUCCESS, ORDER_AZ_FAILURE, ORDER_HP_SUCCESS, ORDER_HP_FAILURE, ORDER_ATT_SUCCESS, ORDER_ATT_FAILURE } from "./action.types";
-import { ORDER_DEF_SUCCESS, ORDER_DEF_FAILURE, ORDER_SPEED_SUCCESS, ORDER_SPEED_FAILURE, FILTER_ORIGIN_SUCCESS, FILTER_ORIGIN_FAILURE, CLEAR_SEARCH_POKEMONS } from "./action.types";
-import { CLOSE_CARD_SUCCESS, CLOSE_CARD_FAILURE, CLEAR_POKEMONS, CLEAR_OWN_POKEMONS, CLEAR_TYPES, CLEAR_FILTERS, CLEAR_FILTERS_POKEDEX } from "./action.types";
+import { ORDER_DEF_SUCCESS, ORDER_DEF_FAILURE, ORDER_SPEED_SUCCESS, ORDER_SPEED_FAILURE, FILTER_ORIGIN_SUCCESS, FILTER_ORIGIN_FAILURE } from "./action.types";
+import { CLOSE_CARD_SUCCESS, CLOSE_CARD_FAILURE, CLEAR_POKEMONS, CLEAR_NEW_POKEMONS, CLEAR_TYPES, CLEAR_FILTERS, CLEAR_FILTERS_POKEDEX, CLEAR_CREATED } from "./action.types";
 
 const initialState = {
     pokemons: [],
     allPokemons: [],
     pokedex: [],
-    allPokedex: [],
     newPokemons: [],
     types: [],
     createdPoke: {},
     createdType: {},
+    current: {},
     user: null,
     access: false,
     error: null,
@@ -84,6 +84,7 @@ const rootReducer = (state= initialState, action) => {
             return {
                 ...state, 
                 error: null,
+                current: action.payload,
                 pokemons: [...state.pokemons, action.payload],
                 };
         case GET_POKEMON_ID_FAILURE: 
@@ -106,20 +107,21 @@ const rootReducer = (state= initialState, action) => {
             return {
                 ...state, 
                 error: null,
+                current: action.payload,
                 pokemons: [...state.pokemons, action.payload],
                 };
-        case GET_OWN_PPOKEMON_ID_FAILURE: 
+        case GET_OWN_POKEMON_ID_FAILURE: 
             return {
                 ...state, 
                 error: action.error
                 };
-        case GET_OWN_PPOKEMON_NAME_SUCCESS: 
+        case GET_OWN_POKEMON_NAME_SUCCESS: 
             return {
                 ...state, 
                 error: null,
-                pokemons: [...state.pokemons, action.payload],
+                pokemons: action.payload,
                 };
-        case GET_OWN_PPOKEMON_NAME_FAILURE: 
+        case GET_OWN_POKEMON_NAME_FAILURE: 
             return {
                 ...state, 
                 error: action.error
@@ -278,7 +280,6 @@ const rootReducer = (state= initialState, action) => {
                 ...state, 
                 error: null,
                 pokedex:  action.payload,
-                allPokedex: action.payload
                 };
         case ADD_POKEDEX_FAILURE: 
             return {
@@ -290,7 +291,6 @@ const rootReducer = (state= initialState, action) => {
                 ...state, 
                 error: null,
                 pokedex: action.payload,
-                allPokedex: action.payload
                 };
         case REMOVE_POKEDEX_FAILURE:
             return {
@@ -302,7 +302,6 @@ const rootReducer = (state= initialState, action) => {
                 ...state,
                 error: null,
                 pokedex: action.payload,
-                allPokedex: action.payload,
                 };
         case GET_POKEDEX_FAILURE:
             return {
@@ -316,12 +315,13 @@ const rootReducer = (state= initialState, action) => {
         case CLEAR_FILTERS_POKEDEX:
             return {
                 ...state,
-                pokedex: state.allPokedex
+                pokemons: state.pokedex
                 };
         case CLOSE_CARD_SUCCESS:
             return {
                 ...state,
-                pokemons: action.payload
+                pokemons: action.payload,
+                allPokemons:action.payload
                 }; 
         case CLOSE_CARD_FAILURE:
             return {
@@ -331,22 +331,24 @@ const rootReducer = (state= initialState, action) => {
         case CLEAR_POKEMONS:
                 return {
                 ...state,
-                pokemons: []
+                pokemons: [],
+                allPokemons: []
                 }; 
-        case CLEAR_OWN_POKEMONS:
+        case CLEAR_NEW_POKEMONS:
                 return {
                 ...state,
-                pokemons: []
-                }; 
-        case CLEAR_SEARCH_POKEMONS:
-                return {
-                ...state,
-                searchPokemons: []
+                newPokemons: []
                 }; 
         case CLEAR_TYPES:
                 return {
                 ...state,
                 types: []
+                };  
+        case CLEAR_CREATED:
+                return {
+                ...state,
+                createdType: [],
+                createdPoke: []
                 };  
         default:
             return {...state};

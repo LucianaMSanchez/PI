@@ -82,8 +82,8 @@ register === false ?
     </div>
     <button type="submit" className={style.boton}>Login</button>
     <div className={style.divCreate}>
-        <span className={style.span}>Si aún no tienes cuenta puedes registrarte</span>
-        <button className={style.aqui} onClick={registerOn}>AQUÍ</button>
+        <span className={style.span}>If you don't have an account yet, register</span>
+        <button className={style.aqui} onClick={registerOn}>HERE</button>
     </div>
 </form>
 : <form onSubmit={registerHandler}>

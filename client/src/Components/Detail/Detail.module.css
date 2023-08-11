@@ -1,19 +1,136 @@
 @import url('https://fonts.googleapis.com/css2?family=Coda&display=swap');
 
 
-.container{
+.imageElectric{
     display: flex;
     flex-direction: column;
-    background-image: url("../../assets/BAI-3-Curves_1.gif");
-    background-size: cover; 
+    background-image: url("../../assets/energias/electric.jpg");
+    background-size: cover;
+}
+.imageBug{
+    display: flex;
+    flex-direction: column;
+    background-image: url("../../assets/energias/bug.jpg");
+    background-size: cover;
+}
+.imageDark{
+    display: flex;
+    flex-direction: column;
+    background-image: url("../../assets/energias/dark.jpg");
+    background-size: cover;
+}
+.imageDragon{
+    display: flex;
+    flex-direction: column;
+    background-image: url("../../assets/energias/dragon.jpg");
+    background-size: cover;
+}
+.imageFairy{
+    display: flex;
+    flex-direction: column;
+    background-image: url("../../assets/energias/fairy.jpg");
+    background-size: cover;
+}
+.imageFighting{
+    display: flex;
+    flex-direction: column;
+    background-image: url("../../assets/energias/fighting.jpg");
+    background-size: cover;
+}
+.imageFire{
+    display: flex;
+    flex-direction: column;
+    background-image: url("../../assets/energias/fire.jpg");
+    background-size: cover;
+}
+.imageFlying{
+    display: flex;
+    flex-direction: column;
+    background-image: url("../../assets/energias/flying.jpg");
+    background-size: cover;
+}
+.imageGhost{
+    display: flex;
+    flex-direction: column;
+    background-image: url("../../assets/energias/ghost.jpg");
+    background-size: cover;
+}
+.imageGrass{
+    display: flex;
+    flex-direction: column;
+    background-image: url("../../assets/energias/grass.jpg");
+    background-size: cover;
+}
+.imageGround{
+    display: flex;
+    flex-direction: column;
+    background-image: url("../../assets/energias/ground.jpg");
+    background-size: cover;
+}
+.imageIce{
+    display: flex;
+    flex-direction: column;
+    background-image: url("../../assets/energias/ice.jpg");
+    background-size: cover;
+}
+.imageNormal{
+    display: flex;
+    flex-direction: column;
+    background-image: url("../../assets/energias/normal.jpg");
+    background-size: cover;
+}
+.imagePoison{
+    display: flex;
+    flex-direction: column;
+    background-image: url("../../assets/energias/poison.jpg");
+    background-size: cover;
+}
+.imagePsychic{
+    display: flex;
+    flex-direction: column;
+    background-image: url("../../assets/energias/psychic.jpg");
+    background-size: cover;
+}
+.imageRock{
+    display: flex;
+    flex-direction: column;
+    background-image: url("../../assets/energias/rock.jpg");
+    background-size: cover;
+}
+.imageShadow{
+    display: flex;
+    flex-direction: column;
+    background-image: url("../../assets/energias/shadow.jpg");
+    background-size: cover;
+}
+.imageSteel{
+    display: flex;
+    flex-direction: column;
+    background-image: url("../../assets/energias/steel.jpg");
+    background-size: cover;
+}
+.imageUnknown{
+    display: flex;
+    flex-direction: column;
+    background-image: url("../../assets/energias/unknown.jpg");
+    background-size: cover;
+}
+.imageWater{
+    display: flex;
+    flex-direction: column;
+    background-image: url("../../assets/energias/water.jpg");
+    background-size: cover;
 }
 
 .divUno{
     display: flex;
-    height: 10vh;
+    height: 5em;
     justify-content: space-between;
     margin: 15px;
+    margin-top: 4em;
     align-items: center;
+    padding-top: 0px;
+    z-index: 2;
 }
 
 .goBack{
@@ -32,15 +149,16 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 2em;
+    padding: 0;
 }
 
 .name{
-    margin-top: 2em;
-    padding-top: 1em;
     font-family: 'Coda', sans-serif;
     font-size: 4em;
     color: rgb(250, 250, 250);
     text-shadow: 0 0 15px #09080a;
+    padding: 0px;
 }
 
 .type{
@@ -71,26 +189,37 @@
     margin: 5px;
     justify-content: space-between;
     margin-right: 60px;
+    z-index: 1;
 }
 
 .imageContainer{
     justify-content: top;
     margin-bottom: 6em;
-    margin-left: 4em;
+    margin-left: 6em;
 }
 
 .image{
-   width: 30em;
+   width: 25em;
 } 
 
 .caracteristics{
-    color: #140352;
+    color: #34313f;
+    background-color: rgba(255, 255, 255, 0.4);
+    border-radius: 15px;
+    height:13cm;
+    width: 6cm;
+    display: flex;
+    flex-direction: column;
     text-align: left;
     font-size: 1.2em;
     font-family: 'Coda', sans-serif;
     font-weight: bold;
     line-height: 2em;
-    text-shadow: 1em 1em 1em #ffffff;
-    margin-right: 11em;
-    margin-top: 7em;
+    text-shadow: 0.5em 0.5em 1em #ffffff;
+    margin-right: 5em;
+    margin-top: 3em;
+    margin-bottom: 1em;
+    box-shadow: 25px 10px 6px #665a72;
+    border: solid 5px rgb(75, 74, 74);
+    padding-left: 3em;
 }

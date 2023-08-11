@@ -2,7 +2,7 @@ import style from "./Cards.module.css";
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector} from "react-redux";
 import Card from '../Card/Card';
-import { getOwnPokemons, getPokemons, clearPokemons, clearTypes, clearOwnPokemons, clearSearchPokemons } from "../../redux/actions";
+import { getOwnPokemons, getPokemons, clearPokemons, clearTypes } from "../../redux/actions";
 import logo from "../../assets/logo.png";
 
 
@@ -24,9 +24,7 @@ function Cards() {
         }
         return () => {
            dispatch(clearPokemons());
-           dispatch(clearOwnPokemons());
            dispatch(clearTypes());
-           dispatch(clearSearchPokemons());
        }
       }, []);
 

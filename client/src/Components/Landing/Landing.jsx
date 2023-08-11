@@ -37,7 +37,7 @@ const Landing = () => {
     setTimeout(() => {
     setShowLight(false);
     dispatch(loginPending())
-  }, 300);  
+  }, 500);  
 };
 
 

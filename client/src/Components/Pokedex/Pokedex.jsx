@@ -1,8 +1,9 @@
 import style from "./Pokedex.module.css";
-import React, { useEffect } from "react"; 
+import React, { useEffect, useState } from "react"; 
 import { useSelector, useDispatch } from "react-redux";
-import Card from "../Card/Card";
 import { clearPokemons, getPokedex } from "../../redux/actions";
+import Filters from "../Filters/Filters";
+import PokedexCard from "../PokedexCard/PokedexCard";
 
 
 const Pokedex = () => {
@@ -10,48 +11,41 @@ const Pokedex = () => {
     let pokemons = useSelector((state) => state.pokemons);
     let pokedex = useSelector((state) => state.pokedex);
     let userId = useSelector((state) => state.user);
+    let [currentPokemons, setCurrentPokemons] = useState([]);
     const dispatch = useDispatch();
 
     useEffect(() => {
         dispatch(clearPokemons());
         dispatch(getPokedex(userId));
-      
         return () => {
-          dispatch(clearPokemons());
+            dispatch(clearPokemons());
         };
-      }, [userId, dispatch]);
+    }, [dispatch]);
+    
+    useEffect(() => {
+        setCurrentPokemons(pokedex)
+    }, [pokedex]);
+
+    useEffect(() => {
+        setCurrentPokemons(pokemons)
+    }, [pokemons]);
+
 
   
-    return(
+    return (
         <div className={style.back}>
-           
-            {pokemons ? (
-            <div className={style.container}>
-           {pokemons.map(({ id, name, image, types}) => {
-                return <Card 
-                key={id}
-                id={id} 
-                name={name} 
-                image={image} 
-                types={types}
-                />;
-            })}
-            </div>
-             ) : (
-                <div className={style.container}>
-                {pokedex?.map(({ id, name, image, types}) => {
-                     return <Card 
-                     key={id}
-                     id={id} 
-                     name={name} 
-                     image={image} 
-                     types={types}
-                     />;
-                 })}
-                </div>
-            )}
+          <div className={style.container}>
+            {currentPokemons?.map((pokemon) => (
+              <PokedexCard key={pokemon.index} pokemon={pokemon} />
+            ))}
+          </div>
+    
+          <div>
+            <Filters pokemons={pokedex} allPokemons={pokedex} />
+          </div>
         </div>
-    )
-};
+      );
+    };
+
 
 export default Pokedex;

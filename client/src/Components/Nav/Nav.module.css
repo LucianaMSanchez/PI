@@ -1,8 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Coda&display=swap');
 
+a {
+    text-decoration: none;
+}
 
 .nav{
-    background-color: #21334b;
+    background-color: #37214b;
     padding: 1em;
     display: flex;
     flex-direction: row;

@@ -1,10 +1,10 @@
-const { User, Type } = require("../../db")
+const { Type, OwnPokemon } = require("../../db")
 
 
-const getOwnPokemonById = async (id, userId) =>{
-  const user = await User.findByPk(userId);
-  const ownPokemon = await user.getOwnPokemons({
-    where: { id},
+const getOwnPokemonById = async (id) =>{
+
+  const ownPokemon = await OwnPokemon.findOne({
+    where: {id},
     include: [
       {
         model: Type,

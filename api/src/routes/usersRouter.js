@@ -28,7 +28,7 @@ userRouter.post("/login", async (req, res) =>{
     }
 });
 
-userRouter.get("/pokedex", async (req, res) => {
+userRouter.post("/pokedexFull", async (req, res) => {
     try {
       let {userId} = req.body;
       const pokedex = await getPokedex(userId);

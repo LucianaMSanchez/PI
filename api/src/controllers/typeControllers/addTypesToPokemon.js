@@ -1,11 +1,13 @@
-const { Type, Pokemon } = require("../../db");
+const { Type, Pokemon, OwnPokemon } = require("../../db");
 const createType = require("./createType");
 const { Op } = require("sequelize");
 
 const addTypesToPokemon = async (id) => {
    
-        const pokemon = await Pokemon.findByPk(id);
-
+  let pokemon =  id < 1282 
+    ? (await Pokemon.findByPk(id))
+    : (await OwnPokemon.findByPk(id));
+    
         if (!pokemon) {
             throw new Error(`Pokemon with ID ${id} not found`);
         }
@@ -33,7 +35,7 @@ const addTypesToPokemon = async (id) => {
 
         const typesRelated = await pokemon.getTypes();
         return typesRelated;
- 
+
 };
 
 module.exports = addTypesToPokemon;

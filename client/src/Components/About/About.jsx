@@ -1,13 +1,13 @@
 import React from "react";
 import style from "./About.module.css";
-import pokemon from "../../assets/pokemon.png"
+import pokemon from "../../assets/pika.jpg"
 
 
 const About = () => {
 
     return (
         <div className={style.contenedor1}>
-            <div>
+            
             <div className={style.div}>
                 <h1 className={style.h1}> Hey! </h1>
                 <h2 className={style.h2}>This is the ultimate Pokémon Cards Application!</h2><br />
@@ -18,6 +18,9 @@ const About = () => {
                 <p className={style.p}>You can also check what pokémons are related to each type of energy and vice versa.</p>
                 <p className={style.p}>Weather you're and expert trainer or you're a newy, you will love this app.</p>
                 <h2 className={style.h2}>We invite you to explore it!!!</h2>
+            </div>            
+            <div>
+                <img className={style.image} src={pokemon} alt="pokemon"/>
             </div>
             <div className={style.div}>
                 <h1 className={style.h1}> Hola! </h1>
@@ -30,10 +33,7 @@ const About = () => {
                 <p className={style.p}>Ya seas un entrenador experto o un novato, te va a encantar esta App.</p>
                 <h2 className={style.h2}>Te invitamos a que la explores!!!</h2>  
             </div>
-            </div>
-            <div>
-                <img className={style.image} src={pokemon} alt="pokemon"/>
-            </div>
+
         </div>
     );
 };

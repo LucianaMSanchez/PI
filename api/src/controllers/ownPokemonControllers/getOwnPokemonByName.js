@@ -1,13 +1,12 @@
-const { User, Type } = require("../../db")
+const { OwnPokemon, Type } = require("../../db")
+const { Op } = require("sequelize");
 
-
-  const getOwnPokemonByName = async (name, userId) =>{
+  const getOwnPokemonByName = async (name) =>{
     
-    const user = await User.findByPk(userId);
-    const ownPokemon = await user.getOwnPokemons({
+    let ownPoke = await OwnPokemon.findAll({
       where: { 
         name : {
-          [Op.iLike]: `%${name}%`, 
+          [Op.iLike]: `%${name}%`,
         },
       },
       include: [
@@ -17,9 +16,9 @@ const { User, Type } = require("../../db")
         },
       ],
     });
-    
-    if(!ownPokemon) throw new Error(`There is no pokemon named:${name}`)
-    return ownPokemon;
+   
+    if(!ownPoke) throw new Error(`There is no pokemon named:${name}`)
+    return ownPoke;
   }
 
 

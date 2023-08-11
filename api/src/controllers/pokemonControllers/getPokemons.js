@@ -21,15 +21,15 @@ const getPokemons = async () => {
 
   const pokemonPromises = allPokemons.slice(0, 36).map((poke) => axios.get(poke.url)); 
 
-  try {
+
     const pokemonResponses = await Promise.all(pokemonPromises);
     pokemons = await Promise.all(pokemonResponses.map((response) => getData(response.data)));
-  } catch (error) {
-    throw new Error(`Error fetching pokemon details: ${error.message}`);
-  }
 
+  if(!pokemons)throw new Error(`Error fetching pokemon details: ${error.message}`);
   return pokemons;
 };
+
+
 
 module.exports = getPokemons;
 

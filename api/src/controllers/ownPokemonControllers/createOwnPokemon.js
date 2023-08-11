@@ -1,30 +1,38 @@
-const { OwnPokemon, User } = require("../../db")
+const { OwnPokemon, User } = require("../../db");
 
-const createOwnPokemon = async (id, name, image, hitPoints, attack, defense, speed, height, weight, types, userId) => {
+const createOwnPokemon = async (id, name, image, hitPoints, attack, defense, speed, height, weight, type1, type2, userId) => {
     const user = await User.findByPk(userId);
 
-    if(!id || !name || !image || !hitPoints || !attack || !defense || !speed || !height || !weight || !types){
-        throw new Error ("All fields must be completed")
+    if (!id || !name || !image || !hitPoints || !attack || !defense || !speed || !height || !weight || !type1 || !type2) {
+        throw new Error("All fields must be completed");
     }
-    const newPokemon = await OwnPokemon.create({
-            id,
-            name,
-            image,
-            hitPoints,
-            attack,
-            defense,
-            speed,
-            height,
-            weight,
-            types,
-       })
-      
-    if (!newPokemon) throw new Error("Ooopss... you can't create this pokemon");
-    await user.addPokemon(newPokemon) 
-    return newPokemon;
-  }
+    const types = [type1, type2];
 
+    const repeated = await OwnPokemon.findByPk(id);
+    if (repeated) {
+        throw new Error("This ID is already been used, choose another number");
+    }
+
+    const newPokemon = await OwnPokemon.create({
+        id,
+        name,
+        image,
+        hitPoints,
+        attack,
+        defense,
+        speed,
+        height,
+        weight,
+        types,
+    });
+
+    if (!newPokemon) {
+        throw new Error("Ooopss... you can't create this Pokémon");
+    }
+
+    await user.addOwnPokemon(newPokemon);
+
+    return newPokemon; 
+};
 
 module.exports = createOwnPokemon;
-
-
