@@ -15,6 +15,7 @@ const Create = () => {
     const dispatch = useDispatch();
     const [errors, setErrors]= useState({});
     const [image, setImage] = useState(null);
+    const [allFieldsCompleted, setAllFieldsCompleted] = useState(false);
     const [pokeData, setPokeData] = useState({
         id: "",
         name: "",
@@ -81,7 +82,15 @@ const Create = () => {
         });
     }, [newPokemons]);
 
+    const areAllFieldsCompleted = () => {
+        const fields = Object.values(pokeData);
+        return fields.every((field) => field !== "" && field !== null);
+      };
 
+    useEffect(() => {
+        setAllFieldsCompleted(areAllFieldsCompleted());
+    }, [pokeData]);
+      
 return (
 <div className={style.back}>
 <div className={style.container}>
@@ -246,7 +255,7 @@ return (
            }
         
             <div className={style.row}>
-                <button type="submit" name="createButton" className={style.button}>Create</button>
+                <button type="submit" name="createButton" className={`${style.button} ${allFieldsCompleted ? '' : style.disabledButton}`} disabled={!allFieldsCompleted}>Create</button>
             </div>
     </form>
 

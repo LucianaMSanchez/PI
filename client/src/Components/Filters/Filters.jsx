@@ -219,9 +219,11 @@ return (
                 <button value={aux.filterType} onClick={() => handleFilterType("unknown")} className={style.buttons}> <img src={images.unknown} alt="unknown" className={style.type} /> </button>
             </div>
         </div>
-    <button className={style.clearButton} onClick={location.pathname === "/home" ? handleClear : handleClearPokedex}>
-      CLEAR FILTERS
-    </button>
+        <button className={style.clearButton} onClick={location.pathname === "/home" ? handleClear : handleClearPokedex}>
+            CLEAR FILTERS
+        </button>
+
+
   </div>
     
  );

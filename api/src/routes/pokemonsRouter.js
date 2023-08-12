@@ -1,5 +1,6 @@
 const express = require("express");
 const getPokemons = require("../controllers/pokemonControllers/getPokemons");
+const getRandomPokemons = require("../controllers/pokemonControllers/getRandomPokemons");
 const getPokemonById = require("../controllers/pokemonControllers/getPokemonById");
 const getPokemonByName = require("../controllers/pokemonControllers/getPokemonByName.js");
 const createPokemon = require("../controllers/pokemonControllers/createPokemon.js");
@@ -37,6 +38,14 @@ pokemonsRouter.get("/", async (req, res) => {
     }  
 });    
 
+pokemonsRouter.get("/random", async (req, res) => {
+    try {
+      const randomPokemons = await getRandomPokemons();  
+      return res.status(200).json(randomPokemons);    
+    } catch (error) {
+      return res.status(404).json({error: error.message})  
+    }  
+});    
 
 pokemonsRouter.get("/:id", async (req, res) => {
     try {

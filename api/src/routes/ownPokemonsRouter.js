@@ -19,7 +19,7 @@ ownPokemonsRouter.get("/search", async (req, res) => {
     }
 });
 
-ownPokemonsRouter.get("/", async (req, res) => {
+ownPokemonsRouter.get("/:userId", async (req, res) => {
     try {
         let {userId} = req.params;
         const pokemons = await getOwnPokemons(userId);

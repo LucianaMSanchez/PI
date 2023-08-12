@@ -1,6 +1,6 @@
 import axios from "axios";
 import { CREATE_USER_SUCCESS, CREATE_USER_FAILURE, LOG_IN_SUCCESS, LOG_IN_FAILURE, LOGIN_PENDING, LOG_OUT, CREATE_POKEMON_SUCCESS, CREATE_POKEMON_FAILURE} from "./action.types";
-import { GET_POKEMONS_SUCCESS, GET_POKEMONS_FAILURE, GET_POKEMON_ID_SUCCESS, GET_POKEMON_ID_FAILURE, GET_POKEMON_NAME_SUCCESS, GET_POKEMON_NAME_FAILURE, CREATE_OWN_POKEMON_SUCCESS, CREATE_OWN_POKEMON_FAILURE } from "./action.types";
+import { GET_POKEMONS_SUCCESS, GET_POKEMONS_FAILURE, GET_RANDOM_SUCCESS, GET_RANDOM_FAILURE, GET_POKEMON_ID_SUCCESS, GET_POKEMON_ID_FAILURE, GET_POKEMON_NAME_SUCCESS, GET_POKEMON_NAME_FAILURE, CREATE_OWN_POKEMON_SUCCESS, CREATE_OWN_POKEMON_FAILURE } from "./action.types";
 import { GET_OWN_POKEMONS_SUCCESS, GET_OWN_POKEMONS_FAILURE, GET_OWN_POKEMON_ID_SUCCESS, GET_OWN_POKEMON_ID_FAILURE, GET_OWN_POKEMON_NAME_SUCCESS, GET_OWN_POKEMON_NAME_FAILURE } from "./action.types";
 import { GET_TYPES_SUCCESS, GET_TYPES_FAILURE, GET_TYPE_NAME_SUCCESS, GET_TYPE_NAME_FAILURE, ADD_TYPE_TO_POK_SUCCESS, ADD_TYPE_TO_POK_FAILURE, ADD_POK_TO_TYPE_SUCCESS, ADD_POK_TO_TYPE_FAILURE } from "./action.types";
 import { ADD_POKEDEX_SUCCESS, ADD_POKEDEX_FAILURE, REMOVE_POKEDEX_SUCCESS, REMOVE_POKEDEX_FAILURE, GET_POKEDEX_SUCCESS, GET_POKEDEX_FAILURE, CREATE_TYPE_SUCCESS, CREATE_TYPE_FAILURE } from "./action.types";
@@ -67,6 +67,24 @@ export const getPokemons = () => {
      } catch (error) {
        return dispatch({
          type: GET_POKEMONS_FAILURE,
+         error: error.message,
+       });
+     }
+   };
+ };
+
+export const getRandomPokemons = () => {
+  const endpoint = "http://localhost:3001/pokemons/random";
+  return async (dispatch) => {
+   try {
+      const {data} = await axios(endpoint)
+      return dispatch({
+         type: GET_RANDOM_SUCCESS,
+         payload: data,
+       });
+     } catch (error) {
+       return dispatch({
+         type: GET_RANDOM_FAILURE,
          error: error.message,
        });
      }
@@ -147,7 +165,7 @@ export const getPokemons = () => {
  };
 
  export const getOwnPokemons = (userId) => {
-  const endpoint = "http://localhost:3001/ownPokemons" + userId;
+  const endpoint = "http://localhost:3001/ownPokemons/" + userId;
   return async (dispatch) => {
    try {
       const {data} = await axios(endpoint)

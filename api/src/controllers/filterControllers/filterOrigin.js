@@ -1,12 +1,13 @@
 
 
-const filterOrigin = async (origin, filterPokemons) => {
-    const filteredPokemons = [];
+const filterOrigin = async (origin, allPokemons) => {
+    let filteredPokemons = [];
     if(origin === "Created"){
-        filteredPokemons = filterPokemons.filter((pokemon) => pokemon.id > 1281);
+        filteredPokemons = allPokemons.filter((pokemon) => pokemon.id > 1281);
     } else {
-        filteredPokemons = filterPokemons.filter((pokemon) => pokemon.id < 1281);
+        filteredPokemons = allPokemons.filter((pokemon) => pokemon.id < 1281);
     }
+    
 
     if(!filteredPokemons) throw new Error ("No pokemons of this origin")
     return filteredPokemons;

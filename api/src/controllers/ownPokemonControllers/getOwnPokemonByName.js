@@ -3,7 +3,7 @@ const { Op } = require("sequelize");
 
   const getOwnPokemonByName = async (name) =>{
     
-    let ownPoke = await OwnPokemon.findAll({
+    let ownPoke = await OwnPokemon.findOne({
       where: { 
         name : {
           [Op.iLike]: `%${name}%`,

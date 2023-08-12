@@ -2,7 +2,7 @@ import style from "./Cards.module.css";
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector} from "react-redux";
 import Card from '../Card/Card';
-import { getOwnPokemons, getPokemons, clearPokemons, clearTypes } from "../../redux/actions";
+import { getOwnPokemons, getPokemons, clearPokemons, clearTypes, getRandomPokemons } from "../../redux/actions";
 import logo from "../../assets/logo.png";
 
 
@@ -13,7 +13,6 @@ function Cards() {
     const [page, setPage] = useState(1);
     const pokePerPage = 12;
     const maxPage = Math.ceil(pokemons.length / pokePerPage);
-    const lastPage = maxPage + 1;
     const userId = useSelector((state) => state.user);
     const dispatch = useDispatch()
    
@@ -28,8 +27,8 @@ function Cards() {
        }
       }, []);
 
-    const nextGet = () => {
-        dispatch(getPokemons())
+    const randomGet = () => {
+        dispatch(getRandomPokemons())
     }
     
     const previousPage = () =>{
@@ -38,19 +37,24 @@ function Cards() {
     }
 
     const nextPage = () =>{
-        if((page + 1) < (maxPage + 2))
+        if((page + 1) < (maxPage + 1))
         setPage(page + 1)
     }
 
-    return <div className={style.back}>
+    return (
+    
+    <div className={style.back}>
+       
+            <div className={style.divUno}>
                 <div className={style.imageDiv}>
                     <img className={style.titulo} src={logo} alt="logo"/>
                 </div>
-                {page === lastPage ? (
-                    <div >
-                        <button className={style.buttonMore} onClick={nextGet}>SEE MORE</button>
-                    </div>
-                ) : (
+                <div className={style.buttonDiv}>
+                    <button className={style.buttonMore} onClick={randomGet}>RELEASE RANDOM</button>
+                </div>
+            </div>
+                    {pokemons.length > 0 ? (
+                        <>
                     <div className={style.container}>
                         {pokemons?.slice((page - 1) * pokePerPage, page * pokePerPage).map((poke, index) => {
                        
@@ -63,7 +67,7 @@ function Cards() {
                         />;
                         })}
                     </div>
-                )}
+        
                 <div className={style.pages}>
                     <div >
                         <button onClick={previousPage} className={style.buttonPrev}>◀</button>
@@ -75,7 +79,14 @@ function Cards() {
                         <button onClick={nextPage} className={style.buttonNext}>▶</button>
                     </div>
                 </div>
-        </div>;
+        </>
+        ) : (
+          
+            <div className={style.pokeball}></div>
+          
+            )}
+            </div>
+    )
 }
 
 export default Cards;

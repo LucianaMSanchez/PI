@@ -81,6 +81,11 @@ input[type=submit] {
     margin-top: 20em;
 }
 
+.disabledButton {
+    background-color: gray;
+    color: white;
+}
+
 .randomButton{
     font-family: 'Coda', sans-serif;
     font-weight: bold;

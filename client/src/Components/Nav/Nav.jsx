@@ -15,8 +15,7 @@ const location = useLocation()
 const user = useSelector((state) => state.user);
 
 const logOut = () => {
-  dispatch(logout());
-  (!user) && navigate("/");
+  dispatch(logout()) && navigate("/");
 };
 
   return (
