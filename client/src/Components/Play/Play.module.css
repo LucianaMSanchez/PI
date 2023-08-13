@@ -1,0 +1,54 @@
+.back{
+  background: linear-gradient(to bottom,#003b52, #80eaf1); 
+  height: 800px;
+  display: flex;
+  flex-direction: column;
+}
+
+.container1{
+  height: 50vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin-top: 6em;
+}
+
+.container2{
+  height: 50vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin-top: 6em;
+}
+
+.hidden{
+
+}
+
+.buttonDisplay{
+  font-family: 'Coda', sans-serif;
+  border: solid 1px #4ef037;
+  border-radius: 15px 15px 15px 15px;
+  height: 3em;
+  width: 6em;
+  padding-top: 0.7em;
+  padding-bottom: 1em;
+  background-color:#ecfeff;
+  box-shadow: inset 0 0 5px #00b7c2;
+  text-align: center;
+}
+
+.buttonPlay{
+  font-family: 'Coda', sans-serif;
+  font-size: 4em;
+  border: solid 1px #4ef037;
+  border-radius: 15px 15px 15px 15px;
+  height: 6em;
+  width: 6em;
+  border-radius: 50%;
+  background-color:#ecfeff;
+  box-shadow: inset 0 0 5px #00b7c2;
+  text-align: center;
+}

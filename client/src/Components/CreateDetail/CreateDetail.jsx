@@ -15,28 +15,29 @@ const Detail = () => {
    const [backDetail, setBackDetail] = useState(""); 
 
    useEffect(() => {
-      if (id) {
-        dispatch(getOwnPokemonId(id));
-        if(current){
-        dispatch(addTypeToPok(id));
+        if (id) {
+            dispatch(getOwnPokemonId(id));
+            if(current){
+            dispatch(addTypeToPok(id));
+            }
         }
-      }
-      return () => {
-         dispatch(clearPokemons());
-         dispatch(clearTypes());
-     }
+        return () => {
+            dispatch(clearPokemons());
+            dispatch(clearTypes());
+        }
     }, [id]);
-    
 
-      useEffect(() => {
+
+    useEffect(() => {
         if (current && current.types && current.types.length > 0) {
           const typeBack = current.types[0];
           const detail = switchBackDetail(typeBack);
           setBackDetail(detail); 
         }
-      }, [current]);
+    }, [current]);
    
-      const switchBackDetail = (type) => {
+    
+    const switchBackDetail = (type) => {
          switch (type) {
              case "shadow":
                  return style.imageShadow;
@@ -143,7 +144,7 @@ const Detail = () => {
 
          </>
       ) : (
-         <h3 className={style.caracteristics}>Loading...</h3>
+         <div className={style.pokeball}></div>
       )}
       </div>
     

@@ -1,127 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Coda&display=swap');
 
 
-.imageElectric{
-    display: flex;
-    flex-direction: column;
-    background-image: url("../../assets/energias/electric.jpg");
-    background-size: cover;
-}
-.imageBug{
-    display: flex;
-    flex-direction: column;
-    background-image: url("../../assets/energias/bug.jpg");
-    background-size: cover;
-}
-.imageDark{
-    display: flex;
-    flex-direction: column;
-    background-image: url("../../assets/energias/dark.jpg");
-    background-size: cover;
-}
-.imageDragon{
-    display: flex;
-    flex-direction: column;
-    background-image: url("../../assets/energias/dragon.jpg");
-    background-size: cover;
-}
-.imageFairy{
-    display: flex;
-    flex-direction: column;
-    background-image: url("../../assets/energias/fairy.jpg");
-    background-size: cover;
-}
-.imageFighting{
-    display: flex;
-    flex-direction: column;
-    background-image: url("../../assets/energias/fighting.jpg");
-    background-size: cover;
-}
-.imageFire{
-    display: flex;
-    flex-direction: column;
-    background-image: url("../../assets/energias/fire.jpg");
-    background-size: cover;
-}
-.imageFlying{
-    display: flex;
-    flex-direction: column;
-    background-image: url("../../assets/energias/flying.jpg");
-    background-size: cover;
-}
-.imageGhost{
-    display: flex;
-    flex-direction: column;
-    background-image: url("../../assets/energias/ghost.jpg");
-    background-size: cover;
-}
-.imageGrass{
-    display: flex;
-    flex-direction: column;
-    background-image: url("../../assets/energias/grass.jpg");
-    background-size: cover;
-}
-.imageGround{
-    display: flex;
-    flex-direction: column;
-    background-image: url("../../assets/energias/ground.jpg");
-    background-size: cover;
-}
-.imageIce{
-    display: flex;
-    flex-direction: column;
-    background-image: url("../../assets/energias/ice.jpg");
-    background-size: cover;
-}
-.imageNormal{
-    display: flex;
-    flex-direction: column;
-    background-image: url("../../assets/energias/normal.jpg");
-    background-size: cover;
-}
-.imagePoison{
-    display: flex;
-    flex-direction: column;
-    background-image: url("../../assets/energias/poison.jpg");
-    background-size: cover;
-}
-.imagePsychic{
-    display: flex;
-    flex-direction: column;
-    background-image: url("../../assets/energias/psychic.jpg");
-    background-size: cover;
-}
-.imageRock{
-    display: flex;
-    flex-direction: column;
-    background-image: url("../../assets/energias/rock.jpg");
-    background-size: cover;
-}
-.imageShadow{
-    display: flex;
-    flex-direction: column;
-    background-image: url("../../assets/energias/shadow.jpg");
-    background-size: cover;
-}
-.imageSteel{
-    display: flex;
-    flex-direction: column;
-    background-image: url("../../assets/energias/steel.jpg");
-    background-size: cover;
-}
-.imageUnknown{
-    display: flex;
-    flex-direction: column;
-    background-image: url("../../assets/energias/unknown.jpg");
-    background-size: cover;
-}
-.imageWater{
-    display: flex;
-    flex-direction: column;
-    background-image: url("../../assets/energias/water.jpg");
-    background-size: cover;
-}
-
 .divUno{
     display: flex;
     height: 5em;
@@ -151,7 +30,7 @@
     flex-direction: column;
     justify-items: center;
     align-items: center;
-    margin-top: 2em;
+    margin-top: 9em;
     padding: 0px;
 }
 
@@ -161,7 +40,6 @@
     color: rgb(250, 250, 250);
     text-shadow: 0 0 15px #09080a;
     padding: 0px;
-    margin-top: 3em;
     z-index: 1;
 }
 
@@ -291,4 +169,127 @@
   100%{
     transform: rotate(360deg);
   }
+}
+
+
+
+.imageElectric{
+    display: flex;
+    flex-direction: column;
+    background-image: url("../../assets/energias/electric.jpg");
+    background-size: cover;
+}
+.imageBug{
+    display: flex;
+    flex-direction: column;
+    background-image: url("../../assets/energias/bug.jpg");
+    background-size: cover;
+}
+.imageDark{
+    display: flex;
+    flex-direction: column;
+    background-image: url("../../assets/energias/dark.jpg");
+    background-size: cover;
+}
+.imageDragon{
+    display: flex;
+    flex-direction: column;
+    background-image: url("../../assets/energias/dragon.jpg");
+    background-size: cover;
+}
+.imageFairy{
+    display: flex;
+    flex-direction: column;
+    background-image: url("../../assets/energias/fairy.jpg");
+    background-size: cover;
+}
+.imageFighting{
+    display: flex;
+    flex-direction: column;
+    background-image: url("../../assets/energias/fighting.jpg");
+    background-size: cover;
+}
+.imageFire{
+    display: flex;
+    flex-direction: column;
+    background-image: url("../../assets/energias/fire.jpg");
+    background-size: cover;
+}
+.imageFlying{
+    display: flex;
+    flex-direction: column;
+    background-image: url("../../assets/energias/flying.jpg");
+    background-size: cover;
+}
+.imageGhost{
+    display: flex;
+    flex-direction: column;
+    background-image: url("../../assets/energias/ghost.jpg");
+    background-size: cover;
+}
+.imageGrass{
+    display: flex;
+    flex-direction: column;
+    background-image: url("../../assets/energias/grass.jpg");
+    background-size: cover;
+}
+.imageGround{
+    display: flex;
+    flex-direction: column;
+    background-image: url("../../assets/energias/ground.jpg");
+    background-size: cover;
+}
+.imageIce{
+    display: flex;
+    flex-direction: column;
+    background-image: url("../../assets/energias/ice.jpg");
+    background-size: cover;
+}
+.imageNormal{
+    display: flex;
+    flex-direction: column;
+    background-image: url("../../assets/energias/normal.jpg");
+    background-size: cover;
+}
+.imagePoison{
+    display: flex;
+    flex-direction: column;
+    background-image: url("../../assets/energias/poison.jpg");
+    background-size: cover;
+}
+.imagePsychic{
+    display: flex;
+    flex-direction: column;
+    background-image: url("../../assets/energias/psychic.jpg");
+    background-size: cover;
+}
+.imageRock{
+    display: flex;
+    flex-direction: column;
+    background-image: url("../../assets/energias/rock.jpg");
+    background-size: cover;
+}
+.imageShadow{
+    display: flex;
+    flex-direction: column;
+    background-image: url("../../assets/energias/shadow.jpg");
+    background-size: cover;
+}
+.imageSteel{
+    display: flex;
+    flex-direction: column;
+    background-image: url("../../assets/energias/steel.jpg");
+    background-size: cover;
+}
+.imageUnknown{
+    display: flex;
+    flex-direction: column;
+    background-image: url("../../assets/energias/unknown.jpg");
+    background-size: cover;
+}
+.imageWater{
+    display: flex;
+    flex-direction: column;
+    background-image: url("../../assets/energias/water.jpg");
+    background-size: cover;
 }

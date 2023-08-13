@@ -185,7 +185,7 @@ const TypeDetail = () => {
 
          </>
       ) : (
-         <h3 className={style.caracteristics}>Loading...</h3>
+         <div className={style.pokeball}></div>
       )}
     </div>
  );

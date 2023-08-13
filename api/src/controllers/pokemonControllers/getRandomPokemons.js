@@ -1,35 +1,30 @@
 const axios = require("axios");
 const getData = require("../../utils/getData");
 
-const baseUrl = "https://pokeapi.co/api/v2/pokemon/";
-const totalRandomPokemons = 12;
-const totalPokemons = 1281;
-
-const getRandomInt = (min, max) => {
-  return Math.floor(Math.random() * (max - min + 1)) + min;
-};
-
 const getRandomPokemons = async () => {
-  let randomIndices = new Set();
+  const baseUrl = "https://pokeapi.co/api/v2/pokemon/";
+  let pokemonCount = 0;
+  let pokemonsPromises = [];
 
-  while (randomIndices.size < totalRandomPokemons) {
-    randomIndices.add(getRandomInt(1, totalPokemons));
+  while (pokemonCount < 12) {
+    try {
+      const random = Math.floor(Math.random() * 1281) + 1; 
+      const endpoint = `${baseUrl}${random}`;
+
+      const response = await axios.get(endpoint);
+      const data = response.data;
+      const pokeData = getData(data);
+      pokemonsPromises.push(pokeData);
+      pokemonCount += 1;
+    } catch (error) {
+      console.error(`Error fetching Pokémon details: ${error.message}`);
+    }
   }
+    const pokemons = await Promise.all(pokemonsPromises)
 
-  const randomPokemonPromises = Array.from(randomIndices).map((index) =>
-    axios.get(`${baseUrl}${index}/`)
-  );
-
-  const randomPokemonResponses = await Promise.all(randomPokemonPromises);
-  const randomPokemons = await Promise.all(
-    randomPokemonResponses.map((response) => getData(response.data))
-  );
-
-  if (!randomPokemons) {
-    throw new Error(`Error fetching random pokemons`);
-  }
-
-  return randomPokemons;
+    console.log(pokemons);
+    return pokemons;
 };
 
 module.exports = getRandomPokemons;
+

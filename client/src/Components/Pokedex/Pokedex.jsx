@@ -30,7 +30,6 @@ const Pokedex = () => {
         setCurrentPokemons(pokemons)
     }, [pokemons]);
 
-
   
     return (
         <div className={style.back}>

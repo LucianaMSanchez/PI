@@ -1,3 +1,113 @@
+
+
+.minicontainer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 2em;
+}
+
+.name{
+    font-family: 'Coda', sans-serif;
+    font-size: 1em;
+    color: rgb(0, 0, 0);
+    text-shadow: 9px 7px 6px #8a878d;
+    width: 11em;
+    text-align: center; 
+    border-radius: 8px;  
+    background-color: #f1f0f0; 
+    border: solid 4px rgb(78, 78, 78);
+    margin-top: 1em;
+}
+
+a {
+    text-decoration: none;
+}
+
+.types{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-top: 0.5em;
+    background-color: transparent;
+    height: 40%;
+    justify-self: end;
+}
+
+.typeImage{
+    width: 1em;
+    border: solid 2px rgb(75, 74, 74);
+    border-radius: 50%;
+}
+
+.imageContainer{
+    border-radius: 10px;  
+    background-color: rgba(173, 173, 173, 0.6);
+    border: solid 10px rgb(78, 78, 78);  
+}
+
+.imagePoke{
+    background-color: transparent;
+    height: 185px;  
+}
+
+.infContainer{
+
+    display: flex;
+    flex-direction: column;
+    width: 14em;
+    margin-top: 1em;
+}
+
+.idDiv{
+    display: flex;
+    flex-direction: row;
+    width: 15em;
+    justify-items: space-between;
+}
+
+.id{
+    font-family: 'Coda', sans-serif;
+    font-size: 1em;
+    color: rgb(0, 0, 0);
+    text-shadow: 9px 7px 6px #8a878d;
+    max-width: 3.5em;
+    text-align: center; 
+    border-radius: 50%;  
+    background-color: #f1f0f0; 
+    border: solid 2px rgb(78, 78, 78);
+}
+
+.champ{
+    background-color: transparent;
+    font-family: 'Coda', sans-serif;
+    font-size: 1em;
+    color: rgb(0, 0, 0);
+    border: none;
+    justify-self: right;
+}
+
+.caracteristics{
+    width: 6em; 
+    justify-items: center;
+    display: grid;
+    grid: auto / auto auto;
+ }
+
+.text{
+    width: 8.5em;
+    font-family: 'Coda', sans-serif;
+    font-size: 0.7em;
+    color: rgb(0, 0, 0);
+    text-shadow: 9px 7px 6px #8a878d;
+    text-align: center; 
+    border-radius: 5px;  
+    background-color: #f1f0f0; 
+    border: solid 3px rgb(78, 78, 78);
+    line-height: 1.2em;
+    margin: 0.5em;
+}
+
 .cardShadow{
     background-image: url("../../assets/energias/shadow.jpg");
     background-size: cover;
@@ -257,101 +367,4 @@
     align-items: center;
     box-shadow: 25px 10px 6px #665a72;
     border: solid 5px rgb(75, 74, 74);
-}
-
-.minicontainer{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 2em;
-}
-
-.name{
-    font-family: 'Coda', sans-serif;
-    font-size: 1em;
-    color: rgb(0, 0, 0);
-    text-shadow: 9px 7px 6px #8a878d;
-    width: 11em;
-    text-align: center; 
-    border-radius: 8px;  
-    background-color: #f1f0f0; 
-    border: solid 4px rgb(78, 78, 78);
-    margin-top: 1em;
-}
-
-a {
-    text-decoration: none;
-}
-
-.types{
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    padding-top: 0.5em;
-    background-color: transparent;
-    height: 40%;
-    justify-self: end;
-}
-
-.typeImage{
-    width: 1em;
-    border: solid 2px rgb(75, 74, 74);
-    border-radius: 50%;
-}
-
-.imageContainer{
-    border-radius: 10px;  
-    background-color: rgba(173, 173, 173, 0.6);
-    border: solid 10px rgb(78, 78, 78);  
-}
-
-.imagePoke{
-    background-color: transparent;
-    height: 185px;  
-}
-
-.infContainer{
-
-    display: flex;
-    flex-direction: column;
-    width: 14em;
-    margin-top: 1em;
-}
-
-.idDiv{
-    width: 15em;
-    justify-items: flex-start;
-}
-
-.id{
-    font-family: 'Coda', sans-serif;
-    font-size: 1em;
-    color: rgb(0, 0, 0);
-    text-shadow: 9px 7px 6px #8a878d;
-    max-width: 3.5em;
-    text-align: center; 
-    border-radius: 50%;  
-    background-color: #f1f0f0; 
-    border: solid 2px rgb(78, 78, 78);
-}
-
-.caracteristics{
-    width: 6em; 
-    justify-items: center;
-    display: grid;
-    grid: auto / auto auto;
- }
-
-.text{
-    width: 8.5em;
-    font-family: 'Coda', sans-serif;
-    font-size: 0.7em;
-    color: rgb(0, 0, 0);
-    text-shadow: 9px 7px 6px #8a878d;
-    text-align: center; 
-    border-radius: 5px;  
-    background-color: #f1f0f0; 
-    border: solid 3px rgb(78, 78, 78);
-    line-height: 1.2em;
-    margin: 0.5em;
 }

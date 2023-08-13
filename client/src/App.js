@@ -7,7 +7,7 @@ import Pokedex from './Components/Pokedex/Pokedex.jsx';
 import Create from './Components/Create/CreatePoke.jsx';
 import CreateDetail from './Components/CreateDetail/CreateDetail.jsx';
 import TypeDetail from './Components/TypeDetail/TypeDetail.jsx';
-// import Play from './Components/Play/Play.jsx';
+import Play from './Components/Play/Play.jsx';
 import { useLocation } from 'react-router-dom';
 import { Route } from 'react-router-dom';
 import { Routes } from 'react-router-dom';
@@ -30,13 +30,12 @@ const location = useLocation();
             <Route path="/createDetail/:id" element={<CreateDetail />} />
             <Route path="/typeDetail/:name" element={<TypeDetail />} />
             <Route path="/create" element={<Create />} />
+            <Route path="/play" element={<Play />} />
          </Routes>
       </div>
-
    );
  
 };
 
 export default App;
 
-// <Route path="/play" element={<Play />} />

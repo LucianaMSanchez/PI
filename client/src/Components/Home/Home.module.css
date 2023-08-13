@@ -10,9 +10,12 @@ height:1500px;
 .links{
     margin-top: 2em;
     width: 12em;
+    height: 11em;
     display: grid;
     grid: auto / auto auto;
     justify-content:space-around;
+    border: solid 2px rgb(109, 3, 109);
+    border-radius: 15px;
 }
 
 .link{

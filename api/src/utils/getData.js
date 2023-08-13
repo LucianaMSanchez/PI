@@ -14,10 +14,15 @@ const getData = async (data) => {
     const speedStat = await data.stats.find(stat => stat.stat.name === "speed");
     const speedPoints = speedStat.base_stat;
 
+    let image = await data.sprites.other.home.front_default
+    if(image === null) {
+      image = await data.sprites.other["official-artwork"].front_default
+    }
+
         const obj = {
         id: data.id,
         name: data.name,
-        image: data.sprites.other.home.front_default,
+        image: image,
         hitPoints: hpPoints,
         attack: attackPoints,
         defense: defensePoints,

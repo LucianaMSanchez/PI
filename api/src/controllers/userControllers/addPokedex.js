@@ -1,4 +1,4 @@
-const { OwnPokemon, Pokemon, User} = require("../../db");
+const { Pokemon, User} = require("../../db");
 
 const addPokedex = async (id, userId) => {
     const user = await User.findByPk(userId);

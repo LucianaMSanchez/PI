@@ -1,83 +1,29 @@
 const express = require("express");
-const filterType = require("../controllers/filterControllers/filterType");
-const orderAz = require("../controllers/filterControllers/orderAz");
-const orderHp = require("../controllers/filterControllers/orderHp");
-const orderAttack = require("../controllers/filterControllers/orderAttack");
-const orderDefense = require("../controllers/filterControllers/orderDefense");
-const orderSpeed = require("../controllers/filterControllers/orderSpeed");
-const filterOrigin = require("../controllers/filterControllers/filterOrigin");
+const {
+    filterTypeHandler, 
+    orderAzHandler,
+    orderHpHandler, 
+    orderAttackHandler,
+    orderDefenseHandler,
+    orderSpeedHandler,
+    filterOriginHandler
+} = require("../handlers/filterHandler")
 
 const filterRouter = express.Router();
 
-filterRouter.post("/type", async (req, res) => {
-    try {
-        const { type, allPokemons} = req.body;
-        const filteredPokemons = await filterType(type, allPokemons);
-        return res.status(200).json(filteredPokemons);   
-    } catch (error) {
-        return res.status(404).json({error: error.message});
-    }
-});
+filterRouter.post("/type", filterTypeHandler);
 
-filterRouter.post("/Az", async (req, res) => {
-    try {
-        const { order, pokemons} = req.body;
-        const orderedPokemons = await orderAz(order, pokemons);
-        return res.status(200).json(orderedPokemons);   
-    } catch (error) {
-        return res.status(404).json({error: error.message});
-    }
-});
+filterRouter.post("/Az", orderAzHandler);
 
-filterRouter.post("/hitPoints", async (req, res) => {
-    try {
-        const { order, pokemons} = req.body;
-        const orderedPokemons = await orderHp(order, pokemons);
-        return res.status(200).json(orderedPokemons);   
-    } catch (error) {
-        return res.status(404).json({error: error.message});
-    }
-});
+filterRouter.post("/hitPoints", orderHpHandler);
 
-filterRouter.post("/attack", async (req, res) => {
-    try {
-        const { order, pokemons} = req.body;
-        const orderedPokemons = await orderAttack(order, pokemons);
-        return res.status(200).json(orderedPokemons);   
-    } catch (error) {
-        return res.status(404).json({error: error.message});
-    }
-});
+filterRouter.post("/attack", orderAttackHandler);
 
-filterRouter.post("/defense", async (req, res) => {
-    try {
-        const { order, pokemons} = req.body;
-        const orderedPokemons = await orderDefense(order, pokemons);
-        return res.status(200).json(orderedPokemons);   
-    } catch (error) {
-        return res.status(404).json({error: error.message});
-    }
-});
+filterRouter.post("/defense", orderDefenseHandler);
 
-filterRouter.post("/speed", async (req, res) => {
-    try {
-        const { order, pokemons} = req.body;
-        const orderedPokemons = await orderSpeed(order, pokemons);
-        return res.status(200).json(orderedPokemons);   
-    } catch (error) {
-        return res.status(404).json({error: error.message});
-    }
-});
+filterRouter.post("/speed", orderSpeedHandler);
 
-filterRouter.post("/origin", async (req, res) => {
-    try {
-        const { origin, allPokemons} = req.body;
-        const originPokemons = await filterOrigin(origin, allPokemons);
-        return res.status(200).json(originPokemons);   
-    } catch (error) {
-        return res.status(404).json({error: error.message});
-    }
-});
+filterRouter.post("/origin", filterOriginHandler);
 
 
 module.exports = filterRouter;

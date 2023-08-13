@@ -5,8 +5,8 @@ import { GET_OWN_POKEMONS_SUCCESS, GET_OWN_POKEMONS_FAILURE, GET_OWN_POKEMON_ID_
 import { GET_TYPES_SUCCESS, GET_TYPES_FAILURE, GET_TYPE_NAME_SUCCESS, GET_TYPE_NAME_FAILURE, ADD_TYPE_TO_POK_SUCCESS, ADD_TYPE_TO_POK_FAILURE, ADD_POK_TO_TYPE_SUCCESS, ADD_POK_TO_TYPE_FAILURE } from "./action.types";
 import { ADD_POKEDEX_SUCCESS, ADD_POKEDEX_FAILURE, REMOVE_POKEDEX_SUCCESS, REMOVE_POKEDEX_FAILURE, GET_POKEDEX_SUCCESS, GET_POKEDEX_FAILURE, CREATE_TYPE_SUCCESS, CREATE_TYPE_FAILURE } from "./action.types";
 import { FILTER_TYPE_SUCCESS, FILTER_TYPE_FAILURE, ORDER_AZ_SUCCESS, ORDER_AZ_FAILURE, ORDER_HP_SUCCESS, ORDER_HP_FAILURE, ORDER_ATT_SUCCESS, ORDER_ATT_FAILURE } from "./action.types";
-import { ORDER_DEF_SUCCESS, ORDER_DEF_FAILURE, ORDER_SPEED_SUCCESS, ORDER_SPEED_FAILURE, FILTER_ORIGIN_SUCCESS, FILTER_ORIGIN_FAILURE } from "./action.types";
-import { CLOSE_CARD_SUCCESS, CLOSE_CARD_FAILURE, CLEAR_POKEMONS, CLEAR_NEW_POKEMONS, CLEAR_TYPES, CLEAR_FILTERS, CLEAR_FILTERS_POKEDEX, CLEAR_CREATED } from "./action.types";
+import { ORDER_DEF_SUCCESS, ORDER_DEF_FAILURE, ORDER_SPEED_SUCCESS, ORDER_SPEED_FAILURE, FILTER_ORIGIN_SUCCESS, FILTER_ORIGIN_FAILURE, ADD_CHAMPS_SUCCESS, ADD_CHAMPS_FAILURE } from "./action.types";
+import { CLOSE_CARD_SUCCESS, CLOSE_CARD_FAILURE, CLEAR_POKEMONS, CLEAR_NEW_POKEMONS, CLEAR_TYPES, CLEAR_FILTERS, CLEAR_FILTERS_POKEDEX, CLEAR_CREATED, REMOVE_CHAMPS_SUCCESS, REMOVE_CHAMPS_FAILURE } from "./action.types";
 
 
 export const createUser = (userData) => {
@@ -147,7 +147,7 @@ export const getRandomPokemons = () => {
 
  export const createOwnPokemon = (pokeData, userId) => {
   const {id, name, image, hitPoints, attack, defense, speed, height, weight, type1, type2} = pokeData;
-  const endpoint = "http://localhost:3001/ownPokemons";
+  const endpoint = "http://localhost:3001/ownPokemons/create";
   return async (dispatch) => {
    try {
       const {data} = await axios.post(endpoint, {id, name, image, hitPoints, attack, defense, speed, height, weight, type1, type2, userId})
@@ -165,10 +165,10 @@ export const getRandomPokemons = () => {
  };
 
  export const getOwnPokemons = (userId) => {
-  const endpoint = "http://localhost:3001/ownPokemons/" + userId;
+  const endpoint = "http://localhost:3001/ownPokemons/";
   return async (dispatch) => {
    try {
-      const {data} = await axios(endpoint)
+      const {data} = await axios.post(endpoint, {userId})
       return dispatch({
          type: GET_OWN_POKEMONS_SUCCESS,
          payload: data,
@@ -531,3 +531,38 @@ export const clearFiltersPokedex = () => {
 };
 
 
+export const addChamps = (id) => {
+  const endpoint = "http://localhost:3001/users/champs";
+  return async (dispatch) => {
+    try {
+       const {data} = await axios.post(endpoint, { id })
+       return dispatch({
+          type: ADD_CHAMPS_SUCCESS,
+          payload: data,
+        });
+      } catch (error) {
+        return dispatch({
+          type: ADD_CHAMPS_FAILURE,
+          error: error.message,
+        });
+      }
+ };
+};
+
+export const removeChamps = (id, champs) => {
+const endpoint = "http://localhost:3001/users/champs";
+return async (dispatch) => {
+  try {
+     const {data} = await axios.delete(endpoint, { data: { id, champs }})
+     return dispatch({
+        type: REMOVE_CHAMPS_SUCCESS,
+        payload: data,
+      });
+    } catch (error) {
+      return dispatch({
+        type: REMOVE_CHAMPS_FAILURE,
+        error: error.message,
+      });
+    }
+};
+};

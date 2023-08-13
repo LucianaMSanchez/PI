@@ -29,7 +29,7 @@ const addPokemonsToType = async (name) => {
             });
 
             if (!foundPokemon) {
-                console.warn(`Pokemon "${pokemon}" not found in the database`);
+                console.warn(`Some related pokemons were not found in the database`);
                 continue;
             }
 

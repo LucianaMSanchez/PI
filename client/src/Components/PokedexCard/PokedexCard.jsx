@@ -1,10 +1,28 @@
 import style from "./PokedexCard.module.css";
-import React from "react"; 
-import { Link } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { addChamps, removeChamps, getChamps} from "../../redux/actions";
+import { Link, useLocation } from "react-router-dom";
 import images from "../../utils/images";
 
 
 const PokedexCard = ({pokemon}) => {
+
+    const [isChamp, setIsChamp] = useState(false);
+    const champs = useSelector((state) => state.champs);
+    const dispatch = useDispatch();
+    const location = useLocation();
+
+    
+    const handleChamps = () => {
+        if (isChamp){
+           setIsChamp(false)
+           dispatch(removeChamps(pokemon.id, champs));
+        } else {
+           setIsChamp(true)
+           dispatch(addChamps(pokemon.id));
+        }
+    };
 
     const switchBackCard = (type) => {
         switch (type) {
@@ -53,9 +71,11 @@ const PokedexCard = ({pokemon}) => {
         }
     }
 
+
+
 return (
-    <Link to={pokemon.id < 1282 ? `/Detail/${pokemon.id}` : `/CreateDetail/${pokemon.id}`} >
     <div className={switchBackCard(pokemon.types[0])}>
+        <Link to={pokemon.id < 1282 ? `/Detail/${pokemon.id}` : `/CreateDetail/${pokemon.id}`} >
         <div className={style.miniContainer}>
             <h1 className={style.name}>{pokemon.name.toUpperCase()}</h1>
                 {pokemon.types?.map((type, index) => (
@@ -87,7 +107,7 @@ return (
         <div className={style.imageContainer}>
             <img src={pokemon.image} alt="imagePoke" className={style.imagePoke}/>
         </div>
-
+        </Link>
         <div className={style.infContainer}>
             <div className={style.caracteristics}>
                 <h3 className={style.text}>HP: <span>{pokemon.hitPoints}</span></h3>
@@ -96,13 +116,17 @@ return (
                 <h3 className={style.text}>Speed: <span>{pokemon.speed}</span> </h3>                                  
             </div>
         </div> 
-            <div className={style.idDiv}>
+        <div className={style.idDiv}>
                 <h2 className={style.id}>{pokemon.id}</h2> 
-            </div>               
+                {location.pathname === "/pokedex" ? (
+               <button onClick={handleChamps} className={style.champ} disabled={champs >= 4}> {isChamp ? "CHAMP⭐" : "CHAMP🔘" } </button>
+                ) : ( null 
+                )}
+        </div>               
     </div>          
-</Link>
+
     )
-}
+};
 
 
 export default PokedexCard;
