@@ -6,10 +6,10 @@
 
 .div{
     background-color: #3dc7be;
-    width:30%;
+    width:40%;
     align-items: center;
-    padding-left: 5em;
-    padding-right: 5em;
+    padding-left: 3em;
+    padding-right: 3em;
     padding-bottom: 5em;
 }
 
@@ -33,8 +33,9 @@
 .p{
     color: rgb(32, 3, 66);
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 1em;
+    font-size: 1.2em;
     text-align: justify;
+    line-height: 1.2em;
 }
 
 .image{

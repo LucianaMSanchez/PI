@@ -1,4 +1,5 @@
 const express = require("express");
+const { validation } = require("../middlewares/validations")
 const {
     getOwnPokemonsHandler,
     getOwnPokemonByNameHandler,
@@ -9,7 +10,7 @@ const {
 const ownPokemonsRouter = express.Router();
 
 
-ownPokemonsRouter.post("/create", createOwnPokemonHandler);
+ownPokemonsRouter.post("/create", validation, createOwnPokemonHandler);
 
 ownPokemonsRouter.post("/", getOwnPokemonsHandler);
 

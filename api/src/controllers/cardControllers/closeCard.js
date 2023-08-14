@@ -1,9 +1,6 @@
 
-function closeCard (id, pokemons) {
-  
-    pokemons = pokemons.filter(poke => poke.id !== +id);
+const closeCard = (id, pokemons) => 
+pokemons.filter(poke => poke.id !== +id);
 
-   return pokemons;
-};
 
 module.exports = closeCard;

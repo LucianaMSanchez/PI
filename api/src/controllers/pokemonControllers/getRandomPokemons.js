@@ -20,11 +20,11 @@ const getRandomPokemons = async () => {
       console.error(`Error fetching Pokémon details: ${error.message}`);
     }
   }
-    const pokemons = await Promise.all(pokemonsPromises)
-
-    console.log(pokemons);
-    return pokemons;
+  
+  const pokemons = await Promise.all(pokemonsPromises)
+  return pokemons;
 };
+
 
 module.exports = getRandomPokemons;
 

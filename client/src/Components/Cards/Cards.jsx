@@ -1,7 +1,7 @@
 import style from "./Cards.module.css";
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector} from "react-redux";
-import Card from '../Card/Card';
+import { Card } from "../index";
 import { getOwnPokemons, getPokemons, clearPokemons, clearTypes, getRandomPokemons } from "../../redux/actions";
 import logo from "../../assets/logo.png";
 
@@ -57,13 +57,12 @@ function Cards() {
                         <>
                     <div className={style.container}>
                         {pokemons?.slice((page - 1) * pokePerPage, page * pokePerPage).map((poke, index) => {
-                       
-                        return <Card 
-                        key={index}
-                        id={poke.id} 
-                        name={poke.name} 
-                        image={poke.image} 
-                        types={poke.types}
+                            return <Card 
+                            key={index}
+                            id={poke.id} 
+                            name={poke.name} 
+                            image={poke.image} 
+                            types={poke.types}
                         />;
                         })}
                     </div>

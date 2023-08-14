@@ -1,12 +1,7 @@
 
 
-const deleteChamps = async (id, champs) => {
- 
-
-    const champsLeft = await champs.filter(champ => champ.id !== id)
-
-    return champsLeft;
-};
+const deleteChamps = async (id, champs) => 
+ await champs.filter(champ => champ.id !== id)
 
 
 module.exports = deleteChamps;

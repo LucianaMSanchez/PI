@@ -10,7 +10,5 @@ const getOwnPokemons = async (userId) =>{
     
 };
 
-
-
 module.exports = getOwnPokemons;
 

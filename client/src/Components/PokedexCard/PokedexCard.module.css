@@ -2,8 +2,8 @@
 
 .minicontainer{
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: center;
     height: 2em;
 }
 
@@ -12,7 +12,7 @@
     font-size: 1em;
     color: rgb(0, 0, 0);
     text-shadow: 9px 7px 6px #8a878d;
-    width: 11em;
+    width: 13em;
     text-align: center; 
     border-radius: 8px;  
     background-color: #f1f0f0; 
@@ -25,17 +25,16 @@ a {
 }
 
 .types{
+    width: 13em;
     display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    padding-top: 0.5em;
+    flex-direction: row;
+    justify-content: center;
     background-color: transparent;
-    height: 40%;
-    justify-self: end;
+    gap: 1em;
 }
 
 .typeImage{
-    width: 1em;
+    width: 1.3em;
     border: solid 2px rgb(75, 74, 74);
     border-radius: 50%;
 }
@@ -56,14 +55,14 @@ a {
     display: flex;
     flex-direction: column;
     width: 14em;
-    margin-top: 1em;
 }
 
 .idDiv{
     display: flex;
     flex-direction: row;
     width: 15em;
-    justify-items: space-between;
+    height: 4em;
+    justify-content: space-between;
 }
 
 .id{
@@ -71,7 +70,7 @@ a {
     font-size: 1em;
     color: rgb(0, 0, 0);
     text-shadow: 9px 7px 6px #8a878d;
-    max-width: 3.5em;
+    width: 3em;
     text-align: center; 
     border-radius: 50%;  
     background-color: #f1f0f0; 
@@ -81,10 +80,12 @@ a {
 .champ{
     background-color: transparent;
     font-family: 'Coda', sans-serif;
+    font-weight: bold;
+    text-shadow: 3px 3px 6px #ffffff;
     font-size: 1em;
     color: rgb(0, 0, 0);
     border: none;
-    justify-self: right;
+    justify-self: end;
 }
 
 .caracteristics{
@@ -108,7 +109,7 @@ a {
     margin: 0.5em;
 }
 
-.cardShadow{
+.backShadow{
     background-image: url("../../assets/energias/shadow.jpg");
     background-size: cover;
     border-radius: 15px;
@@ -121,7 +122,7 @@ a {
     box-shadow: 25px 10px 6px #665a72;
     border: solid 5px rgb(75, 74, 74);
 }
-.cardFire{
+.backFire{
     background-image: url("../../assets/energias/fire.jpg");
     background-size: cover;
     border-radius: 15px;
@@ -134,7 +135,7 @@ a {
     box-shadow: 25px 10px 6px #665a72;
     border: solid 5px rgb(75, 74, 74);
 }
-.cardWater{
+.backWater{
     background-image: url("../../assets/energias/water.jpg");
     background-size: cover;
     border-radius: 15px;
@@ -147,7 +148,7 @@ a {
     box-shadow: 25px 10px 6px #665a72;
     border: solid 5px rgb(75, 74, 74);
 }
-.cardDark{
+.backDark{
     background-image: url("../../assets/energias/dark.jpg");
     background-size: cover;
     border-radius: 15px;
@@ -160,7 +161,7 @@ a {
     box-shadow: 25px 10px 6px #665a72;
     border: solid 5px rgb(75, 74, 74);
 }
-.cardBug{
+.backBug{
     background-image: url("../../assets/energias/bug.jpg");
     background-size: cover;
     border-radius: 15px;
@@ -173,7 +174,7 @@ a {
     box-shadow: 25px 10px 6px #665a72;
     border: solid 5px rgb(75, 74, 74);
 }
-.cardDragon{
+.backDragon{
     background-image: url("../../assets/energias/dragon.jpg");
     background-size: cover;
     border-radius: 15px;
@@ -186,7 +187,7 @@ a {
     box-shadow: 25px 10px 6px #665a72;
     border: solid 5px rgb(75, 74, 74);
 }
-.cardElectric{
+.backElectric{
     background-image: url("../../assets/energias/electric.jpg");
     background-size: cover;
     border-radius: 15px;
@@ -199,7 +200,7 @@ a {
     box-shadow: 25px 10px 6px #665a72;
     border: solid 5px rgb(75, 74, 74);
 }
-.cardGrass{
+.backGrass{
     background-image: url("../../assets/energias/grass.jpg");
     background-size: cover;
     border-radius: 15px;
@@ -212,7 +213,7 @@ a {
     box-shadow: 25px 10px 6px #665a72;
     border: solid 5px rgb(75, 74, 74);
 }
-.cardPoison{
+.backPoison{
     background-image: url("../../assets/energias/poison.jpg");
     background-size: cover;
     border-radius: 15px;
@@ -225,7 +226,7 @@ a {
     box-shadow: 25px 10px 6px #665a72;
     border: solid 5px rgb(75, 74, 74);
 }
-.cardIce{
+.backIce{
     background-image: url("../../assets/energias/ice.jpg");
     background-size: cover;
     border-radius: 15px;
@@ -238,7 +239,7 @@ a {
     box-shadow: 25px 10px 6px #665a72;
     border: solid 5px rgb(75, 74, 74);
 }
-.cardFighting{
+.backFighting{
     background-image: url("../../assets/energias/fighting.jpg");
     background-size: cover;
     border-radius: 15px;
@@ -251,7 +252,7 @@ a {
     box-shadow: 25px 10px 6px #665a72;
     border: solid 5px rgb(75, 74, 74);
 }
-.cardFlying{
+.backFlying{
     background-image: url("../../assets/energias/flying.jpg");
     background-size: cover;
     border-radius: 15px;
@@ -264,7 +265,7 @@ a {
     box-shadow: 25px 10px 6px #665a72;
     border: solid 5px rgb(75, 74, 74);
 }
-.cardUnknown{
+.backUnknown{
     background-image: url("../../assets/energias/unknown.jpg");
     background-size: cover;
     border-radius: 15px;
@@ -277,7 +278,7 @@ a {
     box-shadow: 25px 10px 6px #665a72;
     border: solid 5px rgb(75, 74, 74);
 }
-.cardNormal{
+.backNormal{
     background-image: url("../../assets/energias/normal.jpg");
     background-size: cover;
     border-radius: 15px;
@@ -290,7 +291,7 @@ a {
     box-shadow: 25px 10px 6px #665a72;
     border: solid 5px rgb(75, 74, 74);
 }
-.cardFairy{
+.backFairy{
     background-image: url("../../assets/energias/fairy.jpg");
     background-size: cover;
     border-radius: 15px;
@@ -303,7 +304,7 @@ a {
     box-shadow: 25px 10px 6px #665a72;
     border: solid 5px rgb(75, 74, 74);
 }
-.cardPsychic{
+.backPsychic{
     background-image: url("../../assets/energias/psychic.jpg");
     background-size: cover;
     border-radius: 15px;
@@ -316,7 +317,7 @@ a {
     box-shadow: 25px 10px 6px #665a72;
     border: solid 5px rgb(75, 74, 74);
 }
-.cardGhost{
+.backGhost{
     background-image: url("../../assets/energias/ghost.jpg");
     background-size: cover;
     border-radius: 15px;
@@ -329,7 +330,7 @@ a {
     box-shadow: 25px 10px 6px #665a72;
     border: solid 5px rgb(75, 74, 74);
 }
-.cardGround{
+.backGround{
     background-image: url("../../assets/energias/ground.jpg");
     background-size: cover;
     border-radius: 15px;
@@ -342,7 +343,7 @@ a {
     box-shadow: 25px 10px 6px #665a72;
     border: solid 5px rgb(75, 74, 74);
 }
-.cardRock{
+.backRock{
     background-image: url("../../assets/energias/rock.jpg");
     background-size: cover;
     border-radius: 15px;
@@ -355,7 +356,7 @@ a {
     box-shadow: 25px 10px 6px #665a72;
     border: solid 5px rgb(75, 74, 74);
 }
-.cardSteel{
+.backSteel{
     background-image: url("../../assets/energias/steel.jpg");
     background-size: cover;
     border-radius: 15px;

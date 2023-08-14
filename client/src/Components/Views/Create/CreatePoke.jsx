@@ -1,9 +1,9 @@
-import style from "./CreatePoke.module.css";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import PokedexCard from "../PokedexCard/PokedexCard";
-import validation from "../../utils/validationsNewPoke";
-import {clearPokemons, clearOwnPokemons, createOwnPokemon, getPokemonId} from "../../redux/actions";
+import {clearPokemons, clearOwnPokemons, createOwnPokemon, getPokemonId} from "../../../redux/actions";
+import style from "./CreatePoke.module.css";
+import { PokedexCard } from "../../index";
+import validation from "../../../utils/validationsNewPoke";
 
 
 

@@ -1,29 +1,11 @@
-import style from "./Landing.module.css";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useSelector, useDispatch} from "react-redux";
-import Form from "../Form/Form";
-import mouse from "../../assets/pikachu.png";
-import pokeball from "../../assets/pokeball.png";
-import light from "../../assets/luz2.png";
-import { loginPending } from "../../redux/actions";
+import { loginPending } from "../../../redux/actions";
+import { Form, FollowMouse } from "../../index";
+import style from "./Landing.module.css";
+import pokeball from "../../../assets/pokeball.png";
+import light from "../../../assets/luz2.png";
 
-const ImageFollowMouse = () => {
-  const [position, setPosition] = useState({ x: 0, y: 0 });
-  useEffect(() => {
-    const handleMouseMove = (event) => {
-      setPosition({ x: event.clientX, y: event.clientY });
-    };
-    window.addEventListener('mousemove', handleMouseMove);
-    return () => {
-      window.removeEventListener('mousemove', handleMouseMove);
-    };
-  }, []);
-  return (
-    <div>
-      <img className={style.mouse} src={mouse} alt="mouse" style={{ left: position.x, top: position.y }} />
-    </div>
-  );
-};
 
 const Landing = () => {
   
@@ -44,7 +26,7 @@ const Landing = () => {
   return (
     <div className={style.contenedor2}>
       <div>
-        <ImageFollowMouse />
+        <FollowMouse />
       </div>
       {access === false ? (
         <div>

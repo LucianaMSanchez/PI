@@ -6,11 +6,7 @@ const addTypesToPokemon = async (id) => {
    
   let pokemon =  id < 1282 
     ? (await Pokemon.findByPk(id))
-    : (await OwnPokemon.findByPk(id));
-    
-        if (!pokemon) {
-            throw new Error(`Pokemon with ID ${id} not found`);
-        }
+    : (await OwnPokemon.findByPk(id)); 
 
         if (!pokemon.types || pokemon.types.length === 0) {
             throw new Error(`No types related to this Pokémon`);

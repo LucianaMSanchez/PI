@@ -2,10 +2,6 @@ const { OwnPokemon, User } = require("../../db");
 
 const createOwnPokemon = async (id, name, image, hitPoints, attack, defense, speed, height, weight, type1, type2, userId) => {
     const user = await User.findByPk(userId);
-
-    if (!id || !name || !image || !hitPoints || !attack || !defense || !speed || !height || !weight || !type1 || !type2) {
-        throw new Error("All fields must be completed");
-    }
     const types = [type1, type2];
 
     const repeated = await OwnPokemon.findByPk(id);

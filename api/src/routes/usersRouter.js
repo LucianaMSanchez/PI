@@ -1,4 +1,5 @@
 const express = require("express");
+const { userValidation } = require("../middlewares/validations")
 const {
   createUserHandler,
   loginHandler,
@@ -10,7 +11,7 @@ const {
 const userRouter = express.Router();
 
 
-userRouter.post("/create", createUserHandler);
+userRouter.post("/create", userValidation, createUserHandler);
 
 userRouter.post("/login", loginHandler);
 

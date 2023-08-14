@@ -120,7 +120,7 @@ const rootReducer = (state= initialState, action) => {
             return {
                 ...state, 
                 error: null,
-                current: action.payload,
+                createdPoke: action.payload,
                 pokemons: [...state.pokemons, action.payload],
                 };
         case GET_OWN_POKEMON_ID_FAILURE: 

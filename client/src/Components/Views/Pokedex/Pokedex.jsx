@@ -1,9 +1,8 @@
 import style from "./Pokedex.module.css";
 import React, { useEffect, useState } from "react"; 
 import { useSelector, useDispatch } from "react-redux";
-import { clearPokemons, getPokedex } from "../../redux/actions";
-import Filters from "../Filters/Filters";
-import PokedexCard from "../PokedexCard/PokedexCard";
+import { clearPokemons, getPokedex } from "../../../redux/actions";
+import { PokedexCard, Filters } from "../../index";
 
 
 const Pokedex = () => {

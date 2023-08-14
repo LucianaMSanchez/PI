@@ -1,13 +1,8 @@
 const { Pokemon} = require("../../db");
 
-const addChamps = async (id) => {
 
-    let champ = await Pokemon.findByPk(id);
-    
-    if(!champ) throw new Error("You can't add this champ!");
-
-    return champ;
-};
+const addChamps = async (id) => 
+await Pokemon.findByPk(id);
 
 
 module.exports = addChamps;

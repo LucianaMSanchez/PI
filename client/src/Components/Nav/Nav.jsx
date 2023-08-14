@@ -1,11 +1,10 @@
 import React from "react";
-import SearchBar from "../SearchBar/SearchBar";
-import icono from "../../assets/pokeball.png";
-import style from "./Nav.module.css";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { useSelector } from "react-redux";
-import { useDispatch } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { logout } from "../../redux/actions";
+import style from "./Nav.module.css";
+import { SearchBar }  from "../index";
+import icono from "../../assets/pokeball.png";
 
 const Nav = () => {
  

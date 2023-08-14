@@ -1,9 +1,9 @@
-import style from "./Form.module.css";
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector} from "react-redux";
 import { useNavigate } from "react-router-dom";
-import validation from "../../utils/validationsLogIn";
 import {createUser, login} from "../../redux/actions";
+import validation from "../../utils/validationsLogIn";
+import style from "./Form.module.css";
 
 
 const Form = () => {  

@@ -1,9 +1,8 @@
-import style from "./Play.module.css";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import PokedexCard from "../PokedexCard/PokedexCard";
-import {clearPokemons, getPokemonId} from "../../redux/actions";
-
+import { clearPokemons, getPokemonId } from "../../../redux/actions";
+import { PokedexCard } from "../../index";
+import style from "./Play.module.css";
 
 
 function Play() {

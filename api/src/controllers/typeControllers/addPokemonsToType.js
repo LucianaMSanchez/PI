@@ -11,10 +11,6 @@ const addPokemonsToType = async (name) => {
             },
         });
 
-        if (!type) {
-            throw new Error(`Type with name "${name}" not found`);
-        }
-
         if (!type.pokemons) {
             throw new Error(`No pokemons related to this type`);
         }

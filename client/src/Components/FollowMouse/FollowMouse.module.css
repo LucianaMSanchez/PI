@@ -1,0 +1,7 @@
+
+.mouse{
+    width: 4em;
+    position: absolute;
+    pointer-events: none;
+    transition: 1s ease-out;
+}

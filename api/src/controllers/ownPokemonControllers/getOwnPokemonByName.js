@@ -24,4 +24,3 @@ const { Op } = require("sequelize");
 
 module.exports = getOwnPokemonByName;
 
-

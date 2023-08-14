@@ -1,16 +1,16 @@
-import React, { useState, useEffect } from "react";
-import style from "./SearchBar.module.css";
+import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getOwnPokemonId, getPokemonId, getPokemonName, getOwnPokemonName, clearPokemons } from "../../redux/actions";
+import style from "./SearchBar.module.css";
 
 const SearchBar = () => {
 
+    const pokemons = useSelector((state) => state.pokemons);
     const [id, setId] = useState("");
     const [name, setName] = useState("");
     const [inputValue, setInputValue] = useState("");
-    const dispatch = useDispatch();
-    const pokemons = useSelector((state) => state.pokemons);
     const [searched, setSearched] = useState(false);
+    const dispatch = useDispatch();
 
     const handleChange = (event) => {
         setInputValue(event.target.value);
@@ -41,7 +41,7 @@ const SearchBar = () => {
             }
         }
     };
-
+    
     const handleKeyPress = (event) => {
         if (event.key === "Enter") {
             handleSearch();

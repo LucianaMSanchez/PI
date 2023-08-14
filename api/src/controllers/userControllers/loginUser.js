@@ -3,7 +3,7 @@ const { User } = require("../../db")
 
 const login = async (email, password) => {
   
-    if (!email || !password) throw new Error("All fields must been completed");
+    if (!email || !password) throw new Error("All fields must be completed");
     
     const userFound = await User.findOne({where: {email} }); 
       if (!userFound) throw new Error("User not found");
