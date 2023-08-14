@@ -1,12 +1,12 @@
 const axios = require("axios");
 const getData = require("../../utils/getData");
 
-const getRandomPokemons = async () => {
+const getRandomPokemons = async (count) => {
   const baseUrl = "https://pokeapi.co/api/v2/pokemon/";
   let pokemonCount = 0;
   let pokemonsPromises = [];
 
-  while (pokemonCount < 12) {
+  while (pokemonCount < count) {
     try {
       const random = Math.floor(Math.random() * 1281) + 1; 
       const endpoint = `${baseUrl}${random}`;

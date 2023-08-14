@@ -5,7 +5,7 @@ import { GET_TYPES_SUCCESS, GET_TYPES_FAILURE, GET_TYPE_NAME_SUCCESS, GET_TYPE_N
 import { ADD_POKEDEX_SUCCESS, ADD_POKEDEX_FAILURE, REMOVE_POKEDEX_SUCCESS, REMOVE_POKEDEX_FAILURE, GET_POKEDEX_SUCCESS, GET_POKEDEX_FAILURE, CREATE_TYPE_SUCCESS, CREATE_TYPE_FAILURE } from "./action.types";
 import { FILTER_TYPE_SUCCESS, FILTER_TYPE_FAILURE, ORDER_AZ_SUCCESS, ORDER_AZ_FAILURE, ORDER_HP_SUCCESS, ORDER_HP_FAILURE, ORDER_ATT_SUCCESS, ORDER_ATT_FAILURE, REMOVE_CHAMPS_SUCCESS, REMOVE_CHAMPS_FAILURE } from "./action.types";
 import { ORDER_DEF_SUCCESS, ORDER_DEF_FAILURE, ORDER_SPEED_SUCCESS, ORDER_SPEED_FAILURE, FILTER_ORIGIN_SUCCESS, FILTER_ORIGIN_FAILURE, ADD_CHAMPS_SUCCESS, ADD_CHAMPS_FAILURE } from "./action.types";
-import { CLOSE_CARD_SUCCESS, CLOSE_CARD_FAILURE, CLEAR_POKEMONS, CLEAR_NEW_POKEMONS, CLEAR_TYPES, CLEAR_FILTERS, CLEAR_FILTERS_POKEDEX, CLEAR_CREATED} from "./action.types";
+import { CLOSE_CARD_SUCCESS, CLOSE_CARD_FAILURE, CLEAR_POKEMONS, CLEAR_NEW_POKEMONS, CLEAR_TYPES, CLEAR_FILTERS, CLEAR_FILTERS_POKEDEX, CLEAR_CREATED, CLEAR_ERROR} from "./action.types";
 
 const initialState = {
     pokemons: [],
@@ -99,6 +99,7 @@ const rootReducer = (state= initialState, action) => {
                 error: null,
                 current: action.payload,
                 pokemons: [...state.pokemons, action.payload],
+                allPokemons: [...state.allPokemons, action.payload],
                 };
         case GET_POKEMON_ID_FAILURE: 
             return {
@@ -110,6 +111,7 @@ const rootReducer = (state= initialState, action) => {
                 ...state, 
                 error: null,
                 pokemons: [...state.pokemons, action.payload],
+                allPokemons: [...state.allPokemons, action.payload],
                 };
         case GET_POKEMON_NAME_FAILURE: 
             return {
@@ -122,6 +124,7 @@ const rootReducer = (state= initialState, action) => {
                 error: null,
                 createdPoke: action.payload,
                 pokemons: [...state.pokemons, action.payload],
+                allPokemons: [...state.allPokemons, action.payload],
                 };
         case GET_OWN_POKEMON_ID_FAILURE: 
             return {
@@ -133,6 +136,7 @@ const rootReducer = (state= initialState, action) => {
                 ...state, 
                 error: null,
                 pokemons: [...state.pokemons, action.payload],
+                allPokemons: [...state.allPokemons, action.payload],
                 };
         case GET_OWN_POKEMON_NAME_FAILURE: 
             return {
@@ -384,6 +388,11 @@ const rootReducer = (state= initialState, action) => {
                 ...state,
                 createdType: [],
                 createdPoke: []
+                };  
+        case CLEAR_ERROR:
+                return {
+                ...state,
+                error: null,
                 };  
         default:
             return {...state};

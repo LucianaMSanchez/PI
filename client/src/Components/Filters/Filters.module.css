@@ -10,6 +10,22 @@
     justify-items: center;
     align-items: center;
 }
+
+.error{
+    font-family: 'Coda', sans-serif;
+    font-weight: bolder;
+    font-size: larger;
+    color: #128494;
+    border: solid 1px #ff5722; 
+    border-radius: 15px 15px 15px 15px;
+    height: 2.5em;
+    width: 16em;
+    background-color: #ecfeff; 
+    padding: 0.4em;
+    box-shadow: inset 0 0 5px #ee8727;
+    text-align: center;
+}
+
 .container2{
     height: 1500px;
     width: 12em;

@@ -1,11 +1,10 @@
 import style from "./Filters.module.css"
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { orderAz, orderHp, orderAttack, orderDefense, orderSpeed } from "../../redux/actions";
-import { filterOrigin, filterType, clearFilters, clearFiltersPokedex } from "../../redux/actions";
+import { filterOrigin, filterType, clearFilters, clearFiltersPokedex, clearError } from "../../redux/actions";
 import images from "../../utils/images";
-
 
 
 const Filters = ({pokemons, allPokemons}) =>{
@@ -158,7 +157,13 @@ const Filters = ({pokemons, allPokemons}) =>{
         dispatch(clearFiltersPokedex())
     }
    
-        
+    useEffect(() => {
+    setTimeout(() => {
+        dispatch(clearError());
+      }, 2000);
+      }, [aux]);
+    
+  
 
 return (
 
@@ -219,6 +224,7 @@ return (
                 <button value={aux.filterType} onClick={() => handleFilterType("unknown")} className={style.buttons}> <img src={images.unknown} alt="unknown" className={style.type} /> </button>
             </div>
         </div>
+        {error? <p className={style.error}>{error}</p> : null}
         <button className={style.clearButton} onClick={location.pathname === "/home" ? handleClear : handleClearPokedex}>
             CLEAR FILTERS
         </button>

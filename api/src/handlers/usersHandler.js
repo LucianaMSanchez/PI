@@ -11,7 +11,7 @@ const createUserHandler = async (req, res) => {
         const newUser = await createUser(name, email, password);
         return res.status(200).json(newUser);
     } catch (error) {
-        return res.status(404).json({error: error.message})
+        return res.status(404).json({ errorMessage: error.message })
        
     }
 };
@@ -22,7 +22,8 @@ const loginHandler = async (req, res) =>{
         const userId = await login(email, password);
         return res.status(200).json(userId)
     } catch (error) {
-        return res.status(404).json({error: error.message})
+      console.log(error.message)
+        return res.status(404).json({ errorMessage: error.message })
     }
 };
 
@@ -32,7 +33,7 @@ const getPokedexHandler = async (req, res) => {
       const pokedex = await getPokedex(userId);
       return res.status(200).json(pokedex);    
     } catch (error) {
-      return res.status(404).json({error: error.message})
+      return res.status(404).json({ errorMessage: error.message })
     }
   };
 
@@ -42,7 +43,7 @@ const deletePokedexHandler = async (req, res) => {
       const pokedex = await deletePokedex(id, userId);
       return res.status(200).json(pokedex);    
     } catch (error) {
-      return res.status(404).json({error: error.message})
+      return res.status(404).json({ errorMessage: error.message })
     }
   };
 
@@ -52,7 +53,7 @@ const addPokedexHandler = async (req, res) =>{
       const pokedex = await addPokedex(id, userId);
       return res.status(200).json(pokedex);    
     } catch (error) {
-      return res.status(404).json({error: error.message})
+      return res.status(404).json({ errorMessage: error.message })
     }
   };
 

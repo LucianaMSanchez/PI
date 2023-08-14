@@ -16,7 +16,7 @@ pokemonsRouter.get("/search", getPokemonByNameHandler);
 
 pokemonsRouter.get("/", getPokemonsHandler);    
 
-pokemonsRouter.get("/random", getRandomPokemonsHandler);    
+pokemonsRouter.post("/random", getRandomPokemonsHandler);    
 
 pokemonsRouter.get("/:id", getPokemonByIdHandler);
 

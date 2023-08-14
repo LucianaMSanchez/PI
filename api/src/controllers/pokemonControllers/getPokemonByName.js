@@ -27,12 +27,12 @@ const getPokemonByName = async (name) =>{
         .then((response) => response.data)
         .then((data) => getData(data))
         .catch((error) => {
-          throw new Error(`Error fetching data: ${error.message}`);
+           console.warn(`Error fetching data: ${error.message}`);
         });
         foundPokemon = newpokemon;
       }
     
-    if(!foundPokemon) throw new Error (`There is no pokemon with id:${id}`)
+    if(!foundPokemon) throw new Error (`No original pokémons named: ${name}`)
     return foundPokemon;
     };
       

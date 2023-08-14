@@ -2,7 +2,7 @@ import style from "./Cards.module.css";
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector} from "react-redux";
 import { Card } from "../index";
-import { getOwnPokemons, getPokemons, clearPokemons, clearTypes, getRandomPokemons } from "../../redux/actions";
+import { getOwnPokemons, getPokemons, clearPokemons, clearTypes, getRandomPokemons, clearError } from "../../redux/actions";
 import logo from "../../assets/logo.png";
 
 
@@ -10,11 +10,12 @@ function Cards() {
 
     
     const pokemons = useSelector((state) => state.pokemons); 
+    const error = useSelector((state) => state.error); 
+    const userId = useSelector((state) => state.user);
     const [page, setPage] = useState(1);
+    const dispatch = useDispatch()
     const pokePerPage = 12;
     const maxPage = Math.ceil(pokemons.length / pokePerPage);
-    const userId = useSelector((state) => state.user);
-    const dispatch = useDispatch()
    
     useEffect(() => {
         if (userId) {
@@ -28,7 +29,7 @@ function Cards() {
       }, []);
 
     const randomGet = () => {
-        dispatch(getRandomPokemons())
+        dispatch(getRandomPokemons(12))
     }
     
     const previousPage = () =>{
@@ -41,9 +42,22 @@ function Cards() {
         setPage(page + 1)
     }
 
+    useEffect(() => {
+        setPage(1)
+      }, [pokemons]);
+
+    useEffect(() => {
+        setTimeout(() => {
+            dispatch(clearError());
+        }, 3000);
+        }, [error]);
+
     return (
     
-    <div className={style.back}>
+        <div className={style.back}>
+        {error ? (
+                <p className={style.error}>{error}</p>
+            ) : ( null)}
        
             <div className={style.divUno}>
                 <div className={style.imageDiv}>
@@ -78,14 +92,12 @@ function Cards() {
                         <button onClick={nextPage} className={style.buttonNext}>▶</button>
                     </div>
                 </div>
-        </>
-        ) : (
-          
-            <div className={style.pokeball}></div>
-          
+                </>
+            ) : (
+                    <div className={style.pokeball}></div>
             )}
-            </div>
-    )
+        </div>
+    );
 }
 
 export default Cards;

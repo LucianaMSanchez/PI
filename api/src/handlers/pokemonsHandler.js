@@ -11,7 +11,7 @@ const createPokemonHandler = async (req, res) => {
         const pokemon = await createPokemon(id);
         return res.status(200).json(pokemon);
     } catch (error) {
-        return res.status(404).json({error: error.message})
+        return res.status(404).json({ errorMessage: error.message })
     }
 };
 
@@ -21,7 +21,7 @@ const getPokemonByNameHandler = async (req, res) => {
         const pokemon = await getPokemonByName(name);
         return res.status(200).json(pokemon);
     } catch (error) {
-        return res.status(404).json({error: error.message})
+        return res.status(404).json({ errorMessage: error.message })
     }
 };
 
@@ -30,16 +30,17 @@ const getPokemonsHandler = async (req, res) => {
       const pokemons = await getPokemons();  
       return res.status(200).json(pokemons);    
     } catch (error) {
-      return res.status(404).json({error: error.message})  
+      return res.status(404).json({ errorMessage: error.message })  
     }  
 };
 
 const getRandomPokemonsHandler = async (req, res) => {
     try {
-      const randomPokemons = await getRandomPokemons();  
-      return res.status(200).json(randomPokemons);    
+        const {count} = req.body;
+        const randomPokemons = await getRandomPokemons(count);  
+        return res.status(200).json(randomPokemons);    
     } catch (error) {
-      return res.status(404).json({error: error.message})  
+        return res.status(404).json({ errorMessage: error.message })  
     }  
 }; 
 
@@ -49,7 +50,7 @@ const getPokemonByIdHandler = async (req, res) => {
         const pokemon = await getPokemonById(id);
         return res.status(200).json(pokemon);
     } catch (error) {
-        return res.status(404).json({error: error.message})
+        return res.status(404).json({ errorMessage: error.message })
     }
 };
 

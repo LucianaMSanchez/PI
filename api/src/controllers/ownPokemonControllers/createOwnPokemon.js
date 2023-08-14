@@ -4,10 +4,9 @@ const createOwnPokemon = async (id, name, image, hitPoints, attack, defense, spe
     const user = await User.findByPk(userId);
     const types = [type1, type2];
 
-    const repeated = await OwnPokemon.findByPk(id);
-    if (repeated) {
-        throw new Error("This ID is already been used, choose another number");
-    }
+    if(id < 1282) throw new Error("This ID is already been used, choose a number over 1281");
+    if(await OwnPokemon.findByPk(id)) throw new Error("This ID is already been used, choose another number");
+    
 
     const newPokemon = await OwnPokemon.create({
         id,

@@ -12,6 +12,7 @@ const Create = () => {
     const newPokemons = useSelector((state) => state.newPokemons);
     const current = useSelector((state) => state.current);
     const userId = useSelector((state) => state.user);
+    const error = useSelector((state) => state.error);
     const dispatch = useDispatch();
     const [errors, setErrors]= useState({});
     const [image, setImage] = useState(null);
@@ -94,6 +95,7 @@ const Create = () => {
 return (
 <div className={style.back}>
 <div className={style.container}>
+    {error && <p className={style.error}>{error}</p>}
     <form onSubmit={submitHandler}>
 
         <div className={style.row}>
@@ -242,7 +244,7 @@ return (
             <div className={style.col1}></div>
                 <label htmlFor="image">Image</label>
                 <input type="text" id="image" name="image" value={pokeData.image} onChange={handleInputChange} placeholder="Paste here your image URL"/><br/>
-                    {errors.image ?  <span className={style.error}>{errors.image}</span> : null}
+                    {!image && errors.image ?  <span className={style.error}>{errors.image}</span> : null}
         </div>
        
            { image ? (

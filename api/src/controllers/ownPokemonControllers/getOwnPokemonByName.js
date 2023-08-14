@@ -17,7 +17,7 @@ const { Op } = require("sequelize");
       ],
     });
    
-    if(!ownPoke) throw new Error(`There is no pokemon named:${name}`)
+    if(!ownPoke) throw new Error(`No Own pokémons named: ${name}`)
     return ownPoke;
   }
 

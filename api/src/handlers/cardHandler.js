@@ -7,7 +7,7 @@ const closeCardHandler = async (req, res) => {
         const pokemonsLeft = await closeCard(id, pokemons);
         return res.status(200).json(pokemonsLeft);   
     } catch (error) {
-        return res.status(404).json({error: error.message});
+        return res.status(404).json({ errorMessage: error.message });
     }
 };
 

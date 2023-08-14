@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { clearPokemons, getPokemonId } from "../../../redux/actions";
+import { clearPokemons, getRandomPokemons } from "../../../redux/actions";
 import { PokedexCard } from "../../index";
 import style from "./Play.module.css";
 
@@ -10,7 +10,6 @@ const Play = () => {
    const pokemons = useSelector((state) => state.pokemons);
    const champs = useSelector((state) => state.champs);
    const [hidden, setHidden] = useState(true);
-   const [displayCount, setDisplayCount] = useState(0);
    const [display, setDisplay] = useState(false);
    const dispatch = useDispatch()
    
@@ -22,19 +21,12 @@ const Play = () => {
      };
    }, []);
 
-
    const displayRandom = () => {
       if(!display){
-      const newDisplayCount = displayCount + 4;
-      setDisplayCount(newDisplayCount);
-
-      for (let i = displayCount; i < newDisplayCount; i++) {
-         const idRandom = Math.floor(Math.random() * 1281) + 1;
-         dispatch(getPokemonId(idRandom));
-      }
+         dispatch(getRandomPokemons(4))
    }
    setDisplay(true);
-   }
+   };
 
    const showRandom = () =>{
       setHidden(false);

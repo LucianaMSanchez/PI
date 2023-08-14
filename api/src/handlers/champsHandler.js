@@ -8,7 +8,7 @@ const deleteChampsHandler = async (req, res) => {
       const champsLeft = await deleteChamps(id, champs);
       return res.status(200).json(champsLeft);    
     } catch (error) {
-      return res.status(404).json({error: error.message})
+      return res.status(404).json({ errorMessage: error.message })
     }
   };
 
@@ -18,7 +18,7 @@ const addChampsHandler = async (req, res) =>{
       const champToAdd = await addChamps(id);
       return res.status(200).json(champToAdd);    
     } catch (error) {
-      return res.status(404).json({error: error.message})
+      return res.status(404).json({ errorMessage: error.message })
     }
   };
 

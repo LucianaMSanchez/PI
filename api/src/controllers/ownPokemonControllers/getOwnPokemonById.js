@@ -13,7 +13,7 @@ const getOwnPokemonById = async (id) =>{
     ],
   });
   
-  if(!ownPokemon) throw new Error(`There is no pokemon with id:${id}`)
+  if(!ownPokemon) throw new Error(`There is no pokémon with id: ${id}`)
   return ownPokemon;
 }
 

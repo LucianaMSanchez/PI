@@ -4,7 +4,7 @@ import { GET_POKEMONS_SUCCESS, GET_POKEMONS_FAILURE, GET_RANDOM_SUCCESS, GET_RAN
 import { GET_OWN_POKEMONS_SUCCESS, GET_OWN_POKEMONS_FAILURE, GET_OWN_POKEMON_ID_SUCCESS, GET_OWN_POKEMON_ID_FAILURE, GET_OWN_POKEMON_NAME_SUCCESS, GET_OWN_POKEMON_NAME_FAILURE } from "./action.types";
 import { GET_TYPES_SUCCESS, GET_TYPES_FAILURE, GET_TYPE_NAME_SUCCESS, GET_TYPE_NAME_FAILURE, ADD_TYPE_TO_POK_SUCCESS, ADD_TYPE_TO_POK_FAILURE, ADD_POK_TO_TYPE_SUCCESS, ADD_POK_TO_TYPE_FAILURE } from "./action.types";
 import { ADD_POKEDEX_SUCCESS, ADD_POKEDEX_FAILURE, REMOVE_POKEDEX_SUCCESS, REMOVE_POKEDEX_FAILURE, GET_POKEDEX_SUCCESS, GET_POKEDEX_FAILURE, CREATE_TYPE_SUCCESS, CREATE_TYPE_FAILURE } from "./action.types";
-import { FILTER_TYPE_SUCCESS, FILTER_TYPE_FAILURE, ORDER_AZ_SUCCESS, ORDER_AZ_FAILURE, ORDER_HP_SUCCESS, ORDER_HP_FAILURE, ORDER_ATT_SUCCESS, ORDER_ATT_FAILURE } from "./action.types";
+import { FILTER_TYPE_SUCCESS, FILTER_TYPE_FAILURE, ORDER_AZ_SUCCESS, ORDER_AZ_FAILURE, ORDER_HP_SUCCESS, ORDER_HP_FAILURE, ORDER_ATT_SUCCESS, ORDER_ATT_FAILURE, CLEAR_ERROR } from "./action.types";
 import { ORDER_DEF_SUCCESS, ORDER_DEF_FAILURE, ORDER_SPEED_SUCCESS, ORDER_SPEED_FAILURE, FILTER_ORIGIN_SUCCESS, FILTER_ORIGIN_FAILURE, ADD_CHAMPS_SUCCESS, ADD_CHAMPS_FAILURE } from "./action.types";
 import { CLOSE_CARD_SUCCESS, CLOSE_CARD_FAILURE, CLEAR_POKEMONS, CLEAR_NEW_POKEMONS, CLEAR_TYPES, CLEAR_FILTERS, CLEAR_FILTERS_POKEDEX, CLEAR_CREATED, REMOVE_CHAMPS_SUCCESS, REMOVE_CHAMPS_FAILURE } from "./action.types";
 
@@ -22,7 +22,7 @@ export const createUser = (userData) => {
     } catch (error) {
       return dispatch({
         type: CREATE_USER_FAILURE,
-        error: error.message,
+        error: error.response.data.errorMessage, 
       });
     }
   };
@@ -41,7 +41,7 @@ export const login = (userData) => {
     } catch (error) {
       return dispatch({
         type: LOG_IN_FAILURE,
-        error: error.message,
+        error: error.response.data.errorMessage, 
       });
     }
   };
@@ -67,17 +67,17 @@ export const getPokemons = () => {
      } catch (error) {
        return dispatch({
          type: GET_POKEMONS_FAILURE,
-         error: error.message,
+         error: error.response.data.errorMessage, 
        });
      }
    };
  };
 
-export const getRandomPokemons = () => {
+export const getRandomPokemons = (count) => {
   const endpoint = "http://localhost:3001/pokemons/random";
   return async (dispatch) => {
    try {
-      const {data} = await axios(endpoint)
+      const {data} = await axios.post(endpoint, {count})
       return dispatch({
          type: GET_RANDOM_SUCCESS,
          payload: data,
@@ -85,7 +85,7 @@ export const getRandomPokemons = () => {
      } catch (error) {
        return dispatch({
          type: GET_RANDOM_FAILURE,
-         error: error.message,
+         error: error.response.data.errorMessage, 
        });
      }
    };
@@ -103,7 +103,7 @@ export const getRandomPokemons = () => {
      } catch (error) {
        return dispatch({
          type: GET_POKEMON_ID_FAILURE,
-         error: error.message,
+         error: error.response.data.errorMessage, 
        });
      }
    };
@@ -121,7 +121,7 @@ export const getRandomPokemons = () => {
      } catch (error) {
        return dispatch({
          type: GET_POKEMON_NAME_FAILURE,
-         error: error.message,
+         error: error.response.data.errorMessage, 
        });
      }
    };
@@ -139,7 +139,7 @@ export const getRandomPokemons = () => {
       } catch (error) {
         return dispatch({
           type: CREATE_POKEMON_FAILURE,
-          error: error.message,
+          error: error.response.data.errorMessage, 
         });
       }
  };
@@ -158,7 +158,7 @@ export const getRandomPokemons = () => {
      } catch (error) {
        return dispatch({
          type: CREATE_OWN_POKEMON_FAILURE,
-         error: error.message,
+         error: error.response.data.errorMessage, 
        });
      }
    };
@@ -176,7 +176,7 @@ export const getRandomPokemons = () => {
      } catch (error) {
        return dispatch({
          type: GET_OWN_POKEMONS_FAILURE,
-         error: error.message,
+         error: error.response.data.errorMessage, 
        });
      }
    };
@@ -194,7 +194,7 @@ export const getRandomPokemons = () => {
      } catch (error) {
        return dispatch({
          type: GET_OWN_POKEMON_ID_FAILURE,
-         error: error.message,
+         error: error.response.data.errorMessage, 
        });
      }
    };
@@ -212,7 +212,7 @@ export const getRandomPokemons = () => {
      } catch (error) {
        return dispatch({
          type: GET_OWN_POKEMON_NAME_FAILURE,
-         error: error.message,
+         error: error.response.data.errorMessage, 
        });
      }
    };
@@ -230,7 +230,7 @@ export const getRandomPokemons = () => {
      } catch (error) {
        return dispatch({
          type: GET_TYPES_FAILURE,
-         error: error.message,
+         error: error.response.data.errorMessage, 
        });
      }
    };
@@ -248,7 +248,7 @@ export const getRandomPokemons = () => {
      } catch (error) {
        return dispatch({
          type: GET_TYPE_NAME_FAILURE,
-         error: error.message,
+         error: error.response.data.errorMessage, 
        });
      }
    };
@@ -266,7 +266,7 @@ export const getRandomPokemons = () => {
       } catch (error) {
         return dispatch({
           type: CREATE_TYPE_FAILURE,
-          error: error.message,
+          error: error.response.data.errorMessage, 
         });
       }
  };
@@ -284,7 +284,7 @@ export const getRandomPokemons = () => {
     } catch (error) {
       return dispatch({
         type: ADD_TYPE_TO_POK_FAILURE,
-        error: error.message,
+        error: error.response.data.errorMessage, 
       });
     }
   };
@@ -302,7 +302,7 @@ export const addPokToType = (name) => {
     } catch (error) {
       return dispatch({
         type: ADD_POK_TO_TYPE_FAILURE,
-        error: error.message,
+        error: error.response.data.errorMessage, 
       });
     }
   };
@@ -320,7 +320,7 @@ export const addPokedex = (id, userId) => {
         } catch (error) {
           return dispatch({
             type: ADD_POKEDEX_FAILURE,
-            error: error.message,
+            error: error.response.data.errorMessage, 
           });
         }
    };
@@ -338,7 +338,7 @@ export const removePokedex = (id, userId) => {
       } catch (error) {
         return dispatch({
           type: REMOVE_POKEDEX_FAILURE,
-          error: error.message,
+          error: error.response.data.errorMessage, 
         });
       }
  };
@@ -356,28 +356,28 @@ export const getPokedex = (userId) => {
       } catch (error) {
         return dispatch({
           type: GET_POKEDEX_FAILURE,
-          error: error.message,
+          error: error.response.data.errorMessage, 
         });
       }
  };
 };
 
 export const filterType = (type, allPokemons) => {
-   const endpoint = "http://localhost:3001/filter/type";
-   return async (dispatch) => {
-     try {
-        const {data} = await axios.post(endpoint, { type, allPokemons })
-        return dispatch({
-         type: FILTER_TYPE_SUCCESS,
-         payload: data,
-       });
-     } catch (error) {
+  const endpoint = "http://localhost:3001/filter/type";
+  return async (dispatch) => {
+    try {
+       const {data} = await axios.post(endpoint, { type, allPokemons })
        return dispatch({
-         type: FILTER_TYPE_FAILURE,
-         error: error.message,
-       });
-     }
-   };
+        type: FILTER_TYPE_SUCCESS,
+        payload: data,
+      });
+    } catch (error) {
+      return dispatch({
+        type: FILTER_TYPE_FAILURE,
+        error: error.response.data.errorMessage, 
+      });
+    }
+  };
 };
 
 export const orderAz = (order, pokemons) => {
@@ -392,7 +392,7 @@ export const orderAz = (order, pokemons) => {
     } catch (error) {
       return dispatch({
         type: ORDER_AZ_FAILURE,
-        error: error.message,
+        error: error.response.data.errorMessage, 
       });
     }
   };
@@ -410,7 +410,7 @@ export const orderHp = (order, pokemons) => {
     } catch (error) {
       return dispatch({
         type: ORDER_HP_FAILURE,
-        error: error.message,
+        error: error.response.data.errorMessage, 
       });
     }
   };
@@ -428,7 +428,7 @@ export const orderAttack = (order, pokemons) => {
     } catch (error) {
       return dispatch({
         type: ORDER_ATT_FAILURE,
-        error: error.message,
+        error: error.response.data.errorMessage, 
       });
     }
   };
@@ -446,7 +446,7 @@ export const orderDefense = (order, pokemons) => {
     } catch (error) {
       return dispatch({
         type: ORDER_DEF_FAILURE,
-        error: error.message,
+        error: error.response.data.errorMessage, 
       });
     }
   };
@@ -464,7 +464,7 @@ export const orderSpeed = (order, pokemons) => {
     } catch (error) {
       return dispatch({
         type: ORDER_SPEED_FAILURE,
-        error: error.message,
+        error: error.response.data.errorMessage, 
       });
     }
   };
@@ -482,7 +482,7 @@ export const filterOrigin = (origin, allPokemons) => {
     } catch (error) {
       return dispatch({
         type: FILTER_ORIGIN_FAILURE,
-        error: error.message,
+        error: error.response.data.errorMessage, 
       });
     }
   };
@@ -500,7 +500,7 @@ export const closeCard = (id, pokemons) => {
     } catch (error) {
       return dispatch({
         type: CLOSE_CARD_FAILURE,
-        error: error.message,
+        error: error.response.data.errorMessage, 
       });
     }
   };
@@ -530,6 +530,10 @@ export const clearFiltersPokedex = () => {
   return {type:CLEAR_FILTERS_POKEDEX}
 };
 
+export const clearError = () => {
+  return { type: CLEAR_ERROR };
+};
+
 
 export const addChamps = (id) => {
   const endpoint = "http://localhost:3001/users/champs";
@@ -543,7 +547,7 @@ export const addChamps = (id) => {
       } catch (error) {
         return dispatch({
           type: ADD_CHAMPS_FAILURE,
-          error: error.message,
+          error: error.response.data.errorMessage, 
         });
       }
  };
@@ -561,7 +565,7 @@ return async (dispatch) => {
     } catch (error) {
       return dispatch({
         type: REMOVE_CHAMPS_FAILURE,
-        error: error.message,
+        error: error.response.data.errorMessage, 
       });
     }
 };

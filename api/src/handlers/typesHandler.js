@@ -10,7 +10,7 @@ const getTypesHandler = async (req, res) => {
       const types = await getTypes();
       return res.status(200).json(types);    
     } catch (error) {
-      return res.status(404).json({error: error.message})
+      return res.status(404).json({ errorMessage: error.message })
     }
   };
 
@@ -20,7 +20,7 @@ const addTypesHandler = async (req, res) => {
       const types = await addTypesToPokemon(id);
       return res.status(200).json(types);
     } catch (error) {
-        return res.status(404).json({error: error.message})
+        return res.status(404).json({ errorMessage: error.message })
     }
 };
 
@@ -30,7 +30,7 @@ const addPokeHandler = async (req, res) => {
       const pokemons = await addPokemonsToType(name);
       return res.status(200).json(pokemons);
     } catch (error) {
-      return res.status(404).json({error: error.message})
+      return res.status(404).json({ errorMessage: error.message })
       
     }
   };
@@ -41,7 +41,7 @@ const createTypeHandler = async (req, res) => {
       const type = await createType(name);
       return res.status(200).json(type);
     } catch (error) {
-      return res.status(404).json({error: error.message})
+      return res.status(404).json({ errorMessage: error.message })
     }
   };
 
@@ -51,7 +51,7 @@ const getTypeNameHandler = async (req, res) => {
       const type = await getTypeByName(name);
       return res.status(200).json(type);    
     } catch (error) {
-      return res.status(404).json({error: error.message})
+      return res.status(404).json({ errorMessage: error.message })
     }
   };
 

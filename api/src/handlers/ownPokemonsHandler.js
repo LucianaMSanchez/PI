@@ -9,7 +9,7 @@ const getOwnPokemonByNameHandler = async (req, res) => {
         const pokemon = await getOwnPokemonByName(name);
         return res.status(200).json(pokemon);
     } catch (error) {
-        return res.status(404).json({error: error.message})
+        return res.status(404).json({ errorMessage: error.message })
     }
 };
 
@@ -19,7 +19,7 @@ const getOwnPokemonsHandler = async (req, res) => {
         const pokemons = await getOwnPokemons(userId);
         return res.status(200).json(pokemons);    
     } catch (error) {
-        return res.status(404).json({error: error.message})
+        return res.status(404).json({ errorMessage: error.message })
     }
 };
 
@@ -29,7 +29,7 @@ const getOwnPokemonByIdHandler = async (req, res) => {
         const pokemon = await getOwnPokemonById(id);
         return res.status(200).json(pokemon);
     } catch (error) {
-        return res.status(404).json({error: error.message})
+        return res.status(404).json({ errorMessage: error.message })
     }
 };
 
@@ -39,7 +39,7 @@ const createOwnPokemonHandler = async (req, res) => {
         const newPokemon = await createOwnPokemon(id, name, image, hitPoints, attack, defense, speed, height, weight, type1, type2, userId);
         return res.status(200).json(newPokemon);
     } catch (error) {
-        return res.status(404).json({error: error.message})
+        return res.status(404).json({ errorMessage: error.message })
     }
 };
 

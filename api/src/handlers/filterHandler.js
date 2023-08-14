@@ -13,7 +13,7 @@ const filterTypeHandler = async (req, res) => {
         const filteredPokemons = await filterType(type, allPokemons);
         return res.status(200).json(filteredPokemons);   
     } catch (error) {
-        return res.status(404).json({error: error.message});
+        return res.status(404).json({ errorMessage: error.message });
     }
 };
 
@@ -23,7 +23,7 @@ const orderAzHandler = async (req, res) => {
         const orderedPokemons = await orderAz(order, pokemons);
         return res.status(200).json(orderedPokemons);   
     } catch (error) {
-        return res.status(404).json({error: error.message});
+        return res.status(404).json({ errorMessage: error.message });
     }
 };
 
@@ -33,7 +33,7 @@ const orderHpHandler = async (req, res) => {
         const orderedPokemons = await orderHp(order, pokemons);
         return res.status(200).json(orderedPokemons);   
     } catch (error) {
-        return res.status(404).json({error: error.message});
+        return res.status(404).json({ errorMessage: error.message });
     }
 };
 
@@ -43,7 +43,7 @@ const orderAttackHandler =  async (req, res) => {
         const orderedPokemons = await orderAttack(order, pokemons);
         return res.status(200).json(orderedPokemons);   
     } catch (error) {
-        return res.status(404).json({error: error.message});
+        return res.status(404).json({ errorMessage: error.message });
     }
 };
 
@@ -53,7 +53,7 @@ const orderDefenseHandler = async (req, res) => {
         const orderedPokemons = await orderDefense(order, pokemons);
         return res.status(200).json(orderedPokemons);   
     } catch (error) {
-        return res.status(404).json({error: error.message});
+        return res.status(404).json({ errorMessage: error.message });
     }
 };
 
@@ -63,7 +63,7 @@ const orderSpeedHandler = async (req, res) => {
         const orderedPokemons = await orderSpeed(order, pokemons);
         return res.status(200).json(orderedPokemons);   
     } catch (error) {
-        return res.status(404).json({error: error.message});
+        return res.status(404).json({ errorMessage: error.message });
     }
 };
 
@@ -73,7 +73,7 @@ const filterOriginHandler = async (req, res) => {
         const originPokemons = await filterOrigin(origin, allPokemons);
         return res.status(200).json(originPokemons);   
     } catch (error) {
-        return res.status(404).json({error: error.message});
+        return res.status(404).json({ errorMessage: error.message });
     }
 };
 

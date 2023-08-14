@@ -28,8 +28,9 @@ const SearchBar = () => {
             return window.alert('Repeated Pokémon');
         } else {
             if (id) {
-                dispatch(getPokemonId(id));
-                dispatch(getOwnPokemonId(id));
+                id < 1282 
+                ? dispatch(getPokemonId(id))
+                : dispatch(getOwnPokemonId(id));
             } else if(name){
                 dispatch(getPokemonName(name));
                 dispatch(getOwnPokemonName(name));

@@ -6,6 +6,14 @@
   background-size: cover;
 }
 
+.error{
+    font-size: 0.8em;
+    color: #cf4a15;
+    font-family: 'Coda', sans-serif;
+    font-weight: normal;
+    margin-left: 3em;
+}
+
 input[type=text], select, textarea{
     width: 100%;
     padding: 12px;
