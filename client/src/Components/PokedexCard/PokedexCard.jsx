@@ -57,7 +57,7 @@ return (
         <div className={style.idDiv}>
                 <h2 className={style.id}>{pokemon.id}</h2> 
                 {location.pathname === "/pokedex" ? (
-               <button onClick={handleChamps} className={style.champ} disabled={champs >= 4}> {isChamp ? "CHAMP⭐" : "CHAMP🔘" } </button>
+               <button onClick={handleChamps} className={style.champ} disabled={champs.length === 4}> {isChamp ? "CHAMP⭐" : "CHAMP🔘" } </button>
                 ) : ( null 
                 )}
         </div>               
