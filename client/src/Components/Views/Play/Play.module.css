@@ -81,11 +81,11 @@
   font-weight: bolder;
   border: solid 1px #4ef037;
   border-radius: 15px 15px 15px 15px;
-  height: 3em;
-  width: 7em;
+  height: 2.5em;
+  width: 6em;
   border-radius: 20%;
   background-color:#ecfeff;
-  padding: 0.8em;
+  padding: 0.6em;
   box-shadow: inset 0 0 5px #00b7c2;
   z-index: 9999;
 }

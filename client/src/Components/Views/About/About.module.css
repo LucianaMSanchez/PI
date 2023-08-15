@@ -10,14 +10,14 @@
     align-items: center;
     padding-left: 3em;
     padding-right: 3em;
-    padding-bottom: 5em;
+    padding-bottom: 1em;
 }
 
 .h1{
     font-family: 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
     color: rgb(255, 143, 14);
     text-shadow: 5px 5px 7px black;
-    font-size: 3em;
+    font-size: 2em;
     text-align: left;
     padding-top: 0.5em;
 }
@@ -35,7 +35,7 @@
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 1.2em;
     text-align: justify;
-    line-height: 1.2em;
+    line-height: 1.1em;
 }
 
 .image{
