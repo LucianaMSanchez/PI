@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { clearPokemons, getRandomPokemons } from "../../../redux/actions";
+import { clearPokemons, getRandomPokemons, clearChamps } from "../../../redux/actions";
 import { PokedexCard } from "../../index";
 import style from "./Play.module.css";
 
@@ -9,8 +9,11 @@ const Play = () => {
 
    const pokemons = useSelector((state) => state.pokemons);
    const champs = useSelector((state) => state.champs);
-   const [hidden, setHidden] = useState(true);
+   const [showWinnerMessage, setShowWinnerMessage] = useState(false);
+   const [showLooserMessage, setShowLooserMessage] = useState(false);
+   const [showTieMessage, setShowTieMessage] = useState(false);
    const [display, setDisplay] = useState(false);
+   const [play, setPlay] = useState(false);
    const dispatch = useDispatch()
    
 
@@ -18,6 +21,7 @@ const Play = () => {
          dispatch(clearPokemons());
       return () => {
          dispatch(clearPokemons());
+         dispatch(clearChamps());
      };
    }, []);
 
@@ -25,15 +29,12 @@ const Play = () => {
       if(!display){
          dispatch(getRandomPokemons(4))
    }
-   setDisplay(true);
+      setDisplay(true);
    };
 
-   const showRandom = () =>{
-      setHidden(false);
-   };
    
    const playGame = () => {
-      showRandom()
+      if(!play) {
       const winningCards = [];
    
       pokemons.forEach((poke, index) => {
@@ -53,8 +54,8 @@ const Play = () => {
             speed: champ.speed
          };
    
-         let pokeWins = 0;
-         let champWins = 0;
+      let pokeWins = 0;
+      let champWins = 0;
    
          for (const stat in pokeStats) {
             if (pokeStats[stat] > champStats[stat]) {
@@ -63,21 +64,26 @@ const Play = () => {
                champWins++;
             }
          }
-   
-         if (champWins > pokeWins) {
+        console.log(champWins);
+      if (champWins > pokeWins) {
             winningCards.push(champ);
          } 
       });
-   
+      
+      console.log(winningCards);
+      setTimeout(() => {
+         if (winningCards.length >= 3) {
+            setShowWinnerMessage(true);
+         } else if (winningCards.length === 2) {
+            setShowTieMessage(true);
+         } else {
+            setShowLooserMessage(true);
+         }
+      }, 1500);
 
-      const userWins = winningCards.length >= 3;
-
-      if (userWins) {
-         console.log("You win!");
-      } else {
-         console.log("You lose.");
+      setPlay(true);
       }
-   }
+   };
    
 
    return (
@@ -85,11 +91,11 @@ const Play = () => {
       <div className={style.back}>
          <div className={style.container1}>
                {pokemons?.map((poke)=> (
-                  <PokedexCard key={poke.index} pokemon={poke} className={hidden ? style.hidden : null}/>
+                  <PokedexCard key={poke.index} pokemon={poke} />
                ))}
-               <button className={style.buttonDisplay} onClick={displayRandom}>DISPLAY RANDOM</button>
          </div>
          <div className={style.buttonPlayDiv}>
+            <button className={style.buttonDisplay} onClick={displayRandom}>DISPLAY RANDOM</button>
             <button className={style.buttonPlay} onClick={playGame}>PLAY</button>
          </div>
          <div className={style.container2}>
@@ -97,6 +103,21 @@ const Play = () => {
                   <PokedexCard key={champ.index} pokemon={champ} />
                ))}
          </div>
+         {showWinnerMessage && (
+         <div className={style.popUp}>
+            YOU WIN!!
+         </div>
+      )}
+            {showLooserMessage && (
+         <div className={style.popUp}>
+            YOU LOSE!!
+         </div>
+      )}
+            {showTieMessage && (
+         <div className={style.popUp}>
+            IT'S A TIE!!
+         </div>
+      )}
       </div>
    );
 }
