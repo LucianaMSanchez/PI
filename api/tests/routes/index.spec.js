@@ -16,7 +16,7 @@ const pokemon = {
     image: "image.jpg"
 };
 
-const userId = "25cde654-084e-41fc-a547-df3f212203a1"
+const userId = "cc7c62d8-1244-45f0-915d-2ddbea577d82"
 
 describe("Test de RUTAS", () => {
 
@@ -43,14 +43,64 @@ describe("Test de RUTAS", () => {
     describe("POST /users/login", () => {
 
         it("should respond with a status 200 when valid user info is provided", async () => {
-            const res = (await request.post('/users/login')).send({ email: "lu@gmail.com", password: "Password3"});
+            const res = await request.post('/users/login').send({ email: "lu@gmail.com", password: "Password3"});
             expect(res.statusCode).to.equal(200);
         });
-
+    
         it("should respond with status: 404 when invalid user info is provided", async () => {
             const res = await request.post('/users/login').send({ email: "lasfsdu@gmaildasd.com", password: "Pasasdsxc345sword3"});
             expect(res.statusCode).to.equal(404); 
         });
     });
-  
-})
+
+    describe('POST /users/pokedexFull', () => {
+        it('should get user pokedex successfully', async () => {
+          const response = await request.post('/users/pokedexFull').send({ userId });
+          expect(response.status).to.equal(200);
+          expect(response.body).to.be.an('array'); 
+        });
+    
+        it('should return 404 for invalid userId', async () => {
+          const userId = '7458'; 
+          const response = await request.post('/getPokedex').send({ userId });
+          expect(response.status).to.equal(404);
+        });
+      });
+    
+     
+      describe('DELETE /users/pokedex', () => {
+        it('should delete a pokemon from user pokedex', async () => {
+          const id = '815'; 
+          const response = await request.delete('/users/pokedex').send({ id, userId });
+          expect(response.status).to.equal(200);
+          expect(response.body).to.be.an('array');
+        });
+    
+        it('should return 404 for invalid userId or id', async () => {
+          const userId = '4523';
+          const id = '98563'; 
+          const response = await request.delete('/users/pokedex').send({ id, userId });
+    
+          expect(response.status).to.equal(404);
+        });
+      });
+    
+     
+      describe('POST /users/pokedex', () => {
+        it('should add a pokemon to user pokedex', async () => {
+          const id = '25'; 
+          const response = await request(request).post('/users/pokedex').send({ id, userId });
+          expect(response.status).to.equal(200);
+          expect(response.body).to.be.an('array'); 
+        });
+    
+        it('should return 404 for invalid userId or id', async () => {
+          const userId = '8452'; 
+          const id = '98542'; 
+          const response = await request(request).post('/users/pokedex').send({ id, userId });
+          expect(response.status).to.equal(404);
+        });
+      });
+});    
+
+

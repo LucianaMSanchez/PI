@@ -13,7 +13,6 @@ const Detail = () => {
    const created = useSelector((state) => state.createdPoke)
    const types = useSelector((state) => state.types)
    const pokedex = useSelector((state) => state.pokedex)
-   const error = useSelector((state) => state.error);
    const userId = useSelector((state) => state.user);
    const [isFav, setIsFav] = useState(false);
    const [backDetail, setBackDetail] = useState(""); 

@@ -24,7 +24,6 @@ function Cards() {
         }
         return () => {
            dispatch(clearPokemons());
-           dispatch(clearTypes());
        }
       }, []);
 
@@ -83,13 +82,13 @@ function Cards() {
         
                 <div className={style.pages}>
                     <div >
-                        <button onClick={previousPage} className={style.buttonPrev}>◀</button>
+                        <button onClick={previousPage} className={page === 1 ? style.hidden : style.buttonPrev}>◀</button>
                     </div>
                     <div>
                         <p type="text" className={style.page}> {page} </p>
                     </div>
                     <div>
-                        <button onClick={nextPage} className={style.buttonNext}>▶</button>
+                        <button onClick={nextPage} className={page === maxPage ? style.hidden : style.buttonNext}>▶</button>
                     </div>
                 </div>
                 </>

@@ -78,7 +78,7 @@
 }
 
 .image:hover{
-    transform: scale(1.2) translate(0, -0.8em);
+    transform: scale(1.1) translate(0, -0.8em);
     transition: 0.6s ease-in-out;
 }
 
@@ -91,7 +91,6 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    padding-top: 0.5em;
     background-color: transparent;
     height: 40%;
     justify-self: end;
@@ -103,6 +102,6 @@
 }
 
 .typeImage{
-width: 1.5em;
+    width: 1.5em;
 }
 

@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react';
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
-import { getTypes } from "../../redux/actions";
+import { getTypes, clearTypes } from "../../redux/actions";
 import style from "./Types.module.css";
 import { switchIcon } from "../../utils/switchs";
 
@@ -14,7 +14,10 @@ const Types = () => {
 
     useEffect(() => {
         dispatch(getTypes());
-        }, [dispatch]);
+        return () => {
+            dispatch(clearTypes());
+        }
+        }, []);
 
 
     return (

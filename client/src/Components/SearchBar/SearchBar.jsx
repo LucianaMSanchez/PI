@@ -35,11 +35,11 @@ const SearchBar = () => {
                 dispatch(getPokemonName(name));
                 dispatch(getOwnPokemonName(name));
             }
-            setInputValue("");
             if(!searched){
               dispatch(clearPokemons());
               setSearched(true);
             }
+            setInputValue("");
         }
     };
     

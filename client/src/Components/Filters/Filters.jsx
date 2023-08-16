@@ -183,20 +183,20 @@ return (
         <div className={style.orders}>
             <h2 className={style.titles}>Stats</h2>
             <div>
-                <button value={aux.orderHp} className={style.stat} onClick={() => handleOrderHp("A")}>+ Hp</button>
-                <button value={aux.orderHp} className={style.stat} onClick={() => handleOrderHp("D")}>- Hp</button>
+                <button value={aux.orderHp} className={style.stat} onClick={() => handleOrderHp("D")}>+ Hp</button>
+                <button value={aux.orderHp} className={style.stat} onClick={() => handleOrderHp("A")}>- Hp</button>
             </div>
             <div>
-                <button value={aux.orderAttack} className={style.stat} onClick={() => handleOrderAttack("A")}>+ Attack</button>
-                <button value={aux.orderAttack} className={style.stat} onClick={() => handleOrderAttack("D")}>- Attack</button>
+                <button value={aux.orderAttack} className={style.stat} onClick={() => handleOrderAttack("D")}>+ Attack</button>
+                <button value={aux.orderAttack} className={style.stat} onClick={() => handleOrderAttack("A")}>- Attack</button>
             </div>
             <div>
-                <button value={aux.orderDefense} className={style.stat} onClick={() => handleOrderDefense("A")}>+ Defense</button>
-                <button value={aux.orderDefense} className={style.stat} onClick={() => handleOrderDefense("D")}>- Defense</button>
+                <button value={aux.orderDefense} className={style.stat} onClick={() => handleOrderDefense("D")}>+ Defense</button>
+                <button value={aux.orderDefense} className={style.stat} onClick={() => handleOrderDefense("A")}>- Defense</button>
             </div>
             <div>
-                <button value={aux.orderSpeed} className={style.stat} onClick={() => handleOrderSpeed("A")}>+ Speed</button>
-                <button value={aux.orderSpeed} className={style.stat} onClick={() => handleOrderSpeed("D")}>- Speed</button>
+                <button value={aux.orderSpeed} className={style.stat} onClick={() => handleOrderSpeed("D")}>+ Speed</button>
+                <button value={aux.orderSpeed} className={style.stat} onClick={() => handleOrderSpeed("A")}>- Speed</button>
             </div>
         </div>    
         <div >

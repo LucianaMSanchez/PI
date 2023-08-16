@@ -97,6 +97,10 @@ flex-direction: row;
     border-radius: 5px;
 }
 
+.hidden{
+  display: none;
+}
+
 *
 {
     -webkit-box-sizing: border-box;
