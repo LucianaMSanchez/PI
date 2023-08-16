@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getOwnPokemonId, getPokemonId, getPokemonName, getOwnPokemonName, clearPokemons } from "../../redux/actions";
 import style from "./SearchBar.module.css";
@@ -10,6 +10,7 @@ const SearchBar = () => {
     const [name, setName] = useState("");
     const [inputValue, setInputValue] = useState("");
     const [searched, setSearched] = useState(false);
+    const [error, setError] = useState("");
     const dispatch = useDispatch();
 
     const handleChange = (event) => {
@@ -25,7 +26,7 @@ const SearchBar = () => {
 
     const handleSearch = () => {
         if (pokemons.find((poke) => poke.id == inputValue) || pokemons.find((poke) => poke.name == inputValue)) {
-            return window.alert('Repeated Pokémon');
+            setError('Repeated Pokémon');
         } else {
             if (id) {
                 id < 1282 
@@ -58,6 +59,12 @@ const SearchBar = () => {
         }
     };
 
+    useEffect(() => {
+        setTimeout(() => {
+            setError("");
+        }, 3000);
+        }, [error]);
+
     return (
         <div className={style.bar}>
             <button className={style.randomButton} onClick={handleRandom}>
@@ -74,6 +81,9 @@ const SearchBar = () => {
             <button className={style.searchButton} onClick={handleSearch}>
                 Search
             </button>
+            {error ? (
+                <p className={style.error}>{error}</p>
+            ) : ( null)}
         </div>
     );
 }

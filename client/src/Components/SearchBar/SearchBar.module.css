@@ -35,3 +35,21 @@
     font-weight: bold;
     cursor: pointer;
 }
+
+.error{
+    position: absolute;
+    right: 17em;
+    top: 6em;
+    font-family: 'Coda', sans-serif;
+    font-weight: bold;
+    font-size: small;
+    color: #128494;
+    border: solid 1px #ff5722; 
+    border-radius: 15px 15px 15px 15px;
+    height: 2.2em;
+    width: 20em;
+    background-color: #ecfeff; 
+    padding: 0.4em;
+    box-shadow: inset 0 0 5px #ee8727;
+    text-align: center;
+}
