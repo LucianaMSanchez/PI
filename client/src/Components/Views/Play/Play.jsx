@@ -5,6 +5,7 @@ import { PokedexCard } from "../../index";
 import style from "./Play.module.css";
 
 
+
 const Play = () => {
 
    const pokemons = useSelector((state) => state.pokemons);
@@ -32,10 +33,13 @@ const Play = () => {
       setDisplay(true);
    };
 
+   const winningPokes = [];
+   const winningChamps = [];
+   const winningCards = [];
+
    
    const playGame = () => {
       if(!play) {
-      const winningCards = [];
    
       pokemons.forEach((poke, index) => {
          const champ = champs[index];
@@ -64,34 +68,53 @@ const Play = () => {
                champWins++;
             }
          }
-        console.log(champWins);
+      
+      console.log(champWins)
+       
       if (champWins > pokeWins) {
-            winningCards.push(champ);
+            winningChamps.push(champ);
+            winningCards.push(champ.id);
          } 
+      if (champWins < pokeWins) {
+            winningPokes.push(poke);
+            winningCards.push(poke.id);
+         } 
+      console.log(winningCards)
       });
       
-      console.log(winningCards);
       setTimeout(() => {
-         if (winningCards.length >= 3) {
+         if (winningChamps.length >= 3) {
             setShowWinnerMessage(true);
-         } else if (winningCards.length === 2) {
+         } else if (winningChamps.length === 2) {
             setShowTieMessage(true);
          } else {
             setShowLooserMessage(true);
          }
-      }, 1500);
+      }, 1000);
 
       setPlay(true);
       }
    };
    
+   const isWinningCard = (card) => winningCards.includes(card.id);
+  
 
    return (
     
       <div className={style.back}>
          <div className={style.container1}>
                {pokemons?.map((poke)=> (
-                  <PokedexCard key={poke.index} pokemon={poke} />
+                  <div>
+                  <PokedexCard
+                     key={poke.index}
+                     pokemon={poke}
+                  />
+                    { isWinningCard(poke) ? (
+                     <div>
+                        🌟
+                     </div>
+                  ) : (null)}
+                  </div>
                ))}
          </div>
          <div className={style.buttonPlayDiv}>
@@ -99,9 +122,19 @@ const Play = () => {
             <button className={style.buttonPlay} onClick={playGame}>PLAY</button>
          </div>
          <div className={style.container2}>
-         {champs?.map((champ)=> (
-                  <PokedexCard key={champ.index} pokemon={champ} />
-               ))}
+            {champs?.map((champ) => (
+               <div >
+               <PokedexCard
+                  key={champ.index}
+                  pokemon={champ}
+                  />
+                  { isWinningCard(champ) ? (
+                     <div>
+                        🌟
+                     </div>
+                  ) : (null)}
+               </div>
+            ))}
          </div>
          {showWinnerMessage && (
          <div className={style.popUp}>

@@ -123,6 +123,7 @@ a {
     box-shadow: 25px 10px 6px #665a72;
     border: solid 5px rgb(75, 74, 74);
 }
+
 .backFire{
     background-image: url("../../assets/energias/fire.jpg");
     background-size: cover;
@@ -136,6 +137,7 @@ a {
     box-shadow: 25px 10px 6px #665a72;
     border: solid 5px rgb(75, 74, 74);
 }
+
 .backWater{
     background-image: url("../../assets/energias/water.jpg");
     background-size: cover;

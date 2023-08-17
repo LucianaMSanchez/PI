@@ -174,11 +174,15 @@ return (
                 <button value={aux.orderAz} className={style.ord} onClick={() => handleOrderAz("A")}>Az</button>
                 <button value={aux.orderAz} className={style.ord} onClick={() => handleOrderAz("D")}>Za</button>
             </div>
-        <h2 className={style.titles}>Filter</h2>
-            <div>
-                <button value={aux.filterOrigin} className={style.ord} onClick={() => handleFilterOrigin("Created")}>Created</button>
-                <button value={aux.filterOrigin} className={style.ord} onClick={() => handleFilterOrigin("Original")}>Original</button>
-            </div>
+            {location.pathname === "/home" ? (
+                <>
+                <h2 className={style.titles}>Filter</h2>
+                <div>
+                    <button value={aux.filterOrigin} className={style.ord} onClick={() => handleFilterOrigin("Created")}>Created</button>
+                    <button value={aux.filterOrigin} className={style.ord} onClick={() => handleFilterOrigin("Original")}>Original</button>
+                </div>
+                </>
+            ) : (null)}
         </div>
         <div className={style.orders}>
             <h2 className={style.titles}>Stats</h2>

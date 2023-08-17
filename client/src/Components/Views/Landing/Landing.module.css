@@ -26,7 +26,7 @@
     left: 50%;
     z-index: 2;
     transform: translate(-50%, -50%);
-    transition: 300ms ease-in;
+    transition: 200ms ease-in;
 }
 
 .ball{

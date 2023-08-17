@@ -4,7 +4,7 @@ const { conn } = require('./src/db.js');
 
 
 conn
-  .sync({ force: false })
+  .sync({ force: true })
   .then(() => {
       server.listen(PORT, () => {
         console.log('Server listening at 3001'); 

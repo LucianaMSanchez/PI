@@ -19,7 +19,7 @@ const Landing = () => {
     setTimeout(() => {
     setShowLight(false);
     dispatch(loginPending())
-  }, 400);  
+  }, 300);  
 };
 
 
