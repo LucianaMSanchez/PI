@@ -2,20 +2,19 @@
 
 # **POKEMON** | Proyecto Individual
 
-Pokémon Project - Full Stack Web DevelopmentPokémon Project - Full Stack Web Development
-jul. 2023 - ago. 2023jul. 2023 - ago. 2023
+Pokémon Project - Full Stack Web Development<br />
+jul. 2023 - ago. 2023<br />
 
-Asociada con HenryAsociada con Henry
-● Desarrollar: 
- Landing page, home page, favorites page, types page y respectivas detail pages. 
- Registro y logeo de usuarios. 
- Búsqueda de personajes por diversos parámetros.
- Filtros aislados e integrados, con reutilización en múltiples componentes.
- Creación de registro de personaje en base de datos mediante formulario controlado.
- Actividad lúdica minimalista.
-● Diseñar interfaz y experiencia de usuario de carácter ágil e intuitivo, con optimización de la navegación entre modelos relacionados. 
-● Tecnologías aplicadas: Javascript, React, Redux, Express, PostgreSQL y Sequelize.
-
+● Desarrollar: <br />
+ Landing page, home page, favorites page, types page y respectivas detail pages. <br />
+ Registro y logeo de usuarios. <br />
+ Búsqueda de personajes por diversos parámetros.<br />
+ Filtros aislados e integrados, con reutilización en múltiples componentes.<br />
+ Creación de registro de personaje en base de datos mediante formulario controlado.<br />
+ Actividad lúdica minimalista.<br />
+● Diseñar interfaz y experiencia de usuario de carácter ágil e intuitivo, con optimización de la navegación entre modelos relacionados.<br /> 
+● Tecnologías aplicadas: Javascript, React, Redux, Express, PostgreSQL y Sequelize.<br />
+<br />
 ## **📌 OBJETIVOS**
 
 -  Construir una Single Page Application utlizando las tecnologías: **React**, **Redux**, **Node**, **Express** y **Sequelize**.
